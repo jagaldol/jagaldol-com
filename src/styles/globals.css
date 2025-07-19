@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "GmarketSansMedium";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SUIT-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@theme {
+  --font-SUITRegular: "SUIT-Regular", "Arial", "Helvetica", "sans-serif";
+  --font-GmarketSansMedium: "GmarketSansMedium", "Arial", "Helvetica", "sans-serif";
+  --color-bg: "#F1F1F5";
+  --color-main-theme: "#778899";
+}
+
+body {
+  @apply bg-bg font-SUITRegular max-md:text-sm overflow-y-scroll;
+}
+
+/* Webkit (Chrome, Safari 등) 브라우저에서 스크롤바 스타일링 */
+body::-webkit-scrollbar {
+  width: 12px; /* 스크롤바의 너비 설정 */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; /* 스크롤바 트랙의 배경 색상을 투명하게 설정 */
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-main-theme;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  @apply bg-main-theme/70;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+nav {
+  @apply font-GmarketSansMedium;
+}
+
+h1 {
+  @apply text-3xl max-md:text-xl;
+}
+
+footer a,
+footer p {
+  @apply text-xs;
+}
+
+table {
+  @apply border-collapse border border-gray-200 bg-slate-50;
+}
+th,
+td {
+  @apply border border-gray-300 px-3;
+}
+
+.underline-animate {
+  position: relative;
+  @apply group-hover:after:w-[50%] group-hover:before:w-[50%];
+}
+.underline-animate:before {
+  content: "";
+  position: absolute;
+  right: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: theme("colors.main-theme");
+  transition: all 0.5s;
+}
+.underline-animate:after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: theme("colors.main-theme");
+  transition: all 0.5s;
+}
+
+@import "tailwindcss";
+
+.markdown-body h1 {
+  @apply text-3xl max-md:text-xl font-bold mt-6 mb-4;
+}
+
+.markdown-body h2 {
+  @apply text-2xl max-md:text-lg font-semibold mt-20 mb-3;
+}
+
+.markdown-body h3 {
+  @apply text-xl max-md:text-base font-semibold mt-4 mb-2;
+}
+
+.markdown-body p {
+  @apply my-3;
+}
+
+.markdown-body ul {
+  @apply list-disc ml-5;
+}
+.markdown-body ul:first-child {
+  @apply list-disc ml-5;
+}
+
+.markdown-body ol {
+  @apply list-decimal ml-5;
+}
+.markdown-body a {
+  @apply text-blue-600 hover:text-blue-800;
+}
+.markdown-body img {
+  @apply max-w-full h-auto inline-block;
+}
+.markdown-body pre {
+  @apply rounded;
+}
+.markdown-body hr {
+  @apply border border-b-gray-400 rounded-full;
+}
+.markdown-body span > code {
+  @apply !bg-gray-50 text-teal-700 font-SUITRegular !px-1 font-semibold;
+}
+.markdown-body blockquote {
+  @apply border-l-4 border-gray-400 pl-4 italic;
+}
+
+.markdown-body summary {
+  @apply hover:cursor-pointer;
+}
+
+.hide-scroll-bar {
+  -ms-overflow-style: none;
+}
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
