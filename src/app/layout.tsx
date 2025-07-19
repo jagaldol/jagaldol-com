@@ -1,17 +1,9 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
 import "@/styles/globals.css"
 import { ReactNode } from "react"
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-})
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-})
+import Link from "next/link"
+import ScrollArrow from "@/components/ScrollArrow"
+import { FaBlog, FaGithub, FaRegEnvelope } from "react-icons/fa"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,7 +17,35 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className="antialiased">
+        <div className="absolute top-0 left-0 w-full h-auto min-h-screen">
+          {/* <Header /> */}
+          <ScrollArrow />
+
+          <main className="px-5 pb-40">{children}</main>
+
+          <footer className="absolute bottom-0 left-0 flex items-center w-full h-16 px-20 bg-white max-md:h-10 max-sm:px-10">
+            <div className="flex-1 ">
+              <Link href="/" className="flex-1 underline">
+                &copy;Hyejun An.
+              </Link>
+            </div>
+
+            <div className="flex items-end gap-2">
+              <p className="text-xs">Contact.</p>
+              <a href="mailto:jagaldol.dev@gmail.com" aria-label="이메일">
+                <FaRegEnvelope />
+              </a>
+              <a href="https://github.com/jagaldol" aria-label="깃허브">
+                <FaGithub />
+              </a>
+              <a href="https://blog.jagaldol.com/" aria-label="블로그">
+                <FaBlog />
+              </a>
+            </div>
+          </footer>
+        </div>
+      </body>
     </html>
   )
 }

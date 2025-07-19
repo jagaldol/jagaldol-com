@@ -17,8 +17,8 @@
 @theme {
   --font-SUITRegular: "SUIT-Regular", "Arial", "Helvetica", "sans-serif";
   --font-GmarketSansMedium: "GmarketSansMedium", "Arial", "Helvetica", "sans-serif";
-  --color-bg: "#F1F1F5";
-  --color-main-theme: "#778899";
+  --color-bg: #f1f1f5;
+  --color-main-theme: #778899;
 }
 
 body {
@@ -55,11 +55,6 @@ nav {
 
 h1 {
   @apply text-3xl max-md:text-xl;
-}
-
-footer a,
-footer p {
-  @apply text-xs;
 }
 
 table {
