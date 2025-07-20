@@ -3,7 +3,6 @@ import { FaBlog, FaCakeCandles, FaEnvelope, FaGithub, FaLinkedin, FaUser } from 
 
 import Block from "@/containers/home/Block"
 import ProfileContent from "@/containers/home/profile/ProfileContent"
-import ProfileImage from "@/static/profile.png"
 
 const paragraphDescriptionClassName = "text-black/60 pl-1"
 
@@ -49,7 +48,13 @@ export default function Profile() {
       <div className="grid grid-cols-2 gap-y-10 max-lg:grid-cols-1 px-10 max-md:px-0">
         <div className="pl-[20%] max-xl:pl-[10%] max-sm:pl-0">
           <div className="max-w-sm">
-            <Image className="rounded-xl " alt="프로필 사진" src={ProfileImage} />
+            <Image
+              className="rounded-xl object-contain w-auto h-auto"
+              alt="프로필 사진"
+              src="/profile.png"
+              width={350}
+              height={0}
+            />
           </div>
         </div>
         <ProfileContent title="Contact">

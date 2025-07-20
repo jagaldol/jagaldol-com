@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "jagaldol.com",
     images: [
       {
-        url: "https://jagaldol.com/og-images/profile.png",
+        url: "https://jagaldol.com/images/profile.png",
         width: 1200,
         height: 630,
         alt: "Hyejun An Profile Image",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Engineer | Hyejun An",
     description: "AI 엔지니어 안혜준의 포트폴리오 사이트입니다.",
-    images: ["https://jagaldol.com/og-images/profile.png"],
+    images: ["https://jagaldol.com/images/profile.png"],
   },
 }
 
@@ -45,7 +45,7 @@ export default function RootLayout({
           <Header />
           <ScrollArrow />
 
-          <main className="pb-40">{children}</main>
+          <main className="px-5 pb-40">{children}</main>
 
           <footer className="absolute bottom-0 left-0 flex items-center w-full h-16 px-20 bg-white max-md:h-10 max-sm:px-10">
             <div className="flex-1 ">

@@ -40,6 +40,7 @@ const eslintConfig = [
           },
         },
       ],
+      "@typescript-eslint/no-explicit-any": "off",
     },
   },
   prettierConfig,
