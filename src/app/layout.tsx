@@ -1,9 +1,11 @@
 import type { Metadata } from "next"
 import "@/styles/globals.css"
-import { ReactNode } from "react"
 import Link from "next/link"
-import ScrollArrow from "@/components/ScrollArrow"
+import { ReactNode } from "react"
 import { FaBlog, FaGithub, FaRegEnvelope } from "react-icons/fa"
+
+import Header from "@/components/nav/Header"
+import ScrollArrow from "@/components/ScrollArrow"
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +21,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className="antialiased">
         <div className="absolute top-0 left-0 w-full h-auto min-h-screen">
-          {/* <Header /> */}
+          <Header />
           <ScrollArrow />
 
           <main className="px-5 pb-40">{children}</main>
