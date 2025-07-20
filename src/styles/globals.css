@@ -19,6 +19,17 @@
   --font-GmarketSansMedium: "GmarketSansMedium", "Arial", "Helvetica", "sans-serif";
   --color-bg: #f1f1f5;
   --color-main-theme: #778899;
+  --animate-moveUpDown: moveUpDown 2s ease-in-out infinite;
+
+  @keyframes moveUpDown {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
 }
 
 body {
