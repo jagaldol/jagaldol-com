@@ -4,21 +4,10 @@ import MoreButton from "@/containers/home/title/MoreButton"
 import Cloud from "@/static/cloud.jpg"
 
 export default function Title() {
-  // const data = useStaticQuery(graphql`
-  //   query Title {
-  //     file(relativePath: { eq: "cloud.jpg" }) {
-  //       childImageSharp {
-  //         gatsbyImageData(placeholder: BLURRED, width: 1000)
-  //       }
-  //     }
-  //   }
-  // `)
-  // const titleBackgroundImage = getImage(data.file)
-
   return (
     <>
       <div className="absolute leWft-0 top-0 w-full h-[1000px] -z-30 bg-cover bg-center opacity-60 select-none pointer-events-none">
-        <Image src={Cloud} alt="배경 구름 이미지" className="w-full h-full object-cover" />
+        <Image src={Cloud} alt="배경 구름 이미지" priority className="w-full h-full object-cover" />
       </div>
       <div className="absolute left-0 top-0 w-full h-[1000px] bg-gradient-to-b from-transparent to-bg -z-20" />
 
