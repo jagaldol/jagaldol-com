@@ -1,5 +1,7 @@
-import type { Metadata } from "next"
+import "katex/dist/katex.min.css"
 import "@/styles/globals.css"
+
+import type { Metadata } from "next"
 import Link from "next/link"
 import { ReactNode } from "react"
 import { FaBlog, FaGithub, FaRegEnvelope } from "react-icons/fa"
