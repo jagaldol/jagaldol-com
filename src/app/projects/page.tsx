@@ -1,8 +1,61 @@
-export default function ProjectsPage() {
+import fs from "fs"
+import path from "path"
+
+import { cache } from "react"
+
+import ProjectContainer from "@/containers/project/ProjectConatiner"
+
+type Metadata = {
+  slug: string
+  title: string
+  stack?: string[]
+  image?: string
+  banner?: string
+  start_date?: string
+  end_date?: string
+  deploy_link?: string
+  image_list_path?: string
+}
+
+const CATEGORY_LIST = ["ai"]
+const CONTENT_DIR = path.join(process.cwd(), "src/content")
+
+const getProjectMetadatas = cache(async () => {
+  const projects: Record<string, Metadata[]> = {}
+
+  for (const category of CATEGORY_LIST) {
+    const dir = path.join(CONTENT_DIR, category)
+    const files = fs.readdirSync(dir).filter((f) => f.endsWith(".mdx"))
+
+    const metas = await Promise.all(
+      files.map(async (file) => {
+        const mod = await import(`@/content/${category}/${file}`)
+        return {
+          ...mod.metadata,
+          slug: file.replace(/\.mdx$/, ""),
+          category,
+        }
+      }),
+    )
+
+    metas.sort((a, b) => new Date(b.end_date || 0).getTime() - new Date(a.end_date || 0).getTime())
+
+    projects[category] = metas
+  }
+
+  return projects
+})
+
+export default async function ProjectsPage() {
+  const projects = await getProjectMetadatas()
+
   return (
-    <div>
-      <h1>Projects</h1>
-      <p>Explore our projects</p>
+    <div className="mt-5 flex flex-col text-center">
+      <h1 className="text-3xl my-8">Project List</h1>
+      <ProjectContainer title="AI Project" projects={projects.ai} />
+      {/* <ProjectContainer title="Web Project" projects={projects.web} />
+      <ProjectContainer title="Sub Project" projects={projects.sub} />
+      <ProjectContainer title="Toy Project" projects={projects.toy} /> */}
     </div>
   )
 }
