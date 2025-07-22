@@ -52,8 +52,9 @@ export default function Profile() {
               className="rounded-xl object-contain w-auto h-auto"
               alt="프로필 사진"
               src="/profile.png"
-              width={350}
-              height={0}
+              width="0"
+              height="0"
+              sizes="100vw"
             />
           </div>
         </div>

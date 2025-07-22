@@ -58,6 +58,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               alt={`${metadata.title} 대표 이미지`}
               width={1500}
               height={600}
+              priority
               className="object-contain"
             />
             {metadata.deploy_link && (

@@ -6,10 +6,11 @@ export default function Badge({ name }: { name: string }) {
     <Image
       src={src}
       alt={name}
-      className="w-auto object-contain drop-shadow"
       unoptimized
-      height={28} // h-7 is 1.75rem = 28px
-      width={0} // allow auto width based on height
+      className="w-auto  h-7 object-contain drop-shadow"
+      width="0"
+      height="0"
+      sizes="100vw"
     />
   )
 }
