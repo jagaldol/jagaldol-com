@@ -5,6 +5,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import Badge from "@/components/Badge"
+import ImageListContainer from "@/containers/project/ImageListContainer"
 
 const slugToPathMap = (() => {
   const contentDir = path.join(process.cwd(), "src/content")
@@ -43,6 +44,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const endDateString = end ? `${end.getFullYear()}.${end.getMonth() + 1}.${end.getDate()}.` : "진행중"
   const dateString = `${startDateString} ~ ${endDateString}`
 
+  const imageSrcList = metadata.image_list_path
+    ? fs
+        .readdirSync(path.join(process.cwd(), "public", metadata.image_list_path))
+        .filter((file) => /\.(png|jpe?g|webp|gif)$/i.test(file))
+        .map((name) => `/${[metadata.image_list_path, name].join("/").replace(/\/+/g, "/")}`)
+    : []
+
   return (
     <div className="mt-10 w-full flex justify-center">
       <div className="w-[1300px] max-2xl:w-[1000px] max-xl:w-[1000px] max-lg:w-[700px] max-md:w-full">
@@ -79,6 +87,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <Badge name={value} key={value} />
           ))}
         </div>
+        {imageSrcList.length > 0 && <ImageListContainer imageSrcList={imageSrcList} />}
+
         <article className="markdown-body mt-6 prose dark:prose-invert">
           <Post />
         </article>
