@@ -56,7 +56,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
       <div className="w-[1300px] max-2xl:w-[1000px] max-xl:w-[1000px] max-lg:w-[700px] max-md:w-full">
         <div className="mb-8">
           <h1>{metadata.title}</h1>
-          <p>{metadata.subtitle}</p>
+          <p>{metadata.description}</p>
           <p className="text-end">{dateString}</p>
         </div>
         {metadata.banner && (

@@ -1,4 +1,5 @@
 import Profile from "@/containers/home/profile/Profile"
+import Project from "@/containers/home/Project"
 import Title from "@/containers/home/title/Title"
 
 export default function Home() {
@@ -6,7 +7,7 @@ export default function Home() {
     <>
       <Title />
       <Profile />
-      {/* <Project /> */}
+      <Project />
     </>
   )
 }

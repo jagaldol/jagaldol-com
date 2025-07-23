@@ -12,7 +12,7 @@ export default function ImageList({
       key={src}
       src={src}
       alt={`Image${index}: ${src}`}
-      className="w-auto h-full drop-shadow"
+      className="w-auto h-full drop-shadow rounded-xl"
       width={0}
       height={0}
       sizes="100vw"

@@ -7,7 +7,7 @@ export default function Badge({ name }: { name: string }) {
       src={src}
       alt={name}
       unoptimized
-      className="w-auto h-7 object-contain drop-shadow"
+      className="w-auto h-full object-contain drop-shadow"
       width="0"
       height="0"
       sizes="100vw"
