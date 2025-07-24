@@ -5,7 +5,12 @@ export default function Navigator() {
     <nav className="h-full flex items-end max-md:hidden">
       <NavLink link="/" name="HOME" />
       <NavLink link="/projects" name="PROJECT" />
-      <NavLink link="/files/resume.pdf" name="RESUME" />
+      <a
+        href="/files/resume.pdf"
+        className="mx-3 text-lg transition-all hover:text-main-theme hover:-translate-y-[2px] duration-1000"
+      >
+        RESUME
+      </a>
       <a
         href="https://github.com/jagaldol"
         className="mx-3 text-lg transition-all hover:text-main-theme hover:-translate-y-[2px] duration-1000"

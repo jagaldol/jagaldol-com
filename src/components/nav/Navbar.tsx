@@ -63,7 +63,9 @@ export default function Navbar({ isNavOpen, close }: { isNavOpen: boolean; close
         <div className="flex flex-col items-center gap-10">
           <MobileNavLink link="/" name="HOME" />
           <MobileNavLink link="/projects" name="PROJECT" />
-          <MobileNavLink link="/files/resume.pdf" name="RESUME" />
+          <a href="/files/resume.pdf" className="text-lg transition-all hover:text-main-theme duration-1000">
+            RESUME
+          </a>
           <a href="https://github.com/jagaldol" className="text-lg transition-all hover:text-main-theme duration-1000">
             GITHUB
           </a>
