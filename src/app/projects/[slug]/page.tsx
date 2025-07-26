@@ -1,3 +1,6 @@
+import "katex/dist/katex.min.css"
+import "prismjs/themes/prism-okaidia.css"
+
 import fs from "fs"
 import path from "path"
 
