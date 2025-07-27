@@ -4,11 +4,43 @@ import "prismjs/themes/prism-okaidia.css"
 import fs from "fs"
 import path from "path"
 
+import type { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
 
 import Badge from "@/components/Badge"
 import ImageListContainer from "@/containers/project/ImageListContainer"
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  const { slug } = await params
+  const filePath = slugToPathMap[slug]
+  const { metadata } = await import(`@/content/${filePath}.mdx`)
+
+  return {
+    title: `${metadata.title} | Hyejun An`,
+    description: metadata.description,
+    openGraph: {
+      title: `${metadata.title} | Hyejun An`,
+      description: metadata.description,
+      url: `https://jagaldol.com/projects/${slug}`,
+      images: [
+        {
+          url: `https://jagaldol.com${metadata.image}`,
+          width: 1200,
+          height: 630,
+          alt: `${metadata.title} 대표 이미지`,
+        },
+      ],
+      type: "article",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${metadata.title} | Hyejun An`,
+      description: metadata.description,
+      images: [`https://jagaldol.com${metadata.image}`],
+    },
+  }
+}
 
 const slugToPathMap = (() => {
   const contentDir = path.join(process.cwd(), "src/content")
