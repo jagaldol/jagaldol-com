@@ -13,7 +13,7 @@ export const metadata = {
   start_date: "2024-09-02T00:00:00+0900",
   end_date: "2024-10-04T00:00:00+0900",
   deploy_link: "https://undoc.vercel.app",
-  image_list_path: "projects/ai/undoc/images/",
+  image_list_path: "/projects/ai/undoc/images/",
 }
 
 Undoc은 `Gemma-2-2b-it` 베이스 모델에 **RAG**와 **RAFT** 기법을 적용해 개발된 **의료 상담 챗봇**입니다. **RAG** 기반의 하이브리드 검색 기법을 통해 의료 질의 응답 데이터를 효과적으로 검색하며, **RAFT**는 불완전한 검색 결과에 대한 강건성을 높이는 역할을 합니다. 이 모델은 초거대 `AI 헬스 케어 질의응답 데이터`을 활용하여 학습되었으며, **96.02%의 평균 응답 유사도**([**semantic similarity**](https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/semantic_similarity))를 기록하며 기존 모델 대비 **16% 성능 향상**을 달성했습니다.

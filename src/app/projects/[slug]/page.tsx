@@ -83,7 +83,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     ? fs
         .readdirSync(path.join(process.cwd(), "public", metadata.image_list_path))
         .filter((file) => /\.(png|jpe?g|webp|gif)$/i.test(file))
-        .map((name) => `/${[metadata.image_list_path, name].join("/").replace(/\/+/g, "/")}`)
+        .map((name) => `${[metadata.image_list_path, name].join("/").replace(/\/+/g, "/")}`)
     : []
 
   return (
