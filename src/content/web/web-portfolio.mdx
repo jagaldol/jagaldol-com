@@ -1,0 +1,104 @@
+import Stacks from "@/containers/mdx/Stacks"
+
+export const metadata = {
+  title: "개발자 포트폴리오 웹사이트",
+  description: "프로필 및 프로젝트들을 소개하는 개인 웹사이트(2025년 7월 Next.js로 리뉴얼)",
+  stack: ["Next.js", "MDX"],
+  image: "/projects/web/web-portfolio/thumbnail.png",
+  banner: "/projects/web/web-portfolio/banner.png",
+  start_date: "2024-01-21T00:00:00+0900",
+  end_date: "2024-03-15T00:00:00+0900",
+  deploy_link: "https://github.com/jagaldol/jagaldol-com",
+  image_list_path: "/projects/web/web-portfolio/images/",
+}
+
+개발자로서의 경력을 정리하고, 다양한 프로젝트들을 소개하기 위해 개인 웹사이트를 개발하였습니다. 현재는 AI/LLM Engineeer로 활동하고 있지만, 웹 개발자로서의 경험을 살려 웹사이트를 제작하였습니다.
+
+이 웹사이트는 **Next.js**와 **MDX**를 사용하여 개발되었으며, 각 프로젝트의 세부 정보는 `.mdx` 파일로 작성되어 있습니다. 이를 통해 마크다운 형식으로 작성된 내용을 쉽게 읽고, 관리할 수 있도록 하였습니다.
+
+최초에는 `Gatsby`를 사용하여 개발하였으나, 2025년 7월에 `Next.js`로 리뉴얼하였습니다. `Gatsby`의 생태계가 활성화되지 않아 유지보수, 특히 여러 package의 종속성 문제로 인해 어려움을 겪었기 때문입니다. `Next.js`는 더 널리 사용되고 있으며, 다양한 기능과 생태계를 제공하여 사이트 재개발을 결정하게 되었습니다.
+
+회사를 다니면서 주말에 틈틈히 개발을 진행하였고, 2주에 걸쳐 사이트를 리뉴얼하였습니다. 이 과정에서 **Next.js**의 **App Router**와 **MDX**를 활용하여 효율적인 페이지 관리를 구현하였으며, **Tailwind CSS**를 사용하여 반응형 디자인을 적용하였습니다.
+
+이렇게 새로 리뉴얼을 하게 되며 라이브러리, 프레임워크의 생태계가 얼마나 중요한지 다시 한번 깨닫게 되었습니다. 앞으로도 신기술들을 빠르게 습득하고, 최신화된 표준을 적용하며 시대를 따라가는 게 목표입니다.
+
+<Stacks
+  stacks={[
+    {
+      alt: "Next.js",
+      badge: "https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js",
+    },
+    {
+      alt: "typescript",
+      badge: "https://img.shields.io/badge/-typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white",
+    },
+    {
+      alt: "mdx",
+      badge: "https://img.shields.io/badge/-mdx-1B1F24?style=for-the-badge&logo=mdx&logoColor=white",
+    },
+    {
+      alt: "ESLint",
+      badge: "https://img.shields.io/badge/-ESLint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=white",
+    },
+    {
+      alt: "Prettier",
+      badge: "https://img.shields.io/badge/-Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white",
+    },
+    {
+      alt: "TailwindCSS",
+      badge: "https://img.shields.io/badge/-Tailwind%20css-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white",
+    },
+  ]}
+/>
+
+## Projects Page
+
+4가지 분류는 아래의 기준을 따릅니다.
+
+- **AI Project**: 자신의 AI 전문성을 보여 줄 수 있는 **Signature works**
+- **Web Project**: 또 다른 흥미 분야인 웹에 대한 **Signature works**
+- **Sub Project**: 그 외 **다양한 기술에 대한 흥미**를 보여주는 활동
+- **Toy Project**: 흥미 위주의 단순 재미를 위한 개발
+
+---
+
+> 2025년 7월 기준으로 이 프로젝트는 `Next.js`로 리뉴얼되었습니다. 이전의 `Gatsby` 기반 포트폴리오 사이트는 [여기](https://github.com/jagaldol/jagaldol.github.io)에서 확인할 수 있습니다.
+>
+> 이하는 이전 `Gatsby` 기반 포트폴리오 사이트에 대한 설명입니다.
+
+개발해왔던 프로젝트들을 정리하기 위해 `Gatsby`를 사용하여 직접 포트폴리오 사이트를 만들었습니다. 웹 개발자로써 `React`로 직접 자신만의 웹페이지를 만들어 보고 싶다고 줄곧 생각해왔고, 학기가 끝난 틈을 사용해 저의 프로필과 프로젝트들을 소개할 수 있는 페이지를 만들어 보았습니다. 각 프로젝트의 세부적인 페이지는 `.mdx` 파일에서 마크다운으로 작성되고, 이를 읽어들여 각 페이지를 생성해냅니다.
+
+별도의 서버없이 `github.io`로 사이트 배포를 하기 위해 `React` 기반 정적 사이트 생성기인 `Gatsby`를 선택했습니다. `React` 환경에는 이미 친숙한 만큼 `Gatsby`를 사용하는 데 큰 무리가 없었습니다. 사이트를 만들면서 `GraphQL`을 통해 파일을 읽고 데이터를 처리하였고, 이 과정을 통해 `GraphQL`의 기초적인 사용을 새롭게 익혔습니다.
+
+<Stacks
+  stacks={[
+    {
+      alt: "Gatsby",
+      badge: "https://img.shields.io/badge/-Gatsby-663399?style=for-the-badge&logo=Gatsby",
+    },
+    {
+      alt: "typescript",
+      badge: "https://img.shields.io/badge/-typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white",
+    },
+    {
+      alt: "mdx",
+      badge: "https://img.shields.io/badge/-mdx-1B1F24?style=for-the-badge&logo=mdx&logoColor=white",
+    },
+    {
+      alt: "graphql",
+      badge: "https://img.shields.io/badge/-graphql-E10098?style=for-the-badge&logo=graphql&logoColor=white",
+    },
+    {
+      alt: "ESLint",
+      badge: "https://img.shields.io/badge/-ESLint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=white",
+    },
+    {
+      alt: "Prettier",
+      badge: "https://img.shields.io/badge/-Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white",
+    },
+    {
+      alt: "TailwindCSS",
+      badge: "https://img.shields.io/badge/-Tailwind%20css-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white",
+    },
+  ]}
+/>
