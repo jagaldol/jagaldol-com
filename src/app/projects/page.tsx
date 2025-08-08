@@ -37,7 +37,7 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-const CATEGORY_LIST = ["ai", "web", "sub"]
+const CATEGORY_LIST = ["ai", "web", "sub", "toy"]
 const CONTENT_DIR = path.join(process.cwd(), "src/content")
 
 const getProjectMetadatas = cache(async () => {
@@ -76,7 +76,7 @@ export default async function ProjectsPage() {
         <ProjectContainer title="AI Project" projects={projects.ai} />
         <ProjectContainer title="Web Project" projects={projects.web} />
         <ProjectContainer title="Sub Project" projects={projects.sub} />
-        {/* <ProjectContainer title="Toy Project" projects={projects.toy} /> */}
+        <ProjectContainer title="Toy Project" projects={projects.toy} />
       </div>
     </>
   )
