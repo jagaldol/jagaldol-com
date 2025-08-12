@@ -1,0 +1,66 @@
+import Stacks from "@/containers/mdx/Stacks"
+
+export const metadata = {
+  title: "Profile Counter",
+  description:
+    "A lightweight, self-hosted SVG visitor counter powered by FastAPI and Redis, deployed via Docker Compose",
+  stack: ["fastapi", "docker"],
+  image: "/projects/toy/profile-counter/thumbnail.png",
+  banner: "/projects/toy/profile-counter/banner.png",
+  start_date: "2025-07-07T00:00:00+0900",
+  end_date: "2025-07-11T00:00:00+0900",
+  deploy_link: "https://github.com/jagaldol/profile-counter",
+}
+
+간단한 SVG 뱃지를 통해 웹사이트 방문자 수를 보여주는 self-hosted 방문자 카운터입니다.
+
+기존에 GitHub README 등에 사용하던 https://profile-counter.glitch.me/:yourkey:/count.svg 서비스가 종료되면서, 어느 날 갑자기 조회수 이미지가 깨져버리는 경험을 했습니다.
+이 일을 계기로 더 이상 외부 API에 의존하지 않고, 직접 방문자 수 카운터 API를 만들어 운영하기로 결심하게 되었습니다.
+
+FastAPI와 Redis를 활용해 서버를 구성하고, 누구나 손쉽게 사용할 수 있도록 Docker Compose 기반으로 오픈소스로 배포하였습니다.
+
+> 👉 GitHub 레포지토리: [🔗 jagaldol/profile-counter](https://github.com/jagaldol/profile-counter)
+
+<div align="center">
+
+## ⏱️ Demo
+
+![Profile Counter Demo](https://server.jagaldol.com/profile-counter/jagaldol-profile-counter/count.svg)
+
+</div>
+
+<Stacks
+  stacks={[
+    {
+      alt: "FastAPI",
+      badge: "https://img.shields.io/badge/fastapi-009688?style=for-the-badge&logo=fastapi&logoColor=white",
+    },
+    {
+      alt: "Redis",
+      badge: "https://img.shields.io/badge/redis-DC382D?style=for-the-badge&logo=redis&logoColor=white",
+    },
+    {
+      alt: "Docker",
+      badge: "https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white",
+    },
+    {
+      alt: "SVG",
+      badge: "https://img.shields.io/badge/svg-FFB13B?style=for-the-badge&logo=svg&logoColor=black",
+    },
+  ]}
+/>
+
+## 🚀 주요 기능
+
+- 경량 & 자체 호스팅 가능한 방문자 수 카운터
+- Docker만으로 간편하게 배포 및 실행
+- SVG 이미지 형태로 웹사이트 어디든 삽입 가능
+
+## ⚙️ 배포 방식
+
+FastAPI와 Redis를 기반으로 구성되어 있으며, Docker Compose로 두 컨테이너를 동시에 실행할 수 있도록 설계되어 있습니다.
+간단한 설정만으로 로컬 혹은 개인 서버에 쉽게 배포 가능하며, 운영 환경에서는 nginx를 통한 리버스 프록시 구성도 염두에 두고 설계하였습니다.
+
+## 📄 라이선스
+
+MIT License 하에 공개되어 있으며, 자세한 내용은 [LICENSE](https://github.com/jagaldol/profile-counter/blob/main/LICENSE) 파일을 참고해주세요.
