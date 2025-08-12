@@ -1,0 +1,92 @@
+import Stacks from "@/containers/mdx/Stacks"
+
+export const metadata = {
+  title: "SRT 자동 예약 매크로",
+  description: "SRT 잔여 좌석 자동 예약 및 텔레그램 알림 전송",
+  stack: ["selenium", "telegram"],
+  image: "/projects/toy/srt-macro-reservation/thumbnail.png",
+  banner: "/projects/toy/srt-macro-reservation/banner.png",
+  start_date: "2025-01-15T00:00:00+0900",
+  end_date: "2025-01-23T00:00:00+0900",
+  deploy_link: "https://github.com/jagaldol/srt-macro-reservation",
+}
+
+취업을 위해 서울로 상경하게 되면서 명절마다 SRT 기차표 예매 전쟁에 참여하게 되었습니다.  
+예상대로 원하는 시간대의 표를 잡는 것은 거의 불가능했고, 공허한 눈으로 무한히 새로고침을 반복하는 나날이 이어졌습니다.
+
+그때 문득, 이런 단순 반복 작업은 사람이 아닌 컴퓨터가 대신하면 되지 않을까? 라는 생각이 들었고, 이를 계기로 이 매크로 프로그램을 개발하게 되었습니다.
+
+사용자는 `.env` 파일에 출발역, 도착역, 날짜, 시간만 설정하면 됩니다. 프로그램은 Selenium을 통해 **SRT 웹사이트를 자동으로 탐색 → 좌석 확인 → 예약 또는 예약 대기 등록**까지 전 과정을 수행합니다.  
+**특히 예약 성공 시에는 사용자가 결제를 잊지 않도록, 텔레그램을 통해 5초 간격으로 5분간 반복 알림을 전송**합니다.
+
+이 매크로를 통해 저는 2025년 설 명절에 원하는 시간대의 기차표를 예매해 고향에 내려갈 수 있었고, 이후로도 안정적으로 원하는 시간대의 SRT를 확보할 수 있게 되었습니다.
+
+> ⚠️ **주의사항**
+>
+> 과도한 매크로 사용은 SRT 측의 제재 대상이 될 수 있습니다.  
+> 본 프로그램은 **사람이 직접 새로고침하는 속도보다 느리게**, 약 2~3초 간격으로 조회하도록 설정되어 있습니다.  
+> 일반적인 취소표 줍기에는 1,000번 이내의 새로고침으로 충분하며, 그 이상의 무분별한 사용은 SRT 서버에 부하를 줄 수 있으므로 **악용을 지양**해 주시기 바랍니다.
+
+<Stacks
+  stacks={[
+    {
+      alt: "Python",
+      badge: "https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white",
+    },
+    {
+      alt: "Selenium",
+      badge: "https://img.shields.io/badge/selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white",
+    },
+    {
+      alt: "Telegram Bot",
+      badge: "https://img.shields.io/badge/telegram%20bot-26A5E4?style=for-the-badge&logo=telegram&logoColor=white",
+    },
+    {
+      alt: "ChromeDriver",
+      badge: "https://img.shields.io/badge/chromedriver-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white",
+    },
+    {
+      alt: "Macro Automation",
+      badge: "https://img.shields.io/badge/macro%20automation-blueviolet?style=for-the-badge",
+    },
+    {
+      alt: "SRT Train",
+      badge: "https://img.shields.io/badge/srt%20train-0C2D57?style=for-the-badge",
+    },
+  ]}
+/>
+
+## 💡 주요 기능
+
+- **잔여 좌석 자동 탐색** (특정 시간 이후 열차)
+- **자동 예약 또는 예약 대기 등록**
+- **Telegram 알림 연동** (예약 성공 시 5초마다 5분간 반복)
+- `.bat` 실행을 통한 간편한 윈도우 실행
+
+## ⚙️ 실행 예시
+
+```bash
+.venv\Scripts\activate
+python main.py
+```
+
+또는 Windows용 `run.bat` 파일 제공:
+
+```batch
+@chcp 65001 >nul
+@echo off
+call .venv\Scripts\activate
+python main.py
+pause
+```
+
+## ✉️ 텔레그램 알림 예시
+
+| 상태           | 메시지 예시                 | 반복 여부             |
+| -------------- | --------------------------- | --------------------- |
+| 예약 성공      | 예약에 성공하였습니다.      | ✅ 5초마다 5분간 반복 |
+| 예약 대기 성공 | 예약 대기에 성공하였습니다. | ❌ 1회 전송           |
+
+## 🚀 레포지토리
+
+[🔗 GitHub에서 보기](https://github.com/jagaldol/srt-macro-reservation)
