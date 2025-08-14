@@ -40,8 +40,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-public/og-images/*
-!public/og-images/.gitkeep
-
 public/robots.txt
 public/sitemap*.xml
