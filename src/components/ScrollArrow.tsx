@@ -38,7 +38,7 @@ export default function ScrollArrow() {
       aria-label={atBottom ? "맨 위로" : "맨 밑으로"}
       className={`fixed right-10 bottom-28 z-30 w-12 h-12 rounded-full drop-shadow bg-main-theme
           flex justify-center items-center  
-          hover:bg-main-theme-70 ${atBottom ? "hover:-translate-y-1" : "hover:translate-y-1"} transition-all
+          hover:bg-main-theme/70 ${atBottom ? "hover:-translate-y-1" : "hover:translate-y-1"} transition-all
           max-xl:right-7 max-xl:w-10 max-xl:h-10 max-lg:bottom-20 max-md:bottom-12`}
       onClick={toggleScroll}
     >

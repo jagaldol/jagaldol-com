@@ -22,7 +22,7 @@ export default async function Project() {
         text-lg max-md:text-base
         h-14 max-2xl:h-12 max-md:h-10 
         mx-20 my-10 max-2xl:mx-10 max-md:mx-0
-        drop-shadow text-white bg-main-theme hover:bg-main-theme-70 transition-all
+        drop-shadow text-white bg-main-theme hover:bg-main-theme/70 transition-all
         `}
       >
         View More
