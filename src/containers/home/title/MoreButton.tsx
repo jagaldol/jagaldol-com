@@ -12,11 +12,7 @@ export default function MoreButton() {
     })
   }
   return (
-    <button
-      type="button"
-      className="flex flex-col justify-center items-center animate-moveUpDown hover:cursor-pointer"
-      onClick={scrollDown}
-    >
+    <button type="button" className="flex flex-col justify-center items-center animate-moveUpDown" onClick={scrollDown}>
       <p className="pb-1">더보기</p>
       <IoIosArrowRoundDown className="text-4xl" />
     </button>
