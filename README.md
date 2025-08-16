@@ -1,6 +1,6 @@
 # jagaldol-com
 
-<img width="1440" height="288" alt="image" src="https://github.com/user-attachments/assets/edbaa111-4632-4ef8-9ae6-6d1a89548d68" />
+<img width="1440" height="288" alt="image" src="https://github.com/user-attachments/assets/e437637b-f76b-4432-a8ee-a420ed2a1f44" />
 
 My personal portfolio page, built with `Next.js`.
 
@@ -41,10 +41,9 @@ Each page offers a **detailed look at the project, including my contributions, t
 
 <div align="center">
 
-![Gatsby](https://img.shields.io/badge/-Gatsby-663399?style=for-the-badge&logo=Gatsby)
+![Next.js](https://img.shields.io/badge/-Next.js-000000?style=for-the-badge&logo=next.js)
 ![typescript](https://img.shields.io/badge/-typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![mdx](https://img.shields.io/badge/-mdx-1B1F24?style=for-the-badge&logo=mdx&logoColor=white)
-![graphql](https://img.shields.io/badge/-graphql-E10098?style=for-the-badge&logo=graphql&logoColor=white)
 
 ![ESLint](https://img.shields.io/badge/-ESLint-4B32C3?style=for-the-badge&logo=ESLint&logoColor=white)
 ![Prettier](https://img.shields.io/badge/-Prettier-F7B93E?style=for-the-badge&logo=Prettier&logoColor=white)
