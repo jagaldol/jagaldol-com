@@ -97,7 +97,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               src={metadata.banner}
               alt={`${metadata.title} 대표 이미지`}
               width={1500}
-              height={600}
+              height={300}
               priority
               className="object-contain"
             />
