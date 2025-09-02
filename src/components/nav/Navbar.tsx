@@ -58,11 +58,15 @@ export default function Navbar({ isNavOpen, close }: { isNavOpen: boolean; close
       <nav
         className={`fixed right-0 top-0 bottom-0 z-50
         bg-bg w-72 h-screen px-5 py-32 flex flex-col items-center
-        transition-all ${isNavOpen ? "translate-x-0" : "translate-x-[100%]"}`}
+        transition-all duration-300 ${isNavOpen ? "translate-x-0" : "translate-x-[100%]"}`}
       >
         <div className="flex flex-col items-center gap-10">
-          <MobileNavLink link="/" name="HOME" />
-          <MobileNavLink link="/projects" name="PROJECT" />
+          <button type="button" onClick={close}>
+            <MobileNavLink link="/" name="HOME" />
+          </button>
+          <button type="button" onClick={close}>
+            <MobileNavLink link="/projects" name="PROJECT" />
+          </button>
           <a href="/files/resume.pdf" className="text-lg transition-all hover:text-main-theme duration-1000">
             RESUME
           </a>
