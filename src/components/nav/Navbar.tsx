@@ -5,17 +5,34 @@ import { useEffect, useRef } from "react"
 import MobileNavLink from "@/components/nav/MobileNavLink"
 import useBodyScrollLock from "@/hooks/useBodyScrollLock"
 
-function BackgroundNavbar({ navOutsideRef }: { navOutsideRef: React.Ref<HTMLDivElement> }) {
+function BackgroundNavbar({
+  navOutsideRef,
+  isNavOpen,
+}: {
+  navOutsideRef: React.Ref<HTMLDivElement>
+  isNavOpen: boolean
+}) {
   const { lockScroll, openScroll } = useBodyScrollLock()
 
   useEffect(() => {
-    lockScroll()
+    if (isNavOpen) {
+      lockScroll()
+    } else {
+      openScroll()
+    }
     return () => {
       openScroll()
     }
-  }, [lockScroll, openScroll])
+  }, [isNavOpen, lockScroll, openScroll])
 
-  return <div className="fixed left-0 right-0 top-0 bottom-0 w-full h-screen z-40 bg-black/10" ref={navOutsideRef} />
+  return (
+    <div
+      className={`fixed left-0 right-0 top-0 bottom-0 w-full h-screen z-40 bg-black/10 transition-opacity duration-300 ${
+        isNavOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+      ref={navOutsideRef}
+    />
+  )
 }
 
 export default function Navbar({ isNavOpen, close }: { isNavOpen: boolean; close: () => void }) {
@@ -54,7 +71,7 @@ export default function Navbar({ isNavOpen, close }: { isNavOpen: boolean; close
 
   return (
     <div className="overflow-x-hidden">
-      {isNavOpen ? <BackgroundNavbar navOutsideRef={navOutsideRef} /> : null}
+      <BackgroundNavbar navOutsideRef={navOutsideRef} isNavOpen={isNavOpen} />
       <nav
         className={`fixed right-0 top-0 bottom-0 z-50
         bg-bg w-72 h-screen px-5 py-32 flex flex-col items-center
