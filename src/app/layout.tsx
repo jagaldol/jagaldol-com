@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "jagaldol.com",
     images: [
       {
-        url: "https://jagaldol.com/images/profile.png",
+        url: "https://jagaldol.com/profile.png",
         width: 1200,
         height: 630,
         alt: "Hyejun An Profile Image",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "AI Engineer | Hyejun An",
     description: "AI 엔지니어 안혜준의 포트폴리오 사이트입니다.",
-    images: ["https://jagaldol.com/images/profile.png"],
+    images: ["https://jagaldol.com/profile.png"],
   },
 }
 

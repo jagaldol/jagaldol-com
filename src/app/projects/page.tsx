@@ -9,7 +9,7 @@ import ProjectContainer from "@/containers/project/ProjectConatiner"
 export async function generateMetadata(): Promise<Metadata> {
   const projects = await getProjectMetadatas()
   const latestAI = projects.ai[0]
-  const imageUrl = `https://jagaldol.com${latestAI.image}` || "https://jagaldol.com/images/profile.png"
+  const imageUrl = `https://jagaldol.com${latestAI.image}` || "https://jagaldol.com/profile.png"
 
   return {
     title: "Project | Hyejun An",
