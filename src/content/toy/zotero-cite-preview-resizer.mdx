@@ -1,0 +1,125 @@
+import Stacks from "@/containers/mdx/Stacks"
+
+export const metadata = {
+  title: "Preview Resizer Plugin for Zotero",
+  description: "Zotero PDF 리더의 인용/주석 미리보기 팝업을 넓히고 드래그로 사이즈를 조절할 수 있게 만드는 플러그인",
+  stack: ["zotero", "plugin"],
+  image: "/projects/toy/zotero-cite-preview-resizer/thumbnail.png",
+  banner: "/projects/toy/zotero-cite-preview-resizer/banner.png",
+  start_date: "2025-09-08T00:00:00+0900",
+  end_date: "2025-09-25T00:00:00+0900",
+  deploy_link: "https://github.com/jagaldol/zotero-cite-preview-resizer",
+  image_list_path: "/projects/toy/zotero-cite-preview-resizer/images/",
+}
+
+Zotero PDF 리더에서 인용이나 주석 위에 마우스를 올리면 뜨는 미리보기 팝업은 지나치게 작아 글자를 읽기 위해서 자꾸 눈을 찌푸리게 되었습니다. 이런 불편을 해결하는 방법이 없을까 고민하다가, 직접 플러그인을 만들어보기로 했습니다.
+
+**Zotero Cite Preview Resizer**는 기본 팝업 크기를 800×500px로 넓히고, 사용자가 모서리를 드래그해 원하는 크기로 확대/축소할 수 있도록 만들어진 Zotero 7 전용 플러그인입니다.
+
+> 👉 GitHub 레포지토리: [🔗 jagaldol/zotero-cite-preview-resizer](https://github.com/jagaldol/zotero-cite-preview-resizer)
+
+<Stacks
+  stacks={[
+    {
+      alt: "TypeScript",
+      badge: "https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white",
+    },
+    {
+      alt: "Zotero Plugin Toolkit",
+      badge: "https://img.shields.io/badge/zotero--plugin--toolkit-CC2936?style=for-the-badge",
+    },
+    {
+      alt: "Zotero",
+      badge: "https://img.shields.io/badge/zotero-CC0000?style=for-the-badge&logo=zotero&logoColor=white",
+    },
+    {
+      alt: "CSS",
+      badge: "https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white",
+    },
+    {
+      alt: "Fluent Localization",
+      badge: "https://img.shields.io/badge/fluent%20l10n-0A7E8C?style=for-the-badge",
+    },
+  ]}
+/>
+
+## ✨ 주요 기능
+
+- Zotero 리더의 모든 미리보기 팝업을 기본 800×500px로 확장하고, 세션 동안 기억합니다.
+- `resize: both`를 이용해 드래그로 크기를 조절할 수 있고, 최대 95% 뷰포트까지 확대·축소됩니다.
+- 내부 콘텐츠는 `overflow: auto`로 스크롤되고, 이미지·SVG 등은 100% 폭에 맞춰 자동 리사이즈됩니다.
+- PDF뿐 아니라 EPUB, 스냅샷 등 Zotero Reader가 지원하는 모든 탭에서 동일하게 동작합니다.
+- 환경설정에서 기본 팝업 가로/세로 값을 즉시 변경할 수 있으며, 값은 Zotero 환경 설정에 안전하게 저장됩니다.
+
+## 🔌 설치 플로우
+
+<figure style={{ textAlign: "center" }}>
+  <img
+    src="/projects/toy/zotero-cite-preview-resizer/tool-plugins.png"
+    alt="Zotero의 Tools ▸ Plugins 메뉴 스크린샷"
+    width="500"
+    style={{ display: "block", margin: "0 auto" }}
+  />
+  <figcaption>Tools ▸ Plugins에서 플러그인 관리자 열기</figcaption>
+</figure>
+
+<figure style={{ textAlign: "center" }}>
+  <img
+    src="/projects/toy/zotero-cite-preview-resizer/install-plugin-from-file.png"
+    alt="Install Plugin From File... 버튼을 클릭하는 화면"
+    width="500"
+    style={{ display: "block", margin: "0 auto" }}
+  />
+  <figcaption>Install Plugin From File…을 눌러 배포된 XPI를 설치</figcaption>
+</figure>
+
+## 🔧 작동 방식
+
+플러그인은 초기화 시점에 Zotero의 리더 이벤트를 후킹하여 팝업 DOM에 전용 스타일을 삽입합니다.
+
+```ts
+Zotero.Reader.registerEventListener("renderToolbar", ({ doc }) => injectIntoReader(doc), addon.data.config.addonID)
+```
+
+- `injectIntoReader`는 `popupWidth`, `popupHeight` 환경설정 값을 읽어와 문서 루트에 CSS 변수를 심고, `.view-popup.preview-popup`에 커스텀 스타일 시트를 추가합니다.
+- 메인 창이 새로 열릴 때마다 `onMainWindowLoad`가 동일한 CSS 변수를 주입해 일관된 초기 크기를 보장합니다.
+- 기본 환경설정 값은 `addon/prefs.js`에서 정의되어 있어 Zotero가 플러그인을 로드하는 즉시 적용됩니다.
+
+```js
+pref("popupWidth", 800)
+pref("popupHeight", 500)
+```
+
+## ⚙️ 환경설정 UI
+
+`Zotero.PreferencePanes.register`를 통해 최소한의 옵션만 갖춘 전용 설정 패널을 제공합니다.
+
+<figure style={{ textAlign: "center" }}>
+  <img
+    src="/projects/toy/zotero-cite-preview-resizer/preferences.png"
+    alt="Popup width와 Popup height를 설정하는 Preferences 화면"
+    width="500"
+    style={{ display: "block", margin: "0 auto" }}
+  />
+  <figcaption>환경설정에서 팝업 기본 크기를 바로 조정</figcaption>
+</figure>
+
+- 폭/높이 입력 필드는 Fluent 기반 다국어 label을 사용하며, 즉시 Zotero 기본 설정과 양방향 데이터 바인딩됩니다.
+- 하단에는 플러그인 이름·버전·제작자를 자동으로 렌더링하는 간단한 푸터가 표시됩니다.
+
+## 🛠 개발 & 빌드 노트
+
+- [zotero-plugin-toolkit](https://github.com/windingwind/zotero-plugin-toolkit)을 기반으로 CLI, 핫 리로드, 배포용 번들링이 구성되어 있습니다.
+- 주요 스크립트:
+  ```bash
+  npm run start   # Zotero 7 개발 프로필을 띄워 플러그인을 바로 확인
+  npm run build   # 번들을 생성하고 TypeScript 타입 검사를 수행
+  npm run test    # zotero-plugin-scaffold가 제공하는 통합 테스트 실행
+  npm run lint:check
+  ```
+- TypeScript + ESLint + Prettier 환경을 사용해 정적 검사와 포맷을 유지합니다.
+
+## 🌍 로컬라이제이션 & 라이선스
+
+- Fluent 포맷(`addon/locale/en-US`, `ko-KR`)으로 영어/한국어를 지원하며, 추가 언어도 쉽게 확장할 수 있도록 구조화했습니다.
+- 프로젝트는 **AGPL-3.0-or-later** 라이선스로 공개되어 있으며, Zotero 커뮤니티 플러그인으로 배포하기에 적합한 조건을 따릅니다.
