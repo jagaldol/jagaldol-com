@@ -71,8 +71,8 @@ export default async function ProjectsPage() {
 
   return (
     <>
-      <div className="mt-5 flex flex-col text-center">
-        <h1 className="text-3xl my-8">Project List</h1>
+      <div className="mt-5 flex flex-col">
+        <h1 className="text-3xl my-8 text-center">Project List</h1>
         <ProjectContainer title="AI Project" projects={projects.ai} />
         <ProjectContainer title="Web Project" projects={projects.web} />
         <ProjectContainer title="Sub Project" projects={projects.sub} />
