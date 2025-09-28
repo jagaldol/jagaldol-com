@@ -39,6 +39,22 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 }
 
+const KST_DATE_FORMATTER = new Intl.DateTimeFormat("ko-KR", {
+  timeZone: "Asia/Seoul",
+  year: "numeric",
+  month: "numeric",
+  day: "numeric",
+})
+
+const formatDateInKST = (date: Date) => {
+  const parts = KST_DATE_FORMATTER.formatToParts(date)
+  const year = parts.find((part) => part.type === "year")?.value ?? ""
+  const month = parts.find((part) => part.type === "month")?.value ?? ""
+  const day = parts.find((part) => part.type === "day")?.value ?? ""
+
+  return `${year}.${month}.${day}.`
+}
+
 const slugToPathMap = (() => {
   const contentDir = path.join(process.cwd(), "src/content")
   const map: Record<string, string> = {}
@@ -72,8 +88,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   // 날짜 포맷팅
   const start = new Date(metadata.start_date)
   const end = metadata.end_date ? new Date(metadata.end_date) : null
-  const startDateString = `${start.getFullYear()}.${start.getMonth() + 1}.${start.getDate()}.`
-  const endDateString = end ? `${end.getFullYear()}.${end.getMonth() + 1}.${end.getDate()}.` : "진행중"
+  const startDateString = formatDateInKST(start)
+  const endDateString = end ? formatDateInKST(end) : "진행중"
   const dateString = `${startDateString} ~ ${endDateString}`
 
   const imageSrcList = metadata.image_list_path
