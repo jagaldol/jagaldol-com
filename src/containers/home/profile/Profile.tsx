@@ -68,7 +68,7 @@ export default function Profile() {
         </ProfileContent>
 
         <ProfileContent title="Work Experience">
-          <Paragraph content="[Upstage] AI Research Engineer Intern" description="2025.05. ~ Present" />
+          <Paragraph content="[Upstage] AI Research Engineer Intern" description="2025.05. ~ 2025.11." />
         </ProfileContent>
 
         <ProfileContent title="Education">
