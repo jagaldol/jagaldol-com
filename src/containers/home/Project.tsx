@@ -38,7 +38,7 @@ const getProjectMetadatas = cache(async () => {
 
   const projects = await Promise.all(
     files.map(async (file) => {
-      const mod = await import(`@/content/ai/${file}`)
+      const mod = await import(`../../content/ai/${file}`)
       return {
         ...mod.metadata,
         slug: file.replace(/\.mdx$/, ""),

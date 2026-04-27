@@ -1,9 +1,5 @@
 import createMDX from "@next/mdx"
 import type { NextConfig } from "next"
-import rehypeKatex from "rehype-katex"
-import rehypePrism from "rehype-prism-plus"
-import remarkGfm from "remark-gfm"
-import remarkMath from "remark-math"
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -25,8 +21,8 @@ const nextConfig: NextConfig = {
 const withMDX = createMDX({
   // Add markdown plugins here, as desired
   options: {
-    remarkPlugins: [remarkGfm, remarkMath],
-    rehypePlugins: [rehypeKatex, rehypePrism],
+    remarkPlugins: ["remark-gfm", "remark-math"],
+    rehypePlugins: ["rehype-katex", "rehype-prism-plus"],
   },
 })
 

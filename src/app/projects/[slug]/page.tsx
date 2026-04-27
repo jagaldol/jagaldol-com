@@ -11,7 +11,7 @@ import ImageListContainer from "@/containers/project/ImageListContainer"
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const filePath = slugToPathMap[slug]
-  const { metadata } = await import(`@/content/${filePath}.mdx`)
+  const { metadata } = await import(`../../../content/${filePath}.mdx`)
 
   return {
     title: `${metadata.title} | Hyejun An`,
@@ -83,7 +83,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   const { slug } = await params
   const filePath = slugToPathMap[slug]
 
-  const { default: Post, metadata } = await import(`@/content/${filePath}.mdx`)
+  const { default: Post, metadata } = await import(`../../../content/${filePath}.mdx`)
 
   // 날짜 포맷팅
   const start = new Date(metadata.start_date)
