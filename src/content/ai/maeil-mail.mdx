@@ -2,7 +2,6 @@ import { FaGithub } from "react-icons/fa"
 
 import MemberContainer from "@/containers/mdx/MemberContainer"
 import MemberGrid from "@/containers/mdx/MemberGrid"
-import Stacks from "@/containers/mdx/Stacks"
 
 export const metadata = {
   title: "MaeilMail",
@@ -16,138 +15,57 @@ export const metadata = {
   image_list_path: "/projects/ai/maeil-mail/images/",
 }
 
-매일메일은 **LLM Agent** 기반의 **Chrome Extension 서비스**로, 하루 동안 쌓이는 방대한 이메일 데이터를 요약 및 분류하여 사용자가 중요한 정보를 한눈에 파악할 수 있도록 하는 **메일 보고서 비서**입니다.
+**하루 동안 받은 메일을 요약·분류하고, 처리할 일을 일간 보고서로 정리하는 Chrome Extension 서비스입니다.** 네이버 부스트캠프 AI Tech 7기 Upstage 기업 해커톤에서 6인 팀으로 개발했습니다.
 
-**Reflexion 기법**을 적용해 생성된 요약문을 반복적으로 검증·개선하며, 첨부파일 및 이미지 분석을 위해 **Upstage Document Parse**를 활용해 **비정형 데이터**까지 처리합니다.
+개발 리더로 **LLM 파이프라인 설계, Reflexion 구현, 백엔드·확장 프로그램 통합**을 맡았습니다. 생성 결과를 평가하고 피드백을 반영하는 과정을 구성해, 최종 보고서의 G-Eval 평균을 3.75에서 4.19로 높였습니다.
 
-저는 **네이버 부스트캠프 Upstage 기업 해커톤**에서 **개발리더**로서 프로젝트 기획 및 **LLM Agent**를 활용한 파이프라인 설계와 서비스 구현을 이끌었습니다. 특히 **Reflexion 기법**의 고도화에 집중하여, **생성 결과에 대한 자동 평가 및 피드백 루프를 구축하여 AI 모델이 스스로 개선할 수 있는 체계를 마련**했습니다. 이를 통해 최종 보고서의 품질을 크게 향상시킬 수 있었습니다. 또한, 전체적인 서비스 운영을 위해 `MySQL` 데이터베이스와 `Chrome Extension` 서비스를 위한 `FastAPI` 백엔드 서버 및 `React` 기반의 프론트엔드까지 통합적으로 구현하였습니다.
+## 개발 배경
 
-프로젝트 결과, **G-eval 점수가 3.75에서 4.19로 0.44점** 향상되었고, 메일 요약의 **ROUGE-1**과 **BERTScore** 역시 각각 **24\~30%p, 5\~6%p** 상승했습니다. 이를 통해 매일 쌓이는 이메일의 핵심 정보만 빠르게 파악하고, 업무 효율성을 높이는 **통합 메일 관리 솔루션**을 제시할 수 있었습니다.
+중요한 일정과 요청은 메일 본문뿐 아니라 첨부 문서와 이미지에도 흩어져 있습니다. 매일 쌓이는 메일에서 필요한 정보를 찾고, 처리할 일을 별도로 정리하는 부담을 줄이고자 했습니다.
 
-> 네이버 부스트캠프 7기 Upstage 기업 해커톤 최종 발표 프로젝트
+Gmail에서 수집한 메일과 첨부를 함께 처리하고, 개별 메일의 요약을 모아 카테고리별 보고서와 체크리스트로 제공했습니다. 사용자는 Chrome Extension에서 보고서를 확인합니다.
 
-<Stacks
-  stacks={[
-    {
-      alt: "Python",
-      badge: "https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white",
-    },
-    {
-      alt: "Agent",
-      badge: "https://img.shields.io/badge/-LLM%20Agent-211b2b?style=for-the-badge",
-    },
-    {
-      alt: "Chrome Extension",
-      badge:
-        "https://img.shields.io/badge/Chrome%20Extension-4285F4?style=for-the-badge&logo=googlechrome&logoColor=white",
-    },
-    {
-      alt: "upstage solarpro",
-      badge: "https://img.shields.io/badge/-upstage%20solar%20pro-805cfb?style=for-the-badge",
-    },
-    {
-      alt: "upstage DocumentParse",
-      badge: "https://img.shields.io/badge/-upstage%20Document%20Parse-805cfb?style=for-the-badge",
-    },
-    {
-      alt: "Reflexion",
-      badge: "https://img.shields.io/badge/-Reflexion-1f77b4?style=for-the-badge",
-    },
-    {
-      alt: "G-eval",
-      badge: "https://img.shields.io/badge/-G%20eval-ff7f0e?style=for-the-badge",
-    },
-    {
-      alt: "fastapi",
-      badge: "https://img.shields.io/badge/-fastapi-009688?style=for-the-badge&logo=fastapi&logoColor=white",
-    },
-    {
-      alt: "mysql",
-      badge: "https://img.shields.io/badge/-mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white",
-    },
-    {
-      alt: "docker",
-      badge: "https://img.shields.io/badge/-docker-2496ED?style=for-the-badge&logo=docker&logoColor=white",
-    },
-    {
-      alt: "gmail",
-      badge: "https://img.shields.io/badge/-gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white",
-    },
-    {
-      alt: "typescript",
-      badge: "https://img.shields.io/badge/typescript-3178C6?style=for-the-badge&logo=typescript&logoColor=white",
-    },
-    {
-      alt: "vite",
-      badge: "https://img.shields.io/badge/vite-646CFF?style=for-the-badge&logo=vite&logoColor=white",
-    },
-    {
-      alt: "tailwindcss",
-      badge: "https://img.shields.io/badge/tailwindcss-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white",
-    },
-    {
-      alt: "reactquery",
-      badge: "https://img.shields.io/badge/react%20query-FF4154?style=for-the-badge&logo=reactquery&logoColor=white",
-    },
-  ]}
-/>
+## 직접 맡은 부분
 
-<div align="center">
+### 생성 결과를 다시 평가하는 파이프라인
 
-## Metric
+개별 메일 요약에는 근거 확인과 Self-Refine을 적용하고, 최종 보고서에는 G-Eval 평가와 피드백을 반영하는 Reflexion 루프를 구성했습니다. 프롬프트 지시와 형식 준수 여부를 평가 조건으로 비교하며 보고서 품질을 개선했습니다. 모델의 가중치를 학습시키는 방식이 아니라, **생성된 결과를 평가하고 다시 작성하는 흐름**입니다.
 
-### 📝 개별 메일 요약
+### 보고서를 실제 서비스로 연결
 
-| Condition              | ROUGE-1 Recall | ROUGE-1 Precision | ROUGE-1 F1 | BERT Score Recall | BERT Score Precision | BERT Score F1 | G-EVAL Conciseness |
-| ---------------------- | -------------- | ----------------- | ---------- | ----------------- | -------------------- | ------------- | ------------------ |
-| Baseline               | 0.0667         | 0.0042            | 0.1678     | 0.8223            | 0.8789               | 0.8494        | 4.3958             |
-| + refine               | 0.2618         | 0.2049            | 0.4649     | 0.8740            | 0.9146               | 0.8932        | 4.8750             |
-| + one-shot             | 0.2288         | 0.2005            | 0.3661     | 0.8325            | 0.8905               | 0.8588        | 4.9375             |
-| **+ refine, one-shot** | **0.3062**     | **0.2691**        | **0.4690** | **0.8905**        | **0.9319**           | **0.9107**    | **4.9167**         |
+Google OAuth 2.0과 Gmail API로 메일에 접근하고, Document Parse로 첨부파일과 이미지의 내용을 추출했습니다. FastAPI·MySQL 백엔드와 React 기반 Chrome Extension을 구현해, 메일 수집부터 보고서 저장·조회까지 연결했습니다.
 
-`ROUGE-1`에서 **24.0 ~ 30.1%p**, `BERTScore`에서 **5.3 ~ 6.8%p**, `G-Eval conciseness` 항목(5점 만점)에서 **0.52점** 상승폭이 있었습니다.
+주요 구현 기술은 **Python·FastAPI·React·MySQL**, AI 처리에는 **Solar Pro·Document Parse·Embedding**을 사용했습니다.
 
-<br />
+## 품질과 비용을 함께 비교한 평가
 
-### 🏷️ 메일 분류
+### 최종 보고서 품질
 
-| Condition                | Accuracy   | Tokens     | Accuracy per Token |
-| ------------------------ | ---------- | ---------- | ------------------ |
-| Baseline                 | 0.8104     | 97,436     | 8.32e-6            |
-| **summary based**        | 0.7708     | **52,477** | **1.47e-5**        |
-| summary based + 1-shot   | 0.8021     | 63,599     | 1.27e-5            |
-| summary based + 5-shots  | 0.7708     | 86,878     | 8.87e-6            |
-| summary based + 10-shots | **0.8146** | 115,558    | 7.05e-6            |
+| 생성 방식                      | G-Eval 평균 |
+| ------------------------------ | ----------: |
+| Self-Refine 기준선             |        3.75 |
+| Reflexion + 지시문·형식 페널티 |    **4.19** |
 
-`정확도/토큰 사용량` 지표를 바탕으로 현재 프롬프트를 채택했습니다.
+프로젝트 평가셋을 G-Eval로 자동 평가한 결과, **4.5점 만점 기준 0.44점 상승**했습니다.
 
-<br />
+### 메일 분류의 토큰 사용량
 
-### 📜 최종 리포트
+| 지표        | 원문 기반 | 요약문 기반 |
+| ----------- | --------: | ----------: |
+| 정확도      |    81.04% |      77.08% |
+| 토큰 사용량 |    97,436 |      52,477 |
 
-| Condition                                                 | G-eval score |
-| --------------------------------------------------------- | ------------ |
-| Self-Refine: Baseline                                     | 3.75         |
-| Self-Refine: Detailed Instructions                        | 3.50         |
-| Self-Refine: Detailed Instructions + Formatting Penalty   | 3.94         |
-| Reflexion: Baseline                                       | 4.00         |
-| Reflexion: Detailed Instructions                          | 3.50         |
-| **Reflexion: Detailed Instructions + Formatting Penalty** | **4.19**     |
+요약문 기반 분류는 **토큰 사용량을 약 46% 줄였지만 정확도는 3.96%p 낮아졌습니다.** 정확도와 토큰 사용량을 함께 비교해 비용 효율을 우선하는 구성을 선택했습니다.
 
-`G-Eval` 평가 평균 점수(4.5점 만점)에서 **0.44점** 상승이 있었습니다.
+## 시스템 구성
 
-</div>
+![메일 수집·첨부 분석·요약·분류·최종 보고서 생성으로 이어지는 MaeilMail 시스템](/projects/ai/maeil-mail/structure.png)
 
-## System Structure
+## 코드와 상세 자료
 
-![시스템 구조도](/projects/ai/maeil-mail/structure.png)
-
-## 🔗 둘러보기
-
-- [전체 프로젝트 코드](https://github.com/jagaldol/maeilmail) <FaGithub className="inline text-lg" />
-- [사용된 프롬프트 모음](https://github.com/jagaldol/maeilmail/tree/main/prompt/template) 🗣️
-- [크롬 익스텐션 FastAPI 서버 코드](https://github.com/jagaldol/maeilmail/tree/main/server) <FaGithub className="inline text-lg" />
-- [크롬 익스텐션 코드](https://github.com/jagaldol/maeilmail/tree/main/chrome-extension) <FaGithub className="inline text-lg" />
+- [전체 프로젝트와 상세 평가 결과](https://github.com/jagaldol/maeilmail) <FaGithub className="inline text-lg" />
+- [프롬프트 모음](https://github.com/jagaldol/maeilmail/tree/main/prompt/template)
+- [FastAPI 서버](https://github.com/jagaldol/maeilmail/tree/main/server) · [Chrome Extension](https://github.com/jagaldol/maeilmail/tree/main/chrome-extension)
 
 <MemberContainer>
   <MemberGrid
