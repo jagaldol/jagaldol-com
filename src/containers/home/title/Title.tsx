@@ -24,7 +24,10 @@ export default function Title() {
             </p>
             <p>인공지능, 프론트엔드, 백엔드 등 어떤 분야든 만들고 싶은 것을 직접 구현하는 것을 즐깁니다.</p>
             <p className="max-md:block flex flex-col">
-              <span>LLM 에이전트를 활용한 문제 해결과 반복 업무 자동화, AI로 일하는 방식을 개선하는 AX에 관심이 많습니다. </span>
+              <span>
+                LLM 에이전트를 활용한 문제 해결과 반복 업무 자동화, AI로 일하는 방식을 개선하는 AX에 관심이
+                많습니다.{" "}
+              </span>
               <span>빠르게 변화하는 기술을 꾸준히 배우고, 직접 만들고 활용하며 경험을 쌓고 있습니다.</span>
             </p>
           </div>
