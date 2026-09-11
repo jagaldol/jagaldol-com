@@ -46,7 +46,9 @@ const getProjectMetadatas = cache(async () => {
     }),
   )
 
-  projects.sort((a, b) => new Date(b.end_date || 0).getTime() - new Date(a.end_date || 0).getTime())
+  projects.sort(
+    (a, b) => new Date(b.end_date || b.start_date || 0).getTime() - new Date(a.end_date || a.start_date || 0).getTime(),
+  )
 
   return projects
 })

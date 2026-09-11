@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="288" viewBox="0 0 1440 288" role="img" aria-labelledby="title"><title id="title">Lifebase</title><rect width="1440" height="288" fill="#26394F"/><g transform="translate(376 58) scale(.67)">
+
+<rect width="256" height="256" rx="48" fill="#26394F"/>
+<g stroke="#728A9F" stroke-width="3.6" stroke-linecap="round">
+<path d="M82 224L115 191"/>
+<path d="M196 52L156 78"/>
+<path d="M23 154L64 179"/>
+<path d="M82 224L64 179"/>
+<path d="M64 179L115 191"/>
+<path d="M160 154L115 191"/>
+<path d="M43 75L89 112"/>
+<path d="M118 28L156 78"/>
+<path d="M185 220L160 154"/>
+<path d="M89 112L64 179"/>
+<path d="M232 141L160 154"/>
+<path d="M89 112L156 78"/>
+<path d="M185 220L115 191"/>
+<path d="M160 154L156 78"/>
+<path d="M23 154L89 112"/>
+<path d="M43 75L23 154"/>
+<path d="M118 28L196 52"/>
+<path d="M43 75L118 28"/>
+<path d="M118 28L89 112"/>
+<path d="M82 224L23 154"/>
+<path d="M232 141L185 220"/>
+<path d="M196 52L232 141"/>
+<path d="M232 141L156 78"/>
+<path d="M185 220L82 224"/>
+</g>
+<circle cx="43" cy="75" r="4.200" fill="#879FB4"/>
+<circle cx="118" cy="28" r="7.000" fill="#879FB4"/>
+<circle cx="196" cy="52" r="9.500" fill="#879FB4"/>
+<circle cx="232" cy="141" r="4.200" fill="#879FB4"/>
+<circle cx="185" cy="220" r="7.000" fill="#879FB4"/>
+<circle cx="82" cy="224" r="9.500" fill="#879FB4"/>
+<circle cx="23" cy="154" r="4.200" fill="#879FB4"/>
+<circle cx="89" cy="112" r="14.000" fill="#AEC3D3"/>
+<circle cx="160" cy="154" r="17.000" fill="#D6E3ED"/>
+<circle cx="156" cy="78" r="7.000" fill="#879FB4"/>
+<circle cx="64" cy="179" r="7.000" fill="#879FB4"/>
+<circle cx="115" cy="191" r="5.000" fill="#879FB4"/>
+</g><text x="590" y="176" font-family="Gmarket Sans TTF" font-size="92" font-weight="400" fill="#D6E3ED">Lifebase</text></svg>
