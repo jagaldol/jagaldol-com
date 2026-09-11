@@ -13,7 +13,7 @@ export default async function Project() {
   return (
     <Block title="Project">
       <div className="mt-5 flex flex-col text-center">
-        <ProjectContainer title="Projects" projects={projects} />
+        <ProjectContainer projects={projects} />
       </div>
       <Link
         href="/projects/#AI_Project"
