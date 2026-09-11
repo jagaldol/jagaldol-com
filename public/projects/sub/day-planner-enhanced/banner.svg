@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="288" viewBox="0 0 1440 288" role="img" aria-labelledby="title">
+  <title id="title">Day Planner Enhanced</title>
+  <rect width="1440" height="288" fill="#ffffff"/>
+  <!-- Move the icon and title together to center the group after changing the title. -->
+  <g transform="translate(144.578125 72)">
+    <g fill="none" stroke="#7856d8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="12" y="20" width="120" height="112" rx="12"/>
+      <path d="M42 10v24M102 10v24M12 52h120M38 76h68M38 98h68M58 120h30"/>
+    </g>
+    <text x="192" y="96" fill="#111111" font-family="Gmarket Sans TTF" font-size="76" font-weight="400">Day Planner Enhanced</text>
+  </g>
+</svg>

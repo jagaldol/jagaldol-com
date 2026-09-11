@@ -1,0 +1,91 @@
+import Image from "next/image"
+
+export const metadata = {
+  title: "Day Planner Enhanced",
+  description: "Lifebase의 일정 관리를 위해 커스텀하고 독립 배포한 Obsidian 플러그인",
+  stack: ["svelte", "obsidian"],
+  image: "/projects/sub/day-planner-enhanced/thumbnail.png",
+  banner: "/projects/sub/day-planner-enhanced/banner.png",
+  deploy_link: "https://github.com/jagaldol/obsidian-day-planner-enhanced",
+  image_list_path: "/projects/sub/day-planner-enhanced/images/",
+  start_date: "2026-06-03T00:00:00+0900",
+}
+
+**AI가 작성한 일정과 사람이 수정하는 일정이 같은 노트에 남도록**, Lifebase의 일정 관리에 맞춰 Obsidian Day Planner를 확장했습니다. 중첩 일정의 표시와 편집을 개선하고, 독립 플러그인으로 공개해 **2026년 9월 기준 1,500회 이상의 다운로드를 기록했습니다.**
+
+[GitHub](https://github.com/jagaldol/obsidian-day-planner-enhanced) · [Obsidian에서 설치](https://community.obsidian.md/plugins/day-planner-enhanced) · [Lifebase](https://lifebaseai.com/)
+
+## 개발 배경
+
+Lifebase는 Obsidian의 개인 기록을 AI가 읽고 활용하도록 구성한 개인비서 하네스입니다. 일정도 일간 노트의 Markdown으로 관리하며, AI와 함께 계획을 작성하고 수정합니다.
+
+기존에 널리 사용되는 Day Planner 플러그인이 있었지만, AI와 함께 일정을 관리하기에는 한계가 있었습니다. 특히 **다음 날로 이어지는 일정을 다루기 어려워, 여러 날에 걸친 일정은 각 날짜의 노트에 나누어 작성하고 변경할 때도 모두 수정해야 했습니다.** 이를 유지하기 위한 작성 규칙과 예외 처리가 AI 지침에 쌓이면서, 일정 계획 외에 관리해야 할 맥락과 작업 부담이 늘어났습니다.
+
+자주 활용하던 하위 일정의 UI도 개선이 필요했습니다. 부모·자식 일정이 중복된 블록으로 표시되어 읽기 어려웠고, 하위 항목을 편하게 관리할 전용 편집 UI가 필요했습니다.
+
+이러한 불편을 해결하기 위해 기존 Day Planner를 포크했습니다. 날짜를 넘는 일정을 하나의 원본으로 관리하도록 보완하고, 타임라인 디자인과 하위 일정 관리 기능을 강화한 **독립 플러그인 Day Planner Enhanced**로 개발하기로 했습니다.
+
+## 직접 개선한 부분
+
+### 부모·자식 관계가 보이는 타임라인
+
+중복으로 나타나던 하위 일정 블록을 제거하고 부모 안에서 시간과 작업 목록을 함께 읽도록 정리했습니다. 시간 라벨과 인접 블록의 경계를 맞춰 일정이 많은 날에도 위에서 아래로 흐름을 따라갈 수 있게 했습니다. 원본 Markdown은 그대로 두고 화면에 표시하는 목록을 조정했습니다.
+
+### 하위 일정을 수정하는 전용 편집 UI
+
+타임라인의 일정 메뉴에 `Edit nested items…`를 추가해, 부모 일정에 속한 하위 항목을 별도 편집기에서 수정할 수 있도록 했습니다. `Remove` 메뉴로 일정 항목을 삭제하는 동작도 연결했습니다.
+
+<figure className="mx-auto my-6 w-full max-w-[460px]">
+  <Image
+    src="/projects/sub/day-planner-enhanced/02b-nested-items-menu.png"
+    alt="Edit nested items와 Remove 항목이 추가된 일정 메뉴"
+    width={914}
+    height={522}
+    sizes="(max-width: 500px) 100vw, 460px"
+    className="w-full h-auto rounded-lg"
+  />
+</figure>
+
+편집기에서는 하위 작업을 추가·수정·삭제하고, 순서를 바꾸거나 완료 여부를 체크할 수 있습니다. 위키링크·헤딩·태그 자동완성과 첨부 붙여넣기를 지원해 일정에 필요한 내용을 함께 정리하도록 했습니다.
+
+<figure className="mx-auto my-6 w-full max-w-[640px]">
+  <Image
+    src="/projects/sub/day-planner-enhanced/03-nested-editor.png"
+    alt="하위 일정의 내용과 순서, 완료 상태를 수정하는 전용 편집기"
+    width={2120}
+    height={1240}
+    sizes="(max-width: 680px) 100vw, 640px"
+    className="w-full h-auto rounded-lg"
+  />
+</figure>
+
+수정 내용은 부모 제목과 하위 항목에 반영되어 원래 Markdown 노트에 저장됩니다. 첨부 저장이 진행 중이면 완료를 기다리며, 저장에 실패하면 편집기를 닫지 않고 수정 내용을 유지합니다.
+
+### 자정 넘김과 모바일 조작 보완
+
+23:00–00:30 일정은 두 날짜에 나누어 보여도 원본에서는 하나의 일정입니다. 날짜별 표시 구간과 원본 일정의 시간 정보를 분리해, 다음 날 화면에서 수정하더라도 원래 일정에 반영되도록 했습니다.
+
+<figure className="mx-auto my-6 w-full max-w-[720px]">
+  <Image
+    src="/projects/sub/day-planner-enhanced/04-overnight.png"
+    alt="23시부터 0시 30분까지의 일정을 다음 날 타임라인에도 이어서 표시한 화면"
+    width={1202}
+    height={400}
+    sizes="(max-width: 760px) 100vw, 720px"
+    className="w-full h-auto rounded-lg"
+  />
+</figure>
+
+모바일에서는 체크박스를 누르는 동작과 길게 눌러 일정을 옮기는 동작이 충돌하지 않도록 구분했습니다. 드래그·리사이즈 기준점을 보정하고, 내용이 변하지 않은 Markdown과 첨부를 반복해서 렌더링하는 작업도 줄였습니다.
+
+## 기여 범위와 기술
+
+개인 프로젝트로 기능 설계부터 **TypeScript·Svelte 구현, 회귀 테스트, 릴리스, 사용자 이슈 대응**까지 맡았습니다. 타임라인·인덱싱·iCal·Time Tracker는 기존 Day Planner에서 이어받았으며, 제 기여는 중첩 일정의 표시·편집과 날짜·모바일 조작 개선에 집중됩니다.
+
+변경 시에는 화면뿐 아니라 노트 저장 결과도 확인했습니다. 중첩 항목 편집, 첨부 저장, 날짜별 표시, 드래그·리사이즈 관련 테스트를 통해 UI 조작이 원본 데이터에 올바르게 반영되는지 검증했습니다.
+
+## 배포와 운영
+
+[원저자의 공개 승인](https://github.com/ivan-lednev/obsidian-day-planner/issues/890#issuecomment-5395121348)을 받은 뒤 **Day Planner Enhanced라는 독립 플러그인 ID로 Obsidian Community directory에 등록**했습니다. Lifebase 밖에서도 설치해 사용할 수 있으며, 원본 프로젝트의 변경을 병합하면서 사용자 이슈와 호환성을 관리하고 있습니다.
+
+2026년 8월 24일 [0.7.1](https://github.com/jagaldol/obsidian-day-planner-enhanced/releases/tag/0.7.1)을 배포했습니다. 2026년 9월 기준 **1,500회 이상의 다운로드를 기록했습니다.**

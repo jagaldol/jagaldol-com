@@ -115,7 +115,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
               width={1500}
               height={300}
               priority
-              className="object-contain"
+              className="w-full aspect-[5/1] object-cover"
             />
             {metadata.deploy_link && (
               <div className="absolute top-0 left-0 w-full h-full">
@@ -130,7 +130,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             )}
           </div>
         )}
-        <div className="flex gap-1 justify-end items-center flex-wrap h-7">
+        <div className="flex gap-1 justify-end items-center flex-wrap min-h-7 [&>img]:h-7">
           {metadata.stack?.map((value: string) => (
             <Badge name={value} key={value} />
           ))}
