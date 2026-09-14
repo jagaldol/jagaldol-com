@@ -42,20 +42,27 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className="antialiased">
-        <div className="absolute top-0 left-0 w-full h-auto min-h-screen">
+        <div className="site-shell min-h-screen flex flex-col">
+          <a
+            href="#main-content"
+            className="skip-link fixed top-[-100px] left-5 z-100 [background:white] py-3 px-5 [&:focus]:top-3"
+          >
+            본문으로 건너뛰기
+          </a>
           <Header />
-          <ScrollArrow />
 
-          <main className="px-5 pb-40">{children}</main>
+          <main id="main-content" className="site-main overflow-x-clip flex-1 min-w-0">
+            {children}
+          </main>
 
-          <footer className="absolute bottom-0 left-0 flex items-center w-full h-16 px-20 bg-white max-md:h-10 max-sm:px-10">
+          <footer className="site-footer flex items-center justify-between gap-6 [padding:24px_max(40px,_calc((100vw_-_1320px)_/_2))] [border-top:1px_solid_#e2e8ec] text-[#586c7a] text-[13px] [&_a]:inline-flex [&_a]:items-center [&_a]:min-h-8 max-[701px]:py-5 max-[701px]:px-[22px]">
             <div className="flex-1 ">
               <Link href="/" className="flex-1 underline">
                 &copy;Hyejun An.
               </Link>
             </div>
 
-            <div className="flex items-end gap-2">
+            <div className="flex items-center gap-2">
               <p className="text-xs">Contact.</p>
               <a href="mailto:jagaldol.dev@gmail.com" aria-label="이메일">
                 <FaRegEnvelope />
@@ -68,6 +75,7 @@ export default function RootLayout({
               </a>
             </div>
           </footer>
+          <ScrollArrow />
         </div>
       </body>
     </html>

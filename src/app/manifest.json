@@ -21,7 +21,7 @@
     {
       "src": "/favicon.ico",
       "sizes": "48x48",
-      "type": "image/png"
+      "type": "image/x-icon"
     },
     {
       "src": "/icon2.png",
@@ -48,7 +48,7 @@
     }
   ],
   "theme_color": "#778899",
-  "background_color": "#f1f1f5",
+  "background_color": "#ffffff",
   "start_url": "/",
   "display": "standalone"
 }

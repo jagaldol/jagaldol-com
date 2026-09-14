@@ -1,0 +1,115 @@
+.toggle,
+.panel,
+.backdrop {
+  display: none;
+}
+@media (max-width: 700px) {
+  .toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    position: relative;
+    z-index: 52;
+    color: #788997;
+  }
+  .lines,
+  .lines::before,
+  .lines::after {
+    width: 24px;
+    height: 3px;
+    background: currentColor;
+    transition:
+      transform 500ms ease,
+      background-color 500ms ease;
+  }
+  .lines {
+    position: relative;
+  }
+  .lines::before,
+  .lines::after {
+    content: "";
+    position: absolute;
+    left: 0;
+  }
+  .lines::before {
+    transform: translateY(-9px);
+  }
+  .lines::after {
+    transform: translateY(9px);
+  }
+  .toggle.open .lines {
+    background: transparent;
+  }
+  .toggle.open .lines::before {
+    transform: rotate(-45deg);
+  }
+  .toggle.open .lines::after {
+    transform: rotate(45deg);
+  }
+  .panel {
+    display: block;
+    z-index: 51;
+    overflow-y: auto;
+    transform: translateX(100%);
+    visibility: hidden;
+    transition:
+      transform 300ms ease,
+      visibility 300ms;
+    position: fixed;
+    inset: 0 0 0 auto;
+    margin: 0;
+    width: 80vw;
+    max-width: 420px;
+    height: 100dvh;
+    max-height: 100dvh;
+    padding: 0;
+    border: 0;
+    background: #f1f0f5;
+    color: #202d36;
+  }
+  .panel.open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+  .backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    background: rgb(32 45 54 / 18%);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 300ms ease,
+      visibility 300ms;
+  }
+  .backdrop.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  .content {
+    min-height: 100%;
+    padding: 84px 24px 32px;
+  }
+  .panel :global(.site-navigation) {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 4dvh, 36px);
+    padding-top: clamp(0px, 7dvh, 64px);
+    font-size: 24px;
+  }
+  .panel :global(.site-navigation) a {
+    min-height: 48px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .panel,
+    .backdrop,
+    .lines,
+    .lines::before,
+    .lines::after {
+      transition: none;
+    }
+  }
+}

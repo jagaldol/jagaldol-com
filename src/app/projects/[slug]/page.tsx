@@ -3,7 +3,7 @@ import path from "path"
 
 import type { Metadata } from "next"
 import Image from "next/image"
-import Link from "next/link"
+import { FiArrowUpRight } from "react-icons/fi"
 
 import Badge from "@/components/Badge"
 import ImageListContainer from "@/containers/project/ImageListContainer"
@@ -100,44 +100,46 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     : []
 
   return (
-    <div className="mt-10 w-full flex justify-center">
-      <div className="w-[1300px] max-2xl:w-[1000px] max-xl:w-[1000px] max-lg:w-[700px] max-md:w-full">
-        <div className="mb-8">
-          <h1>{metadata.title}</h1>
-          <p>{metadata.description}</p>
-          <p className="text-end">{dateString}</p>
-        </div>
-        {metadata.banner && (
-          <div className="group relative mb-2">
-            <Image
-              src={metadata.banner}
-              alt={`${metadata.title} 대표 이미지`}
-              width={1500}
-              height={300}
-              priority
-              className="w-full aspect-[5/1] object-cover"
-            />
-            {metadata.deploy_link && (
-              <div className="absolute top-0 left-0 w-full h-full">
-                <Link href={metadata.deploy_link}>
-                  <div className="w-full h-full opacity-0 group-hover:opacity-100 bg-gradient-to-tl from-main-theme to-main-theme/60 z-10 transition-all duration-500 text-white flex drop-shadow-2xl">
-                    <h3 className="absolute right-0 bottom-0 text-3xl max-md:text-2xl max-sm:text-lg max-sm:-translate-y-3 -translate-x-8 -translate-y-5">
-                      바로가기
-                    </h3>
-                  </div>
-                </Link>
-              </div>
-            )}
+    <div className="project-detail-page [padding:48px_40px_100px] max-[701px]:[padding:32px_22px_64px]">
+      <div className="project-detail-inner max-w-270 my-auto mx-auto min-w-0">
+        <div className="project-detail-overview max-w-270 my-0 mx-auto">
+          <div className="project-detail-heading mb-4 [&_h1]:text-[40px] [&_h1]:leading-[1.4] [&_h1]:mb-[14px] [&_>_p]:text-[18px] [&_>_p]:leading-[1.7] [&_.project-detail-date]:text-[#61717d] [&_.project-detail-date]:text-[14px] max-[701px]:[&_h1]:text-[30px] max-[701px]:[&_>_p]:text-[16px]">
+            <h1>{metadata.title}</h1>
+            <p>{metadata.description}</p>
+            <div className="project-detail-meta flex [flex-wrap:wrap] items-center [gap:4px_24px] mt-3">
+              <p className="project-detail-date">{dateString}</p>
+              {metadata.deploy_link && (
+                <a
+                  className="text-link inline-flex items-center gap-2 min-h-11 font-semibold [&:hover]:underline project-external-link text-[14px]"
+                  href={metadata.deploy_link}
+                >
+                  프로젝트 바로가기 <FiArrowUpRight aria-hidden="true" />
+                </a>
+              )}
+            </div>
           </div>
-        )}
-        <div className="flex gap-1 justify-end items-center flex-wrap min-h-7 [&>img]:h-7">
-          {metadata.stack?.map((value: string) => (
-            <Badge name={value} key={value} />
-          ))}
+          {metadata.banner && (
+            <div className="group relative mb-2">
+              <Image
+                src={metadata.banner}
+                alt={`${metadata.title} 대표 이미지`}
+                width={1500}
+                height={300}
+                priority
+                unoptimized
+                className="w-full aspect-[5/1] object-contain"
+              />
+            </div>
+          )}
+          <div className="flex gap-1 justify-end items-center flex-wrap min-h-7 [&>img]:h-7">
+            {metadata.stack?.map((value: string) => (
+              <Badge name={value} key={value} />
+            ))}
+          </div>
         </div>
         {imageSrcList.length > 0 && <ImageListContainer imageSrcList={imageSrcList} />}
 
-        <article className="markdown-body mt-6 prose dark:prose-invert">
+        <article className="markdown-body project-article max-w-220 [margin:56px_auto_0] text-[17px] leading-[1.85] [overflow-wrap:anywhere] [&_pre]:overflow-x-auto [&_pre]:max-w-full max-[701px]:mt-9 max-[701px]:text-[16px] max-[701px]:leading-[1.85]">
           <Post />
         </article>
       </div>

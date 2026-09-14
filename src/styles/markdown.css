@@ -1,0 +1,54 @@
+@layer base {
+  .markdown-body h1 {
+    @apply text-3xl max-md:text-xl font-bold mt-6 mb-4;
+  }
+
+  .markdown-body h2 {
+    @apply text-2xl max-md:text-lg font-semibold mt-20 mb-3;
+  }
+
+  .markdown-body h3 {
+    @apply text-xl max-md:text-base font-semibold mt-4 mb-2;
+  }
+
+  .markdown-body p {
+    @apply my-3;
+  }
+
+  .markdown-body ul {
+    @apply list-disc ml-5;
+  }
+  .markdown-body ul:first-child {
+    @apply list-disc ml-5;
+  }
+
+  .markdown-body ol {
+    @apply list-decimal ml-5;
+  }
+  .markdown-body a {
+    @apply text-blue-600 hover:text-blue-800;
+  }
+  .markdown-body img {
+    @apply max-w-full h-auto inline-block;
+  }
+  .markdown-body pre {
+    @apply rounded;
+  }
+  .markdown-body hr {
+    @apply border border-b-gray-400 rounded-full;
+  }
+  .markdown-body p > code {
+    @apply !bg-gray-50 text-teal-700 font-SUITRegular !px-1 font-semibold rounded;
+  }
+  .markdown-body blockquote {
+    @apply border-l-4 border-gray-400 pl-4 italic;
+  }
+
+  .markdown-body summary {
+    @apply hover:cursor-pointer;
+  }
+}
+.project-article .markdown-body,
+.project-article > * {
+  min-width: 0;
+}

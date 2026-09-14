@@ -20,15 +20,21 @@ export default function ImageListContainer({ imageSrcList }: { imageSrcList: str
     if (!el) return
     const { scrollLeft, scrollWidth, clientWidth } = el
     setIsScrolledToLeft(scrollLeft <= 0)
-    setIsScrolledToRight(scrollLeft + clientWidth >= scrollWidth)
+    setIsScrolledToRight(scrollLeft + clientWidth >= scrollWidth - 1)
   }
 
   const scrollToLeft = () => {
-    scrollRef.current?.scrollBy({ left: isTabletOrMobile ? -350 : -800, behavior: "smooth" })
+    scrollRef.current?.scrollBy({
+      left: isTabletOrMobile ? -350 : -800,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+    })
   }
 
   const scrollToRight = () => {
-    scrollRef.current?.scrollBy({ left: isTabletOrMobile ? 350 : 800, behavior: "smooth" })
+    scrollRef.current?.scrollBy({
+      left: isTabletOrMobile ? 350 : 800,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
+    })
   }
 
   useEffect(() => {
@@ -36,7 +42,14 @@ export default function ImageListContainer({ imageSrcList }: { imageSrcList: str
     if (!el) return
     el.addEventListener("scroll", checkScroll)
     checkScroll()
-    return () => el.removeEventListener("scroll", checkScroll)
+    const observer = new ResizeObserver(checkScroll)
+    observer.observe(el)
+    el.addEventListener("load", checkScroll, true)
+    return () => {
+      el.removeEventListener("scroll", checkScroll)
+      el.removeEventListener("load", checkScroll, true)
+      observer.disconnect()
+    }
   }, [])
 
   const onClickImage = (index: number) => {

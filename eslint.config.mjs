@@ -5,6 +5,7 @@ import prettierConfig from "eslint-config-prettier"
 import prettierPlugin from "eslint-plugin-prettier"
 
 export default defineConfig([
+  { ignores: [".agents/**", ".impeccable/**"] },
   ...nextVitals,
   ...nextTypeScript,
   {

@@ -1,7 +1,3 @@
-import Image from "next/image"
-import { FaBlog, FaCakeCandles, FaEnvelope, FaGithub, FaLinkedin, FaUser } from "react-icons/fa6"
-
-import Block from "@/containers/home/Block"
 import ProfileContent from "@/containers/home/profile/ProfileContent"
 
 const paragraphDescriptionClassName = "text-black/60 pl-1"
@@ -24,63 +20,15 @@ function Paragraph({
   )
 }
 
-function ContactElement({ content, icon, link }: { content: string; icon: React.ReactNode; link?: string }) {
-  return (
-    <div className="flex">
-      {link ? (
-        <a href={link} className="flex gap-1 items-center group">
-          {icon}
-          <span className="underline-animate">{content}</span>
-        </a>
-      ) : (
-        <p className="flex gap-1 items-center">
-          {icon}
-          <span>{content}</span>
-        </p>
-      )}
-    </div>
-  )
-}
-
 export default function Profile() {
   return (
-    <Block title="Profile">
-      <div className="grid grid-cols-2 gap-y-10 max-lg:grid-cols-1 px-10 max-md:px-0">
-        <div className="pl-[20%] max-xl:pl-[10%] max-sm:pl-0">
-          <div className="max-w-sm">
-            <Image
-              className="rounded-xl object-contain w-auto h-auto"
-              alt="프로필 사진"
-              src="/profile.png"
-              width="0"
-              height="0"
-              sizes="100vw"
-            />
-          </div>
-        </div>
-        <ProfileContent title="Contact">
-          <ContactElement content="안혜준(Hyejun An)" icon={<FaUser />} />
-          <ContactElement content="2000.01.29." icon={<FaCakeCandles />} />
-          <ContactElement content="jagaldol.dev@gmail.com" icon={<FaEnvelope />} link="mailto:jagaldol.dev@gmail.com" />
-          <ContactElement content="@jagaldol" icon={<FaGithub />} link="https://github.com/jagaldol/" />
-          <ContactElement content="LinkedIn" icon={<FaLinkedin />} link="https://www.linkedin.com/in/hye-jun/" />
-          <ContactElement content="자갈돌의 devLog" icon={<FaBlog />} link="https://blog.jagaldol.com/" />
-        </ProfileContent>
-
-        <ProfileContent title="Work Experience">
-          <div>
-            <h4 className="text-xl max-md:text-lg font-semibold">Upstage</h4>
-            <p className="mt-1 text-sm">AI Research Engineer Intern</p>
-            <p className="text-sm text-black/60">2025.05. ~ 2025.11.</p>
-            <ul className="mt-3 ml-5 list-disc space-y-1 text-sm leading-relaxed">
-              <li>금융 AI의 RAG·의도분류·도구 호출 평가 및 개선</li>
-              <li>비동기 문서 처리 파이프라인·API 구현</li>
-              <li>Agent Layer·채팅 API·SSE 스트리밍 구현</li>
-            </ul>
-          </div>
-        </ProfileContent>
-
-        <ProfileContent title="Education">
+    <section
+      id="background"
+      className="home-section max-[701px]:mb-17 profile-section [border-top:1px_solid_#dce4e9] pt-13 mb-16 max-[701px]:pt-9"
+      aria-label="교육과 이력"
+    >
+      <div className="profile-grid grid grid-cols-[1.25fr_1fr] [gap:44px_70px] [&_.profile-group:first-child]:[grid-row:span_2] max-[701px]:flex max-[701px]:flex-col max-[701px]:gap-10">
+        <ProfileContent title="교육">
           <Paragraph content="코디세이 AI 올인원 2기 · 혁신교육과정" description="2026.09. ~ 진행 중" />
           <Paragraph content="네이버 부스트캠프 AI Tech 7기 · NLP 트랙" description="2024.08. ~ 2025.02." />
           <Paragraph content="Google 머신러닝 부트캠프 5기" description="2024.07. ~ 2024.10." />
@@ -90,14 +38,14 @@ export default function Profile() {
           </Paragraph>
         </ProfileContent>
 
-        <ProfileContent title="Awards">
+        <ProfileContent title="수상">
           <Paragraph content="2024년 TOPCIT 성적우수자 - 부산대학교총장상" description="2024.12.26." />
           <Paragraph content="2023년 TOPCIT 성적우수자 - 한국정보산업연합회장상" description="2023.12.22." />
           <Paragraph content="제 1회 PNU Coding Challenge - 우수상" description="2023.12.20." />
           <Paragraph content="카카오 테크 캠퍼스 신규 서비스 개발 프로젝트 - 대상" description="2023.11.17." />
         </ProfileContent>
 
-        <ProfileContent title="Certifications & Tests">
+        <ProfileContent title="자격·시험">
           <Paragraph content="TOEIC Speaking · IM2, 120점" description="2025.03.15. 응시 · 2027.03.15.까지 유효" />
           <Paragraph content="SQL개발자(SQLD)" description="2024.12.13. 취득 · 영구 자격" />
           <Paragraph content="TOPCIT · 수준 4, 730점" description="2024.10.12. 응시" />
@@ -111,6 +59,30 @@ export default function Profile() {
           </details>
         </ProfileContent>
       </div>
-    </Block>
+    </section>
+  )
+}
+
+export function Experience() {
+  return (
+    <section
+      id="experience"
+      className="home-section experience-section [&_>_h2]:text-[30px] [&_>_h2]:leading-[1.4] [&_>_h2]:tracking-[-0.025em] [border-top:1px_solid_#dce4e9] [border-bottom:1px_solid_#dce4e9] grid grid-cols-[200px_minmax(0,_1fr)] gap-10 [padding:28px_0_36px] mb-19 max-[1200px]:grid-cols-[140px_minmax(0,_1fr)] max-[1200px]:gap-6 max-[701px]:[&_>_h2]:text-[26px] max-[701px]:block max-[701px]:[padding:24px_0_30px] max-[701px]:mb-13"
+      aria-labelledby="experience-title"
+    >
+      <h2 id="experience-title">경력</h2>
+      <div className="experience-content grid grid-cols-[0.8fr_1.2fr] gap-[30px] [&_h3]:text-[25px] [&_h3]:mb-2 [&_p]:text-[15px] [&_ul]:[list-style:disc] [&_ul]:pl-5 [&_ul]:text-[15px] [&_ul]:leading-[1.9] [&_li_+_li]:mt-2 max-[901px]:grid-cols-[1fr] max-[901px]:gap-6 max-[701px]:[&_h3]:text-[23px] max-[701px]:mt-5 max-[701px]:gap-4">
+        <div>
+          <h3>Upstage</h3>
+          <p>AI Research Engineer Intern</p>
+          <p className="experience-date text-[#596b78] mt-2 tabular-nums">2025.05. ~ 2025.11.</p>
+        </div>
+        <ul>
+          <li>금융 AI의 RAG·의도분류·도구 호출 평가 및 개선</li>
+          <li>비동기 문서 처리 파이프라인·API 구현</li>
+          <li>Agent Layer·채팅 API·SSE 스트리밍 구현</li>
+        </ul>
+      </div>
+    </section>
   )
 }

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import { FaAngleLeft, FaAngleRight, FaXmark } from "react-icons/fa6"
 
 import useBodyScrollLock from "@/hooks/useBodyScrollLock"
@@ -21,43 +21,51 @@ export default function ImageDetail({
 }) {
   const { lockScroll, openScroll } = useBodyScrollLock()
 
-  const handleLeftClick = () => {
-    toLeft()
-  }
+  const dialogRef = useRef<HTMLDialogElement>(null)
 
-  // 오른쪽 클릭 처리 함수
-  const handleRightClick = () => {
-    toRight()
-  }
-
-  // Div 클릭 이벤트 핸들러
   const handleClick = (event: React.MouseEvent<HTMLDivElement>) => {
-    // Div의 전체 너비와 클릭 위치를 가져옵니다.
-    const target = event.target as HTMLDivElement
-    const { width } = target.getBoundingClientRect()
-    const { clientX } = event
-    const clickX = clientX - target.offsetLeft // Div 내에서의 클릭 위치
-
-    // 클릭 위치가 Div의 중간보다 왼쪽이면 왼쪽 클릭, 오른쪽이면 오른쪽 클릭으로 처리합니다.
-    if (clickX < width / 2) {
-      handleLeftClick()
-    } else {
-      handleRightClick()
-    }
+    const { left, width } = event.currentTarget.getBoundingClientRect()
+    if (event.clientX - left < width / 2) toLeft()
+    else toRight()
   }
 
   useEffect(() => {
+    const dialog = dialogRef.current
+    const trigger = document.activeElement as HTMLElement | null
+    dialog?.showModal()
     lockScroll()
     return () => {
+      dialog?.close()
       openScroll()
+      trigger?.focus()
     }
   }, [lockScroll, openScroll])
 
   return (
-    <div className="fixed z-[500] top-0 bottom-0 left-0 right-0 bg-black/80 flex justify-center">
-      <div className="w-[1400px] flex flex-col items-center justify-between py-4">
+    <dialog
+      ref={dialogRef}
+      aria-label="프로젝트 이미지 확대"
+      className="project-image-dialog fixed [inset:0] w-full h-dvh max-w-[none] max-h-[none] my-0 mx-0 py-0 px-0 [border:0] bg-transparent [&[open]]:flex [&[open]]:justify-center [&::backdrop]:[background:rgb(0_0_0_/_80%)]"
+      onCancel={close}
+      onKeyDown={(event) => {
+        if (event.key === "ArrowLeft") {
+          event.preventDefault()
+          toLeft()
+        }
+        if (event.key === "ArrowRight") {
+          event.preventDefault()
+          toRight()
+        }
+      }}
+    >
+      <div className="w-full max-w-[1400px] flex flex-col items-center justify-between py-4">
         <div className="flex w-full justify-end pr-10 max-md:pr-5">
-          <button type="button" aria-label="닫기" onClick={close}>
+          <button
+            type="button"
+            aria-label="닫기"
+            className="w-11 h-11 flex items-center justify-center"
+            onClick={close}
+          >
             <FaXmark className="text-white text-3xl" />
           </button>
         </div>
@@ -65,7 +73,7 @@ export default function ImageDetail({
         <div className="px-5 h-[85%] flex items-center" role="presentation" onClick={handleClick}>
           <Image
             src={srcList[number]}
-            alt={srcList[number]}
+            alt={`프로젝트 화면 ${number + 1}`}
             width={0}
             height={0}
             sizes="100vw"
@@ -99,6 +107,6 @@ export default function ImageDetail({
           </div>
         </div>
       </div>
-    </div>
+    </dialog>
   )
 }
