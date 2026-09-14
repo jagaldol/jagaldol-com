@@ -60,11 +60,6 @@ export default function Title() {
           </div>
         </div>
       </div>
-      <div className="intro-description [grid-area:description] max-w-155 mt-0 text-[17px] leading-[1.85] text-[#364650] break-keep [&_p_+_p]:mt-[9px] max-[701px]:mt-0 max-[701px]:text-[16px] max-[701px]:leading-[1.8]">
-        <p>인공지능, 프론트엔드, 백엔드 등 어떤 분야든 만들고 싶은 것을 직접 구현하는 것을 즐깁니다.</p>
-        <p>LLM 에이전트를 활용한 문제 해결과 반복 업무 자동화, AI로 일하는 방식을 개선하는 AX에 관심이 많습니다.</p>
-        <p>빠르게 변화하는 기술을 꾸준히 배우고, 직접 만들고 활용하며 경험을 쌓고 있습니다.</p>
-      </div>
       <nav
         className="profile-jumps flex flex-wrap items-center gap-x-[18px] gap-y-1 text-[14px] [grid-area:jumps] [&_a]:inline-flex [&_a]:min-h-8 [&_a]:items-center [&_a]:underline [&_a]:decoration-[#a5b3bd] [&_a:hover]:decoration-current"
         aria-label="홈 섹션 바로가기"
@@ -77,6 +72,11 @@ export default function Title() {
         </a>
         <a href="#background">교육·수상·자격</a>
       </nav>
+      <div className="intro-description [grid-area:description] max-w-155 mt-0 text-[17px] leading-[1.85] text-[#364650] break-keep [&_p_+_p]:mt-[9px] max-[701px]:mt-0 max-[701px]:text-[16px] max-[701px]:leading-[1.8]">
+        <p>인공지능, 프론트엔드, 백엔드 등 어떤 분야든 만들고 싶은 것을 직접 구현하는 것을 즐깁니다.</p>
+        <p>LLM 에이전트를 활용한 문제 해결과 반복 업무 자동화, AI로 일하는 방식을 개선하는 AX에 관심이 많습니다.</p>
+        <p>빠르게 변화하는 기술을 꾸준히 배우고, 직접 만들고 활용하며 경험을 쌓고 있습니다.</p>
+      </div>
     </section>
   )
 }
