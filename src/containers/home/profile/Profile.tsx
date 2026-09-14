@@ -71,16 +71,28 @@ export function Experience() {
       aria-labelledby="experience-title"
     >
       <h2 id="experience-title">경력</h2>
-      <div className="experience-content grid grid-cols-[0.8fr_1.2fr] gap-[30px] [&_h3]:text-[25px] [&_h3]:mb-2 [&_p]:text-[15px] [&_ul]:[list-style:disc] [&_ul]:pl-5 [&_ul]:text-[15px] [&_ul]:leading-[1.9] [&_li_+_li]:mt-2 max-[901px]:grid-cols-[1fr] max-[901px]:gap-6 max-[701px]:[&_h3]:text-[23px] max-[701px]:mt-5 max-[701px]:gap-4">
-        <div>
-          <h3>Upstage</h3>
-          <p>AI Research Engineer Intern</p>
-          <p className="experience-date text-[#596b78] mt-2 tabular-nums">2025.05. ~ 2025.11.</p>
+      <div className="experience-content min-w-0 break-keep [&_h3]:text-[25px] [&_p]:text-[15px] max-[701px]:[&_h3]:text-[23px] max-[701px]:mt-5">
+        <div className="flex items-start justify-between gap-4 max-[701px]:flex-col max-[701px]:gap-1">
+          <div>
+            <h3 className="mb-2">Upstage</h3>
+            <p>AI Research Engineer Intern</p>
+          </div>
+          <p className="experience-date text-[#596b78] pt-2 tabular-nums max-[701px]:pt-0">2025.05. ~ 2025.11.</p>
         </div>
-        <ul>
-          <li>금융 AI의 RAG·의도분류·도구 호출 평가 및 개선</li>
-          <li>비동기 문서 처리 파이프라인·API 구현</li>
-          <li>Agent Layer·채팅 API·SSE 스트리밍 구현</li>
+        <p className="mt-5 leading-relaxed">금융 AI 서비스와 LLM Agent 시스템 개발에 참여했습니다.</p>
+        <ul className="mt-5 space-y-3 text-[15px] leading-[1.8]">
+          <li>
+            <strong className="font-semibold">금융 AI 평가·개선</strong>
+            <p className="text-[#596b78]">RAG·의도 분류·도구 호출 기능 평가 및 개선</p>
+          </li>
+          <li>
+            <strong className="font-semibold">RAG 비동기 문서 임베딩</strong>
+            <p className="text-[#596b78]">문서 임베딩 파이프라인·API 구현</p>
+          </li>
+          <li>
+            <strong className="font-semibold">LangGraph 기반 LLM Agent</strong>
+            <p className="text-[#596b78]">메모리·도구 호출을 갖춘 에이전트 시스템 설계·개발</p>
+          </li>
         </ul>
       </div>
     </section>
