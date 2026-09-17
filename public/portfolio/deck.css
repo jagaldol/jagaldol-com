@@ -1,0 +1,861 @@
+@font-face {
+  font-family: Body;
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("/portfolio/assets/71bdb7311f2fb4e0.woff2") format("woff2");
+  unicode-range:
+    U+20-7E, U+A0, U+B7, U+2013, U+2022, U+2190, U+2192, U+2197, U+321C, U+AC00-AC01, U+AC04, U+AC08, U+AC10, U+AC1C,
+    U+AC70, U+AC80, U+AC83, U+AC8C, U+ACA0, U+ACA9, U+ACAC, U+ACB0, U+ACBD, U+ACC4, U+ACE0, U+ACF5, U+ACFC-ACFD, U+AD00,
+    U+AD50, U+AD6C-AD6D, U+AD81, U+ADDC, U+ADE0, U+ADF8, U+AE00, U+AE08, U+AE30, U+AE41, U+AE4A, U+AE4C, U+AF2D, U+B098,
+    U+B0B4, U+B113, U+B124-B125, U+B144, U+B17C, U+B193, U+B294, U+B2A5, U+B2C8, U+B2DD, U+B2E4, U+B2E8, U+B2EB,
+    U+B2F4-B2F5, U+B300, U+B354, U+B370, U+B378, U+B3C4, U+B3CC, U+B3D5, U+B3D9, U+B41C, U+B4DC, U+B4E0, U+B4E4, U+B4ED,
+    U+B514, U+B5A4, U+B77C, U+B791, U+B798-B799, U+B7C9, U+B7EC, U+B80C, U+B819, U+B825, U+B85C-B85D, U+B860,
+    U+B86C-B86D, U+B8CC, U+B8E8, U+B8F9, U+B958, U+B974, U+B97C, U+B9AC, U+B9B0, U+B9C1, U+B9C8, U+B9CC, U+B9CE, U+B9E4,
+    U+BA54, U+BA70, U+BA74, U+BA85, U+BAA8-BAA9, U+BB34, U+BB38, U+BBF8, U+BC0F, U+BC14-BC15, U+BC18, U+BC1C, U+BC29,
+    U+BC30-BC31, U+BC84, U+BC95, U+BCA0, U+BCC0, U+BCF4-BCF5, U+BCF8, U+BD07, U+BD80, U+BD84, U+BD88, U+BDF0, U+BE0C,
+    U+BE14, U+BE44, U+BE60, U+BFD0, U+C0AC, U+C0B0, U+C0C1, U+C0C9, U+C0DD, U+C11C-C11D, U+C120, U+C124, U+C131, U+C158,
+    U+C18C, U+C194, U+C218, U+C21C, U+C220, U+C2A4, U+C2B5, U+C2B9, U+C2DC-C2DD, U+C2E0, U+C2E4, U+C2EC, U+C313,
+    U+C544-C545, U+C548, U+C54A, U+C57D, U+C591, U+C5B4-C5B5, U+C5B8, U+C5C5, U+C5D0, U+C5D4, U+C5EC-C5ED, U+C5F0,
+    U+C601, U+C608, U+C624, U+C640, U+C644, U+C694, U+C6A9, U+C6B0, U+C6B4, U+C6D0, U+C6D4, U+C6F9, U+C704, U+C720-C721,
+    U+C724, U+C728, U+C73C, U+C740, U+C744, U+C74C, U+C751, U+C758, U+C774-C775, U+C778, U+C77C, U+C785, U+C788, U+C790,
+    U+C7A1, U+C7A5, U+C7AC, U+C800-C801, U+C804, U+C808, U+C810-C811, U+C815, U+C81C-C81D, U+C874, U+C878, U+C885,
+    U+C88C, U+C8FC, U+C900, U+C911, U+C990, U+C99D, U+C9C0-C9C1, U+C9C4, U+C9C8, U+C9D1, U+C9D3, U+CC28, U+CC4C, U+CC57,
+    U+CC98, U+CC9C, U+CCB4, U+CD1D, U+CD2C, U+CD5C, U+CD94-CD95, U+CD9C, U+CE21, U+CE58, U+CE74, U+CEA0, U+CEE4, U+CEF4,
+    U+D06C, U+D070, U+D0D5, U+D0E0, U+D130, U+D14C, U+D15C, U+D1A0, U+D1A4, U+D1B5, U+D29C, U+D2B8-D2B9, U+D300, U+D30C,
+    U+D37C, U+D3B8, U+D3C9, U+D3EC-D3ED, U+D3F0, U+D3F4, U+D45C, U+D4E8, U+D504, U+D544, U+D558-D559, U+D55C, U+D569,
+    U+D574, U+D589, U+D5A5, U+D5D8, U+D61C, U+D638, U+D654-D655, U+D658, U+D65C, U+D68C-D68D, U+D6A8, U+D765, U+D788;
+}
+
+@font-face {
+  font-family: Body;
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url("/portfolio/assets/c96ee14a843581b8.woff2") format("woff2");
+  unicode-range:
+    U+20-7E, U+A0, U+B7, U+2013, U+2022, U+2190, U+2192, U+2197, U+321C, U+AC00-AC01, U+AC04, U+AC08, U+AC10, U+AC1C,
+    U+AC70, U+AC80, U+AC83, U+AC8C, U+ACA0, U+ACA9, U+ACAC, U+ACB0, U+ACBD, U+ACC4, U+ACE0, U+ACF5, U+ACFC-ACFD, U+AD00,
+    U+AD50, U+AD6C-AD6D, U+AD81, U+ADDC, U+ADE0, U+ADF8, U+AE00, U+AE08, U+AE30, U+AE41, U+AE4A, U+AE4C, U+AF2D, U+B098,
+    U+B0B4, U+B113, U+B124-B125, U+B144, U+B17C, U+B193, U+B294, U+B2A5, U+B2C8, U+B2DD, U+B2E4, U+B2E8, U+B2EB,
+    U+B2F4-B2F5, U+B300, U+B354, U+B370, U+B378, U+B3C4, U+B3CC, U+B3D5, U+B3D9, U+B41C, U+B4DC, U+B4E0, U+B4E4, U+B4ED,
+    U+B514, U+B5A4, U+B77C, U+B791, U+B798-B799, U+B7C9, U+B7EC, U+B80C, U+B819, U+B825, U+B85C-B85D, U+B860,
+    U+B86C-B86D, U+B8CC, U+B8E8, U+B8F9, U+B958, U+B974, U+B97C, U+B9AC, U+B9B0, U+B9C1, U+B9C8, U+B9CC, U+B9CE, U+B9E4,
+    U+BA54, U+BA70, U+BA74, U+BA85, U+BAA8-BAA9, U+BB34, U+BB38, U+BBF8, U+BC0F, U+BC14-BC15, U+BC18, U+BC1C, U+BC29,
+    U+BC30-BC31, U+BC84, U+BC95, U+BCA0, U+BCC0, U+BCF4-BCF5, U+BCF8, U+BD07, U+BD80, U+BD84, U+BD88, U+BDF0, U+BE0C,
+    U+BE14, U+BE44, U+BE60, U+BFD0, U+C0AC, U+C0B0, U+C0C1, U+C0C9, U+C0DD, U+C11C-C11D, U+C120, U+C124, U+C131, U+C158,
+    U+C18C, U+C194, U+C218, U+C21C, U+C220, U+C2A4, U+C2B5, U+C2B9, U+C2DC-C2DD, U+C2E0, U+C2E4, U+C2EC, U+C313,
+    U+C544-C545, U+C548, U+C54A, U+C57D, U+C591, U+C5B4-C5B5, U+C5B8, U+C5C5, U+C5D0, U+C5D4, U+C5EC-C5ED, U+C5F0,
+    U+C601, U+C608, U+C624, U+C640, U+C644, U+C694, U+C6A9, U+C6B0, U+C6B4, U+C6D0, U+C6D4, U+C6F9, U+C704, U+C720-C721,
+    U+C724, U+C728, U+C73C, U+C740, U+C744, U+C74C, U+C751, U+C758, U+C774-C775, U+C778, U+C77C, U+C785, U+C788, U+C790,
+    U+C7A1, U+C7A5, U+C7AC, U+C800-C801, U+C804, U+C808, U+C810-C811, U+C815, U+C81C-C81D, U+C874, U+C878, U+C885,
+    U+C88C, U+C8FC, U+C900, U+C911, U+C990, U+C99D, U+C9C0-C9C1, U+C9C4, U+C9C8, U+C9D1, U+C9D3, U+CC28, U+CC4C, U+CC57,
+    U+CC98, U+CC9C, U+CCB4, U+CD1D, U+CD2C, U+CD5C, U+CD94-CD95, U+CD9C, U+CE21, U+CE58, U+CE74, U+CEA0, U+CEE4, U+CEF4,
+    U+D06C, U+D070, U+D0D5, U+D0E0, U+D130, U+D14C, U+D15C, U+D1A0, U+D1A4, U+D1B5, U+D29C, U+D2B8-D2B9, U+D300, U+D30C,
+    U+D37C, U+D3B8, U+D3C9, U+D3EC-D3ED, U+D3F0, U+D3F4, U+D45C, U+D4E8, U+D504, U+D544, U+D558-D559, U+D55C, U+D569,
+    U+D574, U+D589, U+D5A5, U+D5D8, U+D61C, U+D638, U+D654-D655, U+D658, U+D65C, U+D68C-D68D, U+D6A8, U+D765, U+D788;
+}
+
+@font-face {
+  font-family: Display;
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url("/portfolio/assets/b38246cc51ebf495.woff2") format("woff2");
+  unicode-range:
+    U+20-7E, U+B7, U+2013, U+2190, U+2192, U+2197, U+321C, U+AC00-AC01, U+AC04, U+AC08, U+AC10, U+AC1C, U+AC70, U+AC80,
+    U+AC83, U+AC8C, U+ACA0, U+ACA9, U+ACAC, U+ACB0, U+ACBD, U+ACC4, U+ACE0, U+ACF5, U+ACFC-ACFD, U+AD00, U+AD50,
+    U+AD6C-AD6D, U+AD81, U+ADDC, U+ADE0, U+ADF8, U+AE00, U+AE08, U+AE30, U+AE41, U+AE4A, U+AE4C, U+AF2D, U+B098, U+B0B4,
+    U+B113, U+B124-B125, U+B144, U+B17C, U+B193, U+B294, U+B2A5, U+B2C8, U+B2DD, U+B2E4, U+B2E8, U+B2EB, U+B2F4-B2F5,
+    U+B300, U+B354, U+B370, U+B378, U+B3C4, U+B3CC, U+B3D5, U+B3D9, U+B41C, U+B4DC, U+B4E0, U+B4E4, U+B4ED, U+B514,
+    U+B5A4, U+B77C, U+B791, U+B798-B799, U+B7C9, U+B7EC, U+B80C, U+B819, U+B825, U+B85C-B85D, U+B860, U+B86C-B86D,
+    U+B8CC, U+B8E8, U+B8F9, U+B958, U+B974, U+B97C, U+B9AC, U+B9B0, U+B9C1, U+B9C8, U+B9CC, U+B9CE, U+B9E4, U+BA54,
+    U+BA70, U+BA74, U+BA85, U+BAA8-BAA9, U+BB34, U+BB38, U+BBF8, U+BC0F, U+BC14-BC15, U+BC18, U+BC1C, U+BC29,
+    U+BC30-BC31, U+BC84, U+BC95, U+BCA0, U+BCC0, U+BCF4-BCF5, U+BCF8, U+BD07, U+BD80, U+BD84, U+BD88, U+BDF0, U+BE0C,
+    U+BE14, U+BE44, U+BE60, U+BFD0, U+C0AC, U+C0B0, U+C0C1, U+C0C9, U+C0DD, U+C11C-C11D, U+C120, U+C124, U+C131, U+C158,
+    U+C18C, U+C194, U+C218, U+C21C, U+C220, U+C2A4, U+C2B5, U+C2B9, U+C2DC-C2DD, U+C2E0, U+C2E4, U+C2EC, U+C313,
+    U+C544-C545, U+C548, U+C54A, U+C57D, U+C591, U+C5B4-C5B5, U+C5B8, U+C5C5, U+C5D0, U+C5D4, U+C5EC-C5ED, U+C5F0,
+    U+C601, U+C608, U+C624, U+C640, U+C644, U+C694, U+C6A9, U+C6B0, U+C6B4, U+C6D0, U+C6D4, U+C6F9, U+C704, U+C720-C721,
+    U+C724, U+C728, U+C73C, U+C740, U+C744, U+C74C, U+C751, U+C758, U+C774-C775, U+C778, U+C77C, U+C785, U+C788, U+C790,
+    U+C7A1, U+C7A5, U+C7AC, U+C800-C801, U+C804, U+C808, U+C810-C811, U+C815, U+C81C-C81D, U+C874, U+C878, U+C885,
+    U+C88C, U+C8FC, U+C900, U+C911, U+C990, U+C99D, U+C9C0-C9C1, U+C9C4, U+C9C8, U+C9D1, U+C9D3, U+CC28, U+CC4C, U+CC57,
+    U+CC98, U+CC9C, U+CCB4, U+CD1D, U+CD2C, U+CD5C, U+CD94-CD95, U+CD9C, U+CE21, U+CE58, U+CE74, U+CEA0, U+CEE4, U+CEF4,
+    U+D06C, U+D070, U+D0D5, U+D0E0, U+D130, U+D14C, U+D15C, U+D1A0, U+D1A4, U+D1B5, U+D29C, U+D2B8-D2B9, U+D300, U+D30C,
+    U+D37C, U+D3B8, U+D3C9, U+D3EC-D3ED, U+D3F0, U+D3F4, U+D45C, U+D4E8, U+D504, U+D544, U+D558-D559, U+D55C, U+D569,
+    U+D574, U+D589, U+D5A5, U+D5D8, U+D61C, U+D638, U+D654-D655, U+D658, U+D65C, U+D68C-D68D, U+D6A8, U+D765, U+D788;
+}
+
+/* ===========================================
+   FIXED 16:9 STAGE: MANDATORY BASE STYLES
+   Include this ENTIRE file in every presentation.
+   Slides are authored at 1920×1080 and scaled as a whole.
+   =========================================== */
+
+/* 1. Lock the browser viewport */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: var(--stage-bg, #000);
+}
+
+/* 2. Full-window deck viewport */
+.deck-viewport {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: var(--stage-bg, #000);
+}
+
+/* 3. Fixed 16:9 design canvas.
+   JavaScript sets transform: translate(...) scale(...). */
+.deck-stage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  transform-origin: 0 0;
+  background: var(--slide-bg, #fff);
+}
+
+/* 4. Slides stack inside the fixed stage.
+   Content must be laid out at 1920×1080, not reflowed per device. */
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  background: var(--slide-bg, #fff);
+}
+
+.slide.active,
+.slide.visible {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+/* 5. Keep media inside authored slide bounds */
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* 6. Presentation chrome stays outside the slide design system */
+.deck-controls {
+  position: fixed;
+  left: 50%;
+  bottom: 22px;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+/* 7. Print one fixed-size slide per page */
+@media print {
+  html,
+  body {
+    width: 1920px;
+    height: auto;
+    overflow: visible;
+    background: #fff;
+  }
+
+  .deck-viewport {
+    position: static;
+    overflow: visible;
+    background: #fff;
+  }
+
+  .deck-stage {
+    position: static;
+    width: auto;
+    height: auto;
+    transform: none !important;
+    background: none;
+  }
+
+  .slide {
+    position: relative;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    width: 1920px;
+    height: 1080px;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .slide:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .deck-controls {
+    display: none !important;
+  }
+}
+
+/* 8. Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.2s !important;
+  }
+}
+/* === Portfolio visual system === */
+:root {
+  --slide-bg: #fff;
+  --stage-bg: #e8eae8;
+  --ink: #233c33;
+  --muted: #78817b;
+  --rule: #c8cfca;
+  --gold: #b5ac7d;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Body, sans-serif;
+  color: var(--ink);
+}
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+h1,
+h2 {
+  font-family: Display, Body, sans-serif;
+  font-weight: 500;
+  letter-spacing: -3px;
+}
+h2 {
+  font-size: 90px;
+  line-height: 1.25;
+}
+p {
+  white-space: normal;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 8px;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid #7c987f;
+  outline-offset: 4px;
+}
+.slide {
+  padding: 90px 112px 110px;
+}
+.slide-footer {
+  position: absolute;
+  bottom: 36px;
+  left: 112px;
+  right: 112px;
+  display: flex;
+  justify-content: space-between;
+  color: #859089;
+  font: 18px Body;
+  letter-spacing: 2px;
+}
+.picture {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+.slide img {
+  object-fit: contain;
+}
+.slide.active {
+  animation: appear 0.22s ease-out;
+}
+@keyframes appear {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* === Cover === */
+.cover-copy {
+  position: absolute;
+  left: 170px;
+  top: 235px;
+}
+.cover h1 {
+  font-size: 130px;
+}
+.cover-tags {
+  font-size: 42px;
+  line-height: 1.35;
+  margin-top: 240px;
+}
+.portrait {
+  position: absolute;
+  left: 1200px;
+  top: 195px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+}
+.contact-row {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 110px;
+  border-top: 1px solid var(--ink);
+  padding: 66px 170px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 29px;
+}
+.cover .slide-footer {
+  bottom: 32px;
+}
+/* === Introduction === */
+.intro-copy {
+  width: 865px;
+}
+.intro h2 {
+  font-family: Body;
+  font-weight: 700;
+  font-size: 61px;
+  letter-spacing: -1.8px;
+  line-height: 1.42;
+  margin-bottom: 65px;
+}
+.intro-copy p {
+  font-size: 29px;
+  line-height: 1.66;
+  margin-bottom: 36px;
+  word-break: keep-all;
+}
+.intro-images {
+  position: absolute;
+  left: 1070px;
+  top: 80px;
+  width: 760px;
+  height: 850px;
+}
+.intro-web {
+  position: absolute;
+  left: 40px;
+  top: 0;
+  width: 630px;
+  height: 445px;
+  filter: drop-shadow(0 8px 15px #0002);
+}
+.intro-blog {
+  position: absolute;
+  left: 100px;
+  top: 335px;
+  width: 655px;
+  height: 400px;
+  transform: rotate(5deg);
+  filter: drop-shadow(0 10px 20px #0003);
+}
+.intro-github {
+  position: absolute;
+  top: 735px;
+  left: 0;
+  width: 760px;
+  height: 190px;
+}
+/* === Profile columns === */
+.profile-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 95px;
+  margin-top: 85px;
+}
+.profile-column h3 {
+  font-size: 33px;
+  font-weight: 700;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 22px;
+  margin-bottom: 28px;
+}
+.entry {
+  margin: 0 0 23px;
+}
+.entry p {
+  font-size: 25px;
+  line-height: 1.4;
+  color: #626e67;
+  word-break: keep-all;
+}
+.entry p::first-line {
+  color: var(--ink);
+  font-weight: 700;
+}
+.profile-columns .entry:last-child {
+  margin-bottom: 0;
+}
+/* === Section dividers === */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.divider h2 {
+  font-size: 132px;
+  letter-spacing: -4px;
+}
+.divider-rule {
+  position: absolute;
+  left: 50%;
+  width: 1px;
+  height: 345px;
+  background: var(--ink);
+}
+.divider-rule.top {
+  top: 0;
+}
+.divider-rule.bottom {
+  bottom: 0;
+}
+.closing .divider-rule.top {
+  height: 365px;
+}
+.closing h2 {
+  font-family: Body;
+  font-weight: 700;
+  font-size: 120px;
+}
+/* === Project evidence === */
+.project {
+  padding: 80px 100px 105px;
+}
+.project-copy {
+  width: 800px;
+}
+.project h2 {
+  font-size: 94px;
+  line-height: 1.3;
+}
+.project-links {
+  display: flex;
+  gap: 26px;
+  font-size: 22px;
+  margin: 14px 0 25px;
+  color: #52695b;
+}
+.project-subtitle {
+  font-size: 31px;
+  line-height: 1.5;
+  color: #65756c;
+  word-break: keep-all;
+}
+.project-date {
+  font-size: 26px;
+  color: #8a938b;
+  margin-top: 15px;
+  line-height: 1.45;
+}
+.project blockquote {
+  margin: 62px 0 45px;
+  padding: 0 0 0 27px;
+  border-left: 5px solid var(--ink);
+  font-size: 33px;
+  line-height: 1.52;
+  word-break: keep-all;
+}
+.project-bullets {
+  padding-left: 26px;
+  font-size: 27px;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+.project-bullets li {
+  padding-left: 4px;
+  margin-bottom: 9px;
+}
+.project-visual {
+  position: absolute;
+  left: 980px;
+  top: 80px;
+  width: 850px;
+  height: 900px;
+}
+.mail-ui {
+  position: absolute;
+  top: 0;
+  left: -25px;
+  width: 895px;
+  height: 490px;
+}
+.mail-diagram {
+  position: absolute;
+  top: 515px;
+  left: 40px;
+  width: 800px;
+  height: 360px;
+}
+.undoc-ui {
+  position: absolute;
+  left: -120px;
+  top: 140px;
+  width: 1060px;
+  height: 735px;
+  max-width: none;
+}
+.award {
+  position: absolute;
+  right: 15px;
+  top: -80px;
+  background: var(--gold);
+  color: white;
+  padding: 48px 28px 32px;
+  font-size: 28px;
+  text-align: center;
+  line-height: 1.5;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 91%, 0 100%);
+}
+.project-7 blockquote {
+  margin-top: 55px;
+  margin-bottom: 45px;
+}
+.project-7 .project-bullets {
+  font-size: 26px;
+  line-height: 1.55;
+}
+.project-7 .project-bullets li:nth-last-child(-n + 2) {
+  font-size: 24px;
+  list-style: circle;
+  margin-left: 20px;
+  color: #67766c;
+}
+.phones {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  height: 900px;
+  padding-top: 90px;
+}
+.phones > .picture {
+  width: 390px;
+  height: 760px;
+}
+.box-scene {
+  position: absolute;
+  left: -980px;
+  top: -80px;
+  width: 1920px;
+  height: 1080px;
+  max-width: none;
+  max-height: none;
+  pointer-events: none;
+}
+.project-9 .project-subtitle {
+  margin-top: 38px;
+}
+/* === More === */
+.more-copy {
+  width: 890px;
+  padding-top: 160px;
+}
+.more-copy h2 {
+  font-family: Body;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 1.5;
+  letter-spacing: -2px;
+}
+.more-copy p {
+  font-size: 31px;
+  line-height: 1.65;
+  margin-top: 90px;
+  word-break: keep-all;
+}
+.more-copy > a {
+  display: inline-block;
+  font-size: 36px;
+  margin-top: 40px;
+  border-bottom: 1px solid var(--ink);
+}
+.more-images {
+  position: absolute;
+  left: 1055px;
+  top: 110px;
+  display: flex;
+  gap: 20px;
+  height: 820px;
+  width: 785px;
+}
+.more-images > .picture {
+  width: 380px;
+  height: 810px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 15px #0002);
+}
+/* === Controls and editing === */
+.deck-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  background: #f9faf9ed;
+  border: 1px solid #c8cfca;
+  border-radius: 12px;
+  padding: 5px 9px;
+  bottom: 10px;
+  box-shadow: 0 3px 18px #0001;
+  color: var(--ink);
+  font: 13px Body;
+  white-space: nowrap;
+}
+.deck-controls button {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 8px 10px;
+  border-radius: 7px;
+  font: inherit;
+}
+.deck-controls button:hover {
+  background: #e3e9e4;
+}
+.deck-controls button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+#counter {
+  min-width: 50px;
+  text-align: center;
+}
+#download {
+  display: none;
+}
+body.editing #download {
+  display: block;
+}
+body.editing #editToggle {
+  background: var(--ink);
+  color: white;
+}
+[contenteditable="true"] {
+  outline: 2px dashed #789982;
+  outline-offset: 6px;
+  cursor: text;
+}
+dialog {
+  border: 1px solid #cbd3cd;
+  border-radius: 14px;
+  padding: 28px;
+  width: min(560px, 90vw);
+  max-height: 85vh;
+  color: var(--ink);
+  font-family: Body;
+}
+dialog::backdrop {
+  background: #15231bb3;
+}
+dialog h2 {
+  font-size: 32px;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+#outlineList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+dialog button {
+  font: 16px Body;
+  color: inherit;
+  background: #f0f3f0;
+  border: 0;
+  border-radius: 7px;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+}
+#closeOutline {
+  margin-top: 15px;
+}
+#notice {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2000;
+  background: #233c33;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font: 15px Body;
+  opacity: 0;
+  pointer-events: none;
+}
+#notice.show {
+  opacity: 1;
+}
+@media (max-width: 550px) {
+  .deck-controls {
+    font-size: 11px;
+    gap: 0;
+    padding: 4px;
+  }
+  .deck-controls button {
+    padding: 7px;
+  }
+  #fullscreen {
+    display: none;
+  }
+}
+/* === Searchable browser print output === */
+@page {
+  size: 20in 11.25in;
+  margin: 0;
+}
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .slide {
+    animation: none !important;
+  }
+  .slide-footer {
+    bottom: 36px;
+  }
+  .deck-controls,
+  dialog,
+  #notice {
+    display: none !important;
+  }
+  [contenteditable] {
+    outline: none !important;
+  }
+}
+
+/* === Original PPT contact and project icons === */
+.contact-row {
+  top: 862px;
+  bottom: auto;
+  height: 155px;
+  padding: 0;
+  display: block;
+  border-top: 1px solid #233c33;
+}
+.contact-item {
+  position: absolute;
+  top: 96px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  height: 46px;
+  font-size: 30px;
+  white-space: nowrap;
+}
+.contact-item.phone {
+  left: 186px;
+}
+.contact-item.email {
+  left: 568px;
+}
+.contact-item.website {
+  left: 1126px;
+}
+.contact-item.github {
+  left: 1449px;
+}
+.source-icon {
+  display: block;
+  flex: none;
+  object-fit: contain;
+}
+.phone .source-icon {
+  width: 20px;
+  height: 34px;
+}
+.email .source-icon {
+  width: 30px;
+  height: 22px;
+}
+.website .source-icon {
+  width: 43px;
+  height: 43px;
+}
+.github .source-icon {
+  width: 41px;
+  height: 41px;
+}
+.contact-item.website span,
+.contact-item.github span {
+  color: #0000ee;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.project-links {
+  gap: 28px;
+  height: 30px;
+  align-items: center;
+}
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.project-links a:hover span,
+.project-links a:focus-visible span {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.project-links .source-icon {
+  width: 25px;
+  height: 25px;
+}
+.portrait {
+  border: 1px solid #d9d9d9;
+}
+
+/* Fullscreen controls overlay the slide and appear near the bottom edge. */
+:fullscreen .deck-controls {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s ease;
+}
+:fullscreen body.controls-revealed .deck-controls,
+:fullscreen .deck-controls:has(:focus-visible) {
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (prefers-reduced-motion: reduce) {
+  :fullscreen .deck-controls {
+    transition: none;
+  }
+}
+
+@media print {
+  .slide.divider {
+    display: flex !important;
+  }
+}

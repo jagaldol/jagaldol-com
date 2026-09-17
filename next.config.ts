@@ -2,7 +2,17 @@ import createMDX from "@next/mdx"
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async rewrites() {
+    return [{ source: "/portfolio", destination: "/portfolio/index.html" }]
+  },
+  async headers() {
+    return [
+      {
+        source: "/portfolio/assets/:file*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
+    ]
+  },
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
     remotePatterns: [
