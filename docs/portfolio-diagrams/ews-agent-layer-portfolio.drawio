@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" compressed="false">
+  <diagram id="ews-agent-layer-portfolio" name="ews-agent-layer-portfolio">
+    <mxGraphModel page="1" pageWidth="1000" pageHeight="765" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="classifiers" value="병렬 분류" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#F7FAF8;strokeColor=#CBD9D0;verticalAlign=top;align=left;spacingTop=0;spacingLeft=20;fontSize=23;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="145" y="160" width="630" height="155" />
+        </mxCell>
+        <mxCell id="input-context" source="input" target="context" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="memory-context" source="memory" target="context" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="context-rag" source="context" target="rag-intent" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0.3;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="414" y="140" />
+              <mxPoint x="302" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="context-reasoning" source="context" target="reasoning" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0.7;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="506" y="140" />
+              <mxPoint x="617" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rag-router" source="rag-intent" target="router" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="302" y="345" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="reasoning-router" source="reasoning" target="router" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="617" y="345" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="select-rag" source="router" target="rag" value="문서 검색" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="153" y="412" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="select-chat" source="router" target="chat" value="일반 대화" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="780" y="412" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="tools-loop" source="chat" target="tools" value="호출 / 결과" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;startArrow=block;startFill=1;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="rag-response" source="rag" target="response" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="153" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="chat-response" source="chat" target="response" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=1;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="615" y="550" />
+              <mxPoint x="615" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="response-memory" source="response" target="memory" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=1;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="467.5" y="735" />
+              <mxPoint x="965" y="735" />
+              <mxPoint x="965" y="77.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="input" value="사용자 질문" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#FFFFFF;strokeColor=#A3B3AB;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="25" y="35" width="215" height="85" />
+        </mxCell>
+        <mxCell id="context" value="Context Builder" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#E8F0EB;strokeColor=#6F9684;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="345" y="35" width="230" height="85" />
+        </mxCell>
+        <mxCell id="memory" value="대화 메모리&lt;br&gt;&lt;font style=&quot;font-size:20px&quot;&gt;thread_id&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;shape=cylinder;size=0.15;boundedLbl=1;fillColor=#E8F0EB;strokeColor=#6F9684;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="700" y="25" width="195" height="105" />
+        </mxCell>
+        <mxCell id="rag-intent" value="RAG 필요 여부" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#E8F0EB;strokeColor=#6F9684;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="180" y="215" width="245" height="70" />
+        </mxCell>
+        <mxCell id="reasoning" value="추론 강도" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#E8F0EB;strokeColor=#6F9684;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="495" y="215" width="245" height="70" />
+        </mxCell>
+        <mxCell id="router" value="Router" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;shape=rhombus;fillColor=#285343;strokeColor=#285343;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="375" y="360" width="170" height="105" />
+        </mxCell>
+        <mxCell id="rag" value="RAG 검색 · 생성" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#E8F0EB;strokeColor=#6F9684;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="25" y="510" width="255" height="80" />
+        </mxCell>
+        <mxCell id="chat" value="일반 대화 LLM" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#E8F0EB;strokeColor=#6F9684;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="665" y="510" width="230" height="80" />
+        </mxCell>
+        <mxCell id="tools" value="도구 실행" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#FFFFFF;strokeColor=#A3B3AB;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="665" y="640" width="230" height="55" />
+        </mxCell>
+        <mxCell id="response" value="응답 · SSE" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#285343;strokeColor=#285343;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="365" y="625" width="205" height="70" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

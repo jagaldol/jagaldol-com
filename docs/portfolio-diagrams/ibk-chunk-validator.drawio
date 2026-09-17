@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" compressed="false">
+  <diagram id="ibk-chunk-validator" name="ibk-chunk-validator">
+    <mxGraphModel page="1" pageWidth="840" pageHeight="420" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="edge-0" value="" edge="1" parent="1" source="query" target="retrieval" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-1" value="" edge="1" parent="1" source="query" target="validator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="420" y="75" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-2" value="검색된 청크" edge="1" parent="1" source="retrieval" target="validator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-3" value="유효 청크" edge="1" parent="1" source="validator" target="answer" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="query" value="사용자 질문" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#FFFFFF;strokeColor=#A8B4AD;strokeWidth=1.5;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="20" y="35" width="180" height="80" />
+        </mxCell>
+        <mxCell id="retrieval" value="문서 검색" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#FFFFFF;strokeColor=#A8B4AD;strokeWidth=1.5;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="20" y="260" width="180" height="95" />
+        </mxCell>
+        <mxCell id="validator" value="Chunk Validator&lt;br&gt;&lt;font style=&quot;font-size:19px&quot;&gt;질문에 필요한 근거 선별&lt;/font&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#E7F0EB;strokeColor=#285343;strokeWidth=2;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="300" y="260" width="240" height="95" />
+        </mxCell>
+        <mxCell id="answer" value="답변 생성" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#FFFFFF;strokeColor=#A8B4AD;strokeWidth=1.5;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="635" y="260" width="185" height="95" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

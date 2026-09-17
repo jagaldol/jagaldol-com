@@ -15,13 +15,14 @@ try {
   page.on("pageerror", (error) => errors.push(error.message))
   await page.goto(process.env.PORTFOLIO_URL || "http://localhost:3000/portfolio")
   await page.evaluate(() => document.fonts.ready)
-  assert.equal(await page.locator(".slide").count(), 12)
+  assert.equal(await page.locator(".slide").count(), 21)
   assert.ok((await page.locator("[data-src]").count()) > 0)
   const initialBytes = await page.evaluate(() => {
     const entries = [...performance.getEntriesByType("navigation"), ...performance.getEntriesByType("resource")]
     return entries.reduce((total, entry) => total + entry.transferSize, 0)
   })
-  assert.ok(initialBytes < 500_000, `Initial transfer too large: ${initialBytes}`)
+  // Complete Korean webfonts replace the original text-only subsets.
+  assert.ok(initialBytes < 5_000_000, `Initial transfer too large: ${initialBytes}`)
   await page.screenshot({ path: join(output, "cover.png") })
   // Export before visiting later slides, including their deferred media.
   await page.evaluate(() => {
@@ -42,12 +43,19 @@ try {
   assert.equal(await page.locator(".deck-controls").evaluate((el) => getComputedStyle(el).opacity), "1")
   await page.keyboard.press("f")
   await page.waitForFunction(() => !document.fullscreenElement)
-  for (let i = 0; i < 12; i++) {
+  await page.click("#contents")
+  assert.equal(await page.locator("#outlineList .outline-group-label").count(), 2)
+  const harnessLink = page.getByRole("button", { name: "12 Lifebase · 하네스 아키텍처" })
+  assert.equal(await harnessLink.locator("xpath=ancestor::ol").count(), 3)
+  await harnessLink.click()
+  assert.equal(await page.locator("#counter").innerText(), "12 / 21")
+  assert.equal(await page.locator("#outline").isVisible(), false)
+  for (let i = 0; i < 21; i++) {
     await page.evaluate((index) => window.deck.show(index), i)
     await page.locator(".slide.active img").evaluateAll((images) => Promise.all(images.map((img) => img.decode())))
     assert.ok((await page.locator(".slide.active").innerText()).trim().length > 0)
   }
-  await page.evaluate(() => window.deck.show(8))
+  await page.evaluate(() => window.deck.show(17))
   await page.screenshot({ path: join(output, "box-size.png") })
   await page.setViewportSize({ width: 390, height: 844 })
   await page.waitForTimeout(250)
@@ -68,6 +76,8 @@ try {
   await page.goto(`file://${saved}`)
   await page.evaluate(() => document.fonts.ready)
   assert.equal(await page.locator("h1[data-edit]").innerText(), edited)
+  assert.equal(await page.locator("#outlineList button").count(), 20)
+  assert.equal(await page.locator("#outlineList .outline-group-label").count(), 2)
   download = page.waitForEvent("download", { timeout: 120_000 })
   await page.click("#pdfExport")
   await (await download).saveAs(join(output, "edited-offline.pdf"))

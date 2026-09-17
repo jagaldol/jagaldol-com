@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" compressed="false">
+  <diagram id="ibk-agent-flow" name="ibk-agent-flow">
+    <mxGraphModel page="1" pageWidth="840" pageHeight="420" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="edge-0" value="" edge="1" parent="1" source="input" target="intent" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-1" value="일반 대화" edge="1" parent="1" source="intent" target="response" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-2" value="도구 선택" edge="1" parent="1" source="intent" target="fc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-3" value="" edge="1" parent="1" source="fc" target="api" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-4" value="실행 결과" edge="1" parent="1" source="api" target="response" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=0;entryX=0.5;entryY=1;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="input" value="사용자 질문" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#FFFFFF;strokeColor=#A8B4AD;strokeWidth=1.5;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="20" y="45" width="180" height="85" />
+        </mxCell>
+        <mxCell id="intent" value="의도 분류" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#E7F0EB;strokeColor=#285343;strokeWidth=2;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="285" y="45" width="215" height="85" />
+        </mxCell>
+        <mxCell id="response" value="응답 생성" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#FFFFFF;strokeColor=#A8B4AD;strokeWidth=1.5;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="605" y="45" width="210" height="85" />
+        </mxCell>
+        <mxCell id="fc" value="인자 추출&lt;br&gt;&lt;font style=&quot;font-size:19px&quot;&gt;tool_choice: required&lt;/font&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#E7F0EB;strokeColor=#285343;strokeWidth=2;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="285" y="270" width="215" height="95" />
+        </mxCell>
+        <mxCell id="api" value="선택된 도구 실행" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#FFFFFF;strokeColor=#A8B4AD;strokeWidth=1.5;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="605" y="270" width="210" height="95" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

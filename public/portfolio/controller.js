@@ -1,4 +1,4 @@
-import { activateMedia, ensureEditedFonts, standaloneHTML } from "./assets.js"
+import { activateMedia, standaloneHTML } from "./assets.js"
 import { downloadDeckPDF } from "./pdf.js"
 
 class SlidePresentation {
@@ -7,7 +7,9 @@ class SlidePresentation {
     this.stage = document.querySelector(".deck-stage")
     this.current = 0
     this.editing = false
-    this.storageKey = "hyejun-portfolio-html-2026-09-17-v1"
+    this.canEdit = location.protocol === "file:" || ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname)
+    document.querySelector("#editToggle").hidden = !this.canEdit
+    this.storageKey = "hyejun-portfolio-html-2026-09-17-v17"
     this.items = [...document.querySelectorAll("[data-edit]")]
     this.items.forEach((el, i) => (el.dataset.editId = i))
     this.restore()
@@ -50,6 +52,7 @@ class SlidePresentation {
   }
   restore() {
     this.edits = {}
+    if (!this.canEdit) return
     try {
       let saved = JSON.parse(localStorage.getItem(this.storageKey) || "null")
       if (Array.isArray(saved)) {
@@ -60,7 +63,6 @@ class SlidePresentation {
       } else if (saved?.version === 2 && saved.edits && typeof saved.edits === "object") this.edits = saved.edits
       this.items.forEach((el, i) => {
         if (typeof this.edits[i] === "string") {
-          ensureEditedFonts(this.edits[i])
           el.innerText = this.edits[i]
         }
       })
@@ -68,7 +70,6 @@ class SlidePresentation {
   }
   persist(el) {
     if (!this.editing || !el.isContentEditable) return
-    ensureEditedFonts(el.innerText)
     this.edits[el.dataset.editId] = el.innerText
     try {
       localStorage.setItem(this.storageKey, JSON.stringify({ version: 2, edits: this.edits }))
@@ -77,6 +78,7 @@ class SlidePresentation {
     }
   }
   toggleEdit() {
+    if (!this.canEdit) return
     this.editing = !this.editing
     document.body.classList.toggle("editing", this.editing)
     this.items.forEach((el) => {
@@ -89,6 +91,7 @@ class SlidePresentation {
     )
   }
   async save() {
+    if (!this.canEdit) return
     try {
       let root = document.documentElement.cloneNode(true)
       root.querySelector("body").classList.remove("editing", "controls-revealed")
@@ -146,19 +149,50 @@ class SlidePresentation {
         this.persist(el)
       })
     })
+    const outlineSections = new Map()
+    const outlineGroups = new Map()
+    by("outlineList").replaceChildren()
     this.slides.forEach((s, i) => {
+      if (s.dataset.outlineSkip) return
+      let parent = outlineSections.get(s.dataset.section) || by("outlineList")
+      if (s.dataset.group) {
+        const key = `${s.dataset.section}/${s.dataset.group}`
+        if (!outlineGroups.has(key)) {
+          const group = document.createElement("li")
+          const label = document.createElement("p")
+          label.className = "outline-group-label"
+          label.textContent = s.dataset.group
+          const list = document.createElement("ol")
+          group.append(label, list)
+          parent.append(group)
+          outlineGroups.set(key, list)
+        }
+        parent = outlineGroups.get(key)
+      }
+      const item = document.createElement("li")
       let b = document.createElement("button")
-      b.textContent = `${String(i + 1).padStart(2, "0")}  ${s.dataset.title}`
+      const number = document.createElement("span")
+      number.className = "outline-page-number"
+      number.textContent = String(i + 1).padStart(2, "0")
+      const label = document.createElement("span")
+      label.textContent = s.dataset.title
+      b.append(number, label)
       b.onclick = () => {
         by("outline").close()
         this.show(i)
       }
-      by("outlineList").append(b)
+      item.append(b)
+      parent.append(item)
+      if (s.dataset.outlineRoot) {
+        const list = document.createElement("ol")
+        item.append(list)
+        outlineSections.set(s.dataset.outlineRoot, list)
+      }
     })
     by("contents").onclick = () => by("outline").showModal()
     by("closeOutline").onclick = () => by("outline").close()
     document.addEventListener("keydown", (e) => {
-      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
+      if (this.canEdit && (e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
         e.preventDefault()
         this.save()
         return

@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" compressed="false">
+  <diagram id="ews-agent-layer" name="ews-agent-layer">
+    <mxGraphModel page="1" pageWidth="840" pageHeight="540" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="edge-0" value="" edge="1" parent="1" source="input" target="route" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-1" value="일반 대화" edge="1" parent="1" source="route" target="chat" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=0.25;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="406" y="175" />
+              <mxPoint x="165" y="175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-2" value="문서 검색" edge="1" parent="1" source="route" target="rag" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=0.75;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="569" y="175" />
+              <mxPoint x="695" y="175" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-3" value="호출 / 결과" edge="1" parent="1" source="chat" target="tools" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;startArrow=block;startFill=1;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-4" value="" edge="1" parent="1" source="chat" target="output" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="465" y="278" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge-5" value="" edge="1" parent="1" source="rag" target="output" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#73867D;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=19;fontColor=#53685D;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=1;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="695" y="468" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="input" value="질문 · 대화 맥락" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#FFFFFF;strokeColor=#A8B4AD;strokeWidth=1.5;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="20" y="35" width="220" height="85" />
+        </mxCell>
+        <mxCell id="route" value="RAG 여부 · 추론 강도&lt;br&gt;&lt;font style=&quot;font-size:19px&quot;&gt;병렬 분류 및 라우팅&lt;/font&gt;" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#E7F0EB;strokeColor=#285343;strokeWidth=2;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="325" y="35" width="325" height="85" />
+        </mxCell>
+        <mxCell id="chat" value="일반 대화 LLM" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#E7F0EB;strokeColor=#285343;strokeWidth=2;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="55" y="235" width="220" height="85" />
+        </mxCell>
+        <mxCell id="rag" value="RAG 검색 · 생성" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#E7F0EB;strokeColor=#285343;strokeWidth=2;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="570" y="235" width="250" height="85" />
+        </mxCell>
+        <mxCell id="tools" value="도구 실행" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#FFFFFF;strokeColor=#A8B4AD;strokeWidth=1.5;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="55" y="425" width="220" height="85" />
+        </mxCell>
+        <mxCell id="output" value="응답 · SSE" vertex="1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;spacing=10;fillColor=#E7F0EB;strokeColor=#285343;strokeWidth=2;fontColor=#223D33;fontFamily=Arial;fontSize=24;">
+          <mxGeometry as="geometry" x="365" y="425" width="200" height="85" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

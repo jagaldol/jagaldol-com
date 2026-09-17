@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" compressed="false">
+  <diagram id="ews-data-ingestion-portfolio" name="ews-data-ingestion-portfolio">
+    <mxGraphModel page="1" pageWidth="960" pageHeight="600" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" value="Data Ingestion Service" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#F7FAF8;strokeColor=#CBD9D0;verticalAlign=top;align=left;spacingTop=16;spacingLeft=20;fontSize=23;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="240" y="20" width="690" height="415" />
+        </mxCell>
+        <mxCell id="submit" source="main" target="job" value="등록·조회" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.22;entryX=0;entryY=0.22;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="offset" x="0" y="-18" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="status-return" source="job" target="main" value="job_id·상태" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.78;entryX=1;entryY=0.78;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="offset" x="0" y="-18" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="run" source="job" target="parse" value="비동기 실행" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry as="geometry" relative="1">
+            <Array as="points">
+              <mxPoint x="605.0" y="245" />
+              <mxPoint x="605.0" y="122" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="parse-chunk" source="parse" target="chunk" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="chunk-embedding" source="chunk" target="embedding" value="" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="write" source="embedding" target="store" value="저장" edge="1" parent="1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#728D7E;strokeWidth=2;endArrow=block;endFill=1;fontFamily=Arial;fontSize=20;fontColor=#4F685B;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="main" value="EWS&lt;br&gt;Main Server" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#FFFFFF;strokeColor=#A3B3AB;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="190" width="165" height="110" />
+        </mxCell>
+        <mxCell id="job" value="Job Manager" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#285343;strokeColor=#285343;fontColor=#FFFFFF;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="340.0" y="190" width="200" height="110" />
+        </mxCell>
+        <mxCell id="parse" value="파일 로드 · 파싱" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#E8F0EB;strokeColor=#6F9684;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="665.0" y="85" width="225" height="75" />
+        </mxCell>
+        <mxCell id="chunk" value="Chunking" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#E8F0EB;strokeColor=#6F9684;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="665.0" y="205" width="225" height="75" />
+        </mxCell>
+        <mxCell id="embedding" value="Embedding" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=#E8F0EB;strokeColor=#6F9684;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="665.0" y="325" width="225" height="75" />
+        </mxCell>
+        <mxCell id="store" value="PostgreSQL&lt;br&gt;&lt;font style=&quot;font-size:20px&quot;&gt;벡터 · 메타데이터&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;shape=cylinder;size=0.15;boundedLbl=1;fillColor=#E8F0EB;strokeColor=#6F9684;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="665.0" y="480" width="225" height="95" />
+        </mxCell>
+        <mxCell id="status" value="작업 단계 · 성공 / 실패" style="rounded=0;whiteSpace=wrap;html=1;fontFamily=Arial;fontSize=24;fontColor=#233E34;spacing=10;strokeWidth=1.5;fillColor=none;strokeColor=none;fontSize=21;fontColor=#65796E;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="330.0" y="310" width="220" height="45" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

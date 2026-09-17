@@ -3,28 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: block;
-  src: url("/portfolio/assets/71bdb7311f2fb4e0.woff2") format("woff2");
-  unicode-range:
-    U+20-7E, U+A0, U+B7, U+2013, U+2022, U+2190, U+2192, U+2197, U+321C, U+AC00-AC01, U+AC04, U+AC08, U+AC10, U+AC1C,
-    U+AC70, U+AC80, U+AC83, U+AC8C, U+ACA0, U+ACA9, U+ACAC, U+ACB0, U+ACBD, U+ACC4, U+ACE0, U+ACF5, U+ACFC-ACFD, U+AD00,
-    U+AD50, U+AD6C-AD6D, U+AD81, U+ADDC, U+ADE0, U+ADF8, U+AE00, U+AE08, U+AE30, U+AE41, U+AE4A, U+AE4C, U+AF2D, U+B098,
-    U+B0B4, U+B113, U+B124-B125, U+B144, U+B17C, U+B193, U+B294, U+B2A5, U+B2C8, U+B2DD, U+B2E4, U+B2E8, U+B2EB,
-    U+B2F4-B2F5, U+B300, U+B354, U+B370, U+B378, U+B3C4, U+B3CC, U+B3D5, U+B3D9, U+B41C, U+B4DC, U+B4E0, U+B4E4, U+B4ED,
-    U+B514, U+B5A4, U+B77C, U+B791, U+B798-B799, U+B7C9, U+B7EC, U+B80C, U+B819, U+B825, U+B85C-B85D, U+B860,
-    U+B86C-B86D, U+B8CC, U+B8E8, U+B8F9, U+B958, U+B974, U+B97C, U+B9AC, U+B9B0, U+B9C1, U+B9C8, U+B9CC, U+B9CE, U+B9E4,
-    U+BA54, U+BA70, U+BA74, U+BA85, U+BAA8-BAA9, U+BB34, U+BB38, U+BBF8, U+BC0F, U+BC14-BC15, U+BC18, U+BC1C, U+BC29,
-    U+BC30-BC31, U+BC84, U+BC95, U+BCA0, U+BCC0, U+BCF4-BCF5, U+BCF8, U+BD07, U+BD80, U+BD84, U+BD88, U+BDF0, U+BE0C,
-    U+BE14, U+BE44, U+BE60, U+BFD0, U+C0AC, U+C0B0, U+C0C1, U+C0C9, U+C0DD, U+C11C-C11D, U+C120, U+C124, U+C131, U+C158,
-    U+C18C, U+C194, U+C218, U+C21C, U+C220, U+C2A4, U+C2B5, U+C2B9, U+C2DC-C2DD, U+C2E0, U+C2E4, U+C2EC, U+C313,
-    U+C544-C545, U+C548, U+C54A, U+C57D, U+C591, U+C5B4-C5B5, U+C5B8, U+C5C5, U+C5D0, U+C5D4, U+C5EC-C5ED, U+C5F0,
-    U+C601, U+C608, U+C624, U+C640, U+C644, U+C694, U+C6A9, U+C6B0, U+C6B4, U+C6D0, U+C6D4, U+C6F9, U+C704, U+C720-C721,
-    U+C724, U+C728, U+C73C, U+C740, U+C744, U+C74C, U+C751, U+C758, U+C774-C775, U+C778, U+C77C, U+C785, U+C788, U+C790,
-    U+C7A1, U+C7A5, U+C7AC, U+C800-C801, U+C804, U+C808, U+C810-C811, U+C815, U+C81C-C81D, U+C874, U+C878, U+C885,
-    U+C88C, U+C8FC, U+C900, U+C911, U+C990, U+C99D, U+C9C0-C9C1, U+C9C4, U+C9C8, U+C9D1, U+C9D3, U+CC28, U+CC4C, U+CC57,
-    U+CC98, U+CC9C, U+CCB4, U+CD1D, U+CD2C, U+CD5C, U+CD94-CD95, U+CD9C, U+CE21, U+CE58, U+CE74, U+CEA0, U+CEE4, U+CEF4,
-    U+D06C, U+D070, U+D0D5, U+D0E0, U+D130, U+D14C, U+D15C, U+D1A0, U+D1A4, U+D1B5, U+D29C, U+D2B8-D2B9, U+D300, U+D30C,
-    U+D37C, U+D3B8, U+D3C9, U+D3EC-D3ED, U+D3F0, U+D3F4, U+D45C, U+D4E8, U+D504, U+D544, U+D558-D559, U+D55C, U+D569,
-    U+D574, U+D589, U+D5A5, U+D5D8, U+D61C, U+D638, U+D654-D655, U+D658, U+D65C, U+D68C-D68D, U+D6A8, U+D765, U+D788;
+  src: url("/portfolio/assets/50b7e2e91f9f05e0.woff2") format("woff2");
 }
 
 @font-face {
@@ -32,28 +11,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: block;
-  src: url("/portfolio/assets/c96ee14a843581b8.woff2") format("woff2");
-  unicode-range:
-    U+20-7E, U+A0, U+B7, U+2013, U+2022, U+2190, U+2192, U+2197, U+321C, U+AC00-AC01, U+AC04, U+AC08, U+AC10, U+AC1C,
-    U+AC70, U+AC80, U+AC83, U+AC8C, U+ACA0, U+ACA9, U+ACAC, U+ACB0, U+ACBD, U+ACC4, U+ACE0, U+ACF5, U+ACFC-ACFD, U+AD00,
-    U+AD50, U+AD6C-AD6D, U+AD81, U+ADDC, U+ADE0, U+ADF8, U+AE00, U+AE08, U+AE30, U+AE41, U+AE4A, U+AE4C, U+AF2D, U+B098,
-    U+B0B4, U+B113, U+B124-B125, U+B144, U+B17C, U+B193, U+B294, U+B2A5, U+B2C8, U+B2DD, U+B2E4, U+B2E8, U+B2EB,
-    U+B2F4-B2F5, U+B300, U+B354, U+B370, U+B378, U+B3C4, U+B3CC, U+B3D5, U+B3D9, U+B41C, U+B4DC, U+B4E0, U+B4E4, U+B4ED,
-    U+B514, U+B5A4, U+B77C, U+B791, U+B798-B799, U+B7C9, U+B7EC, U+B80C, U+B819, U+B825, U+B85C-B85D, U+B860,
-    U+B86C-B86D, U+B8CC, U+B8E8, U+B8F9, U+B958, U+B974, U+B97C, U+B9AC, U+B9B0, U+B9C1, U+B9C8, U+B9CC, U+B9CE, U+B9E4,
-    U+BA54, U+BA70, U+BA74, U+BA85, U+BAA8-BAA9, U+BB34, U+BB38, U+BBF8, U+BC0F, U+BC14-BC15, U+BC18, U+BC1C, U+BC29,
-    U+BC30-BC31, U+BC84, U+BC95, U+BCA0, U+BCC0, U+BCF4-BCF5, U+BCF8, U+BD07, U+BD80, U+BD84, U+BD88, U+BDF0, U+BE0C,
-    U+BE14, U+BE44, U+BE60, U+BFD0, U+C0AC, U+C0B0, U+C0C1, U+C0C9, U+C0DD, U+C11C-C11D, U+C120, U+C124, U+C131, U+C158,
-    U+C18C, U+C194, U+C218, U+C21C, U+C220, U+C2A4, U+C2B5, U+C2B9, U+C2DC-C2DD, U+C2E0, U+C2E4, U+C2EC, U+C313,
-    U+C544-C545, U+C548, U+C54A, U+C57D, U+C591, U+C5B4-C5B5, U+C5B8, U+C5C5, U+C5D0, U+C5D4, U+C5EC-C5ED, U+C5F0,
-    U+C601, U+C608, U+C624, U+C640, U+C644, U+C694, U+C6A9, U+C6B0, U+C6B4, U+C6D0, U+C6D4, U+C6F9, U+C704, U+C720-C721,
-    U+C724, U+C728, U+C73C, U+C740, U+C744, U+C74C, U+C751, U+C758, U+C774-C775, U+C778, U+C77C, U+C785, U+C788, U+C790,
-    U+C7A1, U+C7A5, U+C7AC, U+C800-C801, U+C804, U+C808, U+C810-C811, U+C815, U+C81C-C81D, U+C874, U+C878, U+C885,
-    U+C88C, U+C8FC, U+C900, U+C911, U+C990, U+C99D, U+C9C0-C9C1, U+C9C4, U+C9C8, U+C9D1, U+C9D3, U+CC28, U+CC4C, U+CC57,
-    U+CC98, U+CC9C, U+CCB4, U+CD1D, U+CD2C, U+CD5C, U+CD94-CD95, U+CD9C, U+CE21, U+CE58, U+CE74, U+CEA0, U+CEE4, U+CEF4,
-    U+D06C, U+D070, U+D0D5, U+D0E0, U+D130, U+D14C, U+D15C, U+D1A0, U+D1A4, U+D1B5, U+D29C, U+D2B8-D2B9, U+D300, U+D30C,
-    U+D37C, U+D3B8, U+D3C9, U+D3EC-D3ED, U+D3F0, U+D3F4, U+D45C, U+D4E8, U+D504, U+D544, U+D558-D559, U+D55C, U+D569,
-    U+D574, U+D589, U+D5A5, U+D5D8, U+D61C, U+D638, U+D654-D655, U+D658, U+D65C, U+D68C-D68D, U+D6A8, U+D765, U+D788;
+  src: url("/portfolio/assets/e57c1a2c18650c1a.woff2") format("woff2");
 }
 
 @font-face {
@@ -61,28 +19,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: block;
-  src: url("/portfolio/assets/b38246cc51ebf495.woff2") format("woff2");
-  unicode-range:
-    U+20-7E, U+B7, U+2013, U+2190, U+2192, U+2197, U+321C, U+AC00-AC01, U+AC04, U+AC08, U+AC10, U+AC1C, U+AC70, U+AC80,
-    U+AC83, U+AC8C, U+ACA0, U+ACA9, U+ACAC, U+ACB0, U+ACBD, U+ACC4, U+ACE0, U+ACF5, U+ACFC-ACFD, U+AD00, U+AD50,
-    U+AD6C-AD6D, U+AD81, U+ADDC, U+ADE0, U+ADF8, U+AE00, U+AE08, U+AE30, U+AE41, U+AE4A, U+AE4C, U+AF2D, U+B098, U+B0B4,
-    U+B113, U+B124-B125, U+B144, U+B17C, U+B193, U+B294, U+B2A5, U+B2C8, U+B2DD, U+B2E4, U+B2E8, U+B2EB, U+B2F4-B2F5,
-    U+B300, U+B354, U+B370, U+B378, U+B3C4, U+B3CC, U+B3D5, U+B3D9, U+B41C, U+B4DC, U+B4E0, U+B4E4, U+B4ED, U+B514,
-    U+B5A4, U+B77C, U+B791, U+B798-B799, U+B7C9, U+B7EC, U+B80C, U+B819, U+B825, U+B85C-B85D, U+B860, U+B86C-B86D,
-    U+B8CC, U+B8E8, U+B8F9, U+B958, U+B974, U+B97C, U+B9AC, U+B9B0, U+B9C1, U+B9C8, U+B9CC, U+B9CE, U+B9E4, U+BA54,
-    U+BA70, U+BA74, U+BA85, U+BAA8-BAA9, U+BB34, U+BB38, U+BBF8, U+BC0F, U+BC14-BC15, U+BC18, U+BC1C, U+BC29,
-    U+BC30-BC31, U+BC84, U+BC95, U+BCA0, U+BCC0, U+BCF4-BCF5, U+BCF8, U+BD07, U+BD80, U+BD84, U+BD88, U+BDF0, U+BE0C,
-    U+BE14, U+BE44, U+BE60, U+BFD0, U+C0AC, U+C0B0, U+C0C1, U+C0C9, U+C0DD, U+C11C-C11D, U+C120, U+C124, U+C131, U+C158,
-    U+C18C, U+C194, U+C218, U+C21C, U+C220, U+C2A4, U+C2B5, U+C2B9, U+C2DC-C2DD, U+C2E0, U+C2E4, U+C2EC, U+C313,
-    U+C544-C545, U+C548, U+C54A, U+C57D, U+C591, U+C5B4-C5B5, U+C5B8, U+C5C5, U+C5D0, U+C5D4, U+C5EC-C5ED, U+C5F0,
-    U+C601, U+C608, U+C624, U+C640, U+C644, U+C694, U+C6A9, U+C6B0, U+C6B4, U+C6D0, U+C6D4, U+C6F9, U+C704, U+C720-C721,
-    U+C724, U+C728, U+C73C, U+C740, U+C744, U+C74C, U+C751, U+C758, U+C774-C775, U+C778, U+C77C, U+C785, U+C788, U+C790,
-    U+C7A1, U+C7A5, U+C7AC, U+C800-C801, U+C804, U+C808, U+C810-C811, U+C815, U+C81C-C81D, U+C874, U+C878, U+C885,
-    U+C88C, U+C8FC, U+C900, U+C911, U+C990, U+C99D, U+C9C0-C9C1, U+C9C4, U+C9C8, U+C9D1, U+C9D3, U+CC28, U+CC4C, U+CC57,
-    U+CC98, U+CC9C, U+CCB4, U+CD1D, U+CD2C, U+CD5C, U+CD94-CD95, U+CD9C, U+CE21, U+CE58, U+CE74, U+CEA0, U+CEE4, U+CEF4,
-    U+D06C, U+D070, U+D0D5, U+D0E0, U+D130, U+D14C, U+D15C, U+D1A0, U+D1A4, U+D1B5, U+D29C, U+D2B8-D2B9, U+D300, U+D30C,
-    U+D37C, U+D3B8, U+D3C9, U+D3EC-D3ED, U+D3F0, U+D3F4, U+D45C, U+D4E8, U+D504, U+D544, U+D558-D559, U+D55C, U+D569,
-    U+D574, U+D589, U+D5A5, U+D5D8, U+D61C, U+D638, U+D654-D655, U+D658, U+D65C, U+D68C-D68D, U+D6A8, U+D765, U+D788;
+  src: url("/portfolio/assets/c4f55b14a9ac8ba8.woff2") format("woff2");
 }
 
 /* ===========================================
@@ -354,6 +291,26 @@ button:focus-visible {
   margin-bottom: 36px;
   word-break: keep-all;
 }
+.intro-links {
+  position: absolute;
+  top: 282px;
+  left: 112px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 24px;
+  color: #52695b;
+}
+.intro-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.intro-links .source-icon {
+  width: 25px;
+  height: 25px;
+  flex: none;
+}
 .intro-images {
   position: absolute;
   left: 1070px;
@@ -390,7 +347,7 @@ button:focus-visible {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 95px;
-  margin-top: 85px;
+  margin-top: 60px;
 }
 .profile-column h3 {
   font-size: 33px;
@@ -415,6 +372,266 @@ button:focus-visible {
 .profile-columns .entry:last-child {
   margin-bottom: 0;
 }
+.career-layout {
+  display: grid;
+  grid-template-columns: 490px 1fr;
+  gap: 100px;
+  margin-top: 70px;
+}
+.career-company h3 {
+  font-size: 52px;
+  margin-bottom: 22px;
+}
+.career-role,
+.career-period {
+  font-size: 26px;
+  line-height: 1.6;
+  color: #626e67;
+}
+.career-period {
+  margin-top: 8px;
+}
+.career-summary {
+  margin-top: 48px;
+  font-size: 30px;
+  line-height: 1.65;
+}
+.career-project {
+  border-top: 1px solid var(--rule);
+  padding-top: 28px;
+}
+.career-project + .career-project {
+  margin-top: 52px;
+}
+.career-project h3 {
+  font-size: 34px;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+.career-description {
+  font-size: 26px;
+  line-height: 1.5;
+  color: #626e67;
+}
+.career-project ul {
+  margin-top: 24px;
+  padding-left: 28px;
+  font-size: 27px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+.project-category {
+  position: absolute;
+  top: 30px;
+  left: 100px;
+  font-size: 20px;
+  color: #626e67;
+}
+/* === Lifebase === */
+.lifebase blockquote {
+  margin: 44px 0 36px;
+}
+.lifebase-graph {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.lifebase-graph a {
+  display: block;
+  cursor: zoom-in;
+}
+.lifebase-graph img {
+  width: 100%;
+  height: 800px;
+  object-fit: contain;
+}
+.lifebase-overview .project-copy {
+  width: 760px;
+}
+.lifebase-overview .lifebase-graph {
+  left: 870px;
+  top: 45px;
+  width: 1010px;
+  height: 950px;
+}
+.lifebase-overview .lifebase-graph img {
+  height: 900px;
+}
+.lifebase-overview .visual-caption {
+  margin-top: 16px;
+}
+.lifebase-diagram img {
+  width: 100%;
+  object-fit: contain;
+}
+.lifebase-diagram {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.lifebase-harness .project-copy {
+  width: 690px;
+}
+.lifebase-harness .project-visual {
+  left: 890px;
+  width: 940px;
+}
+.lifebase-harness .project-visual img {
+  width: 100%;
+  height: 900px;
+  object-fit: contain;
+}
+.lifebase-system .project-copy {
+  width: 680px;
+}
+.lifebase-system .project-visual {
+  left: 860px;
+  top: 200px;
+  width: 1000px;
+  height: 720px;
+}
+.lifebase-system .project-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.lifebase-system.project blockquote {
+  margin: 36px 0 24px;
+  font-size: 30px;
+}
+.lifebase-product-screens {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 30px;
+}
+.lifebase-product-screens figure {
+  margin: 0;
+}
+.lifebase-product-screens a {
+  display: block;
+  cursor: zoom-in;
+}
+.lifebase-product-screens img {
+  display: block;
+  width: 100%;
+  height: 185px;
+  object-fit: contain;
+}
+.lifebase-product-screens figcaption {
+  margin-top: 12px;
+  font-size: 21px;
+  color: var(--muted);
+  text-align: center;
+}
+.lifebase-system .project-bullets {
+  font-size: 25px;
+}
+.work-project .project-copy h2 {
+  font-size: 68px;
+  margin-bottom: 32px;
+}
+.project-full-name {
+  display: block;
+  font-size: 42px;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+.work-project blockquote {
+  margin: 44px 0 35px;
+}
+.work-project .project-focus {
+  margin-top: 38px;
+  font-size: 38px;
+  line-height: 1.3;
+}
+.work-evidence {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 52px;
+}
+.ews-project .project-copy {
+  width: 860px;
+}
+.ews-project .project-full-name {
+  display: inline;
+  margin-top: 0;
+}
+.ews-project .project-visual {
+  left: 1030px;
+  width: 790px;
+}
+.ews-project .work-diagram a {
+  display: block;
+  cursor: zoom-in;
+}
+.ews-project .work-diagram img {
+  height: 550px;
+}
+.ews-project .work-evidence {
+  gap: 34px;
+}
+.work-diagram {
+  margin: 0;
+}
+.work-diagram img {
+  display: block;
+  width: 100%;
+  height: 425px;
+  object-fit: contain;
+}
+.work-diagram figcaption {
+  margin-top: 12px;
+  color: #65756c;
+  text-align: center;
+  font-size: 22px;
+}
+.work-result {
+  border-top: 1px solid var(--rule);
+  padding-top: 28px;
+}
+.work-result h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.result-value {
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.result-value span {
+  font-size: 30px;
+  font-weight: 400;
+  color: #65756c;
+  margin: 0 8px;
+}
+.result-finding {
+  font-size: 32px;
+  font-weight: 400;
+}
+.result-finding strong {
+  font-weight: 700;
+}
+.result-detail {
+  font-size: 27px;
+  margin-top: 10px;
+}
+.result-note {
+  font-size: 22px;
+  color: #65756c;
+  line-height: 1.5;
+  margin-top: 18px;
+}
+.visual-caption {
+  margin-top: 22px;
+  font-size: 23px;
+  line-height: 1.5;
+  text-align: center;
+  color: #626e67;
+}
 /* === Section dividers === */
 .divider {
   display: flex;
@@ -425,6 +642,23 @@ button:focus-visible {
 .divider h2 {
   font-size: 132px;
   letter-spacing: -4px;
+}
+.divider-heading {
+  text-align: center;
+}
+.project-sections {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
+  font-size: 27px;
+  color: #a1aaa4;
+}
+.project-sections .active {
+  color: var(--ink);
+  font-weight: 700;
 }
 .divider-rule {
   position: absolute;
@@ -507,7 +741,7 @@ button:focus-visible {
   top: 0;
   left: -25px;
   width: 895px;
-  height: 490px;
+  height: 550px;
 }
 .mail-diagram {
   position: absolute;
@@ -577,7 +811,7 @@ button:focus-visible {
 /* === More === */
 .more-copy {
   width: 890px;
-  padding-top: 160px;
+  padding-top: 90px;
 }
 .more-copy h2 {
   font-family: Body;
@@ -589,7 +823,7 @@ button:focus-visible {
 .more-copy p {
   font-size: 31px;
   line-height: 1.65;
-  margin-top: 90px;
+  margin-top: 45px;
   word-break: keep-all;
 }
 .more-copy > a {
@@ -681,9 +915,35 @@ dialog h2 {
   margin-bottom: 20px;
 }
 #outlineList {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+#outlineList,
+#outlineList ol {
+  list-style: none;
+  padding: 0;
+}
+#outlineList ol {
+  margin: 8px 0 12px 14px;
+  border-left: 1px solid #cbd3cd;
+  padding-left: 14px;
+}
+#outlineList button {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 4px;
+  padding: 9px 10px;
+}
+.outline-page-number {
+  color: #75867b;
+  font-variant-numeric: tabular-nums;
+}
+.outline-group-label {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 15px 0 8px;
 }
 dialog button {
   font: 16px Body;
