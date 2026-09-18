@@ -141,7 +141,7 @@
                 <p class="career-description" data-edit>은행 내부 문서 검색과 업무 도구를 연결하는 생성형 AI 서비스</p>
                 <ul>
                   <li data-edit>RAG·의도 분류·도구 호출 기능 평가 및 개선</li>
-                  <li data-edit>Function Call 평가셋 구성·호출 오류 분석·설정 개선</li>
+                  <li data-edit>Function Call 멀티턴 지연 분석·의도 분류 기반 구조 개선</li>
                   <li data-edit>Chunk Validator 사례 분석·프롬프트 개선·검증 참여</li>
                 </ul>
               </div>
@@ -164,7 +164,7 @@
             <div class="profile-column">
               <h3 data-edit>교육</h3>
               <div class="entry">
-                <p class="" data-edit>부산대학교 정보컴퓨터공학전공<br />2018.03. ~ 2025.02. · 학점 4.00 / 4.5</p>
+                <p class="" data-edit>부산대학교 정보컴퓨터공학전공 학사<br />2018.03. ~ 2025.02. · 학점 4.00 / 4.5</p>
               </div>
               <div class="entry">
                 <p class="" data-edit>
@@ -217,7 +217,7 @@
               </div>
               <div class="entry">
                 <p class="" data-edit>
-                  TOPCIT – 수준 4<br />점수 - 730점<br />주관 – 정보통신기획평가원<br />응시 – 2024.10.12.
+                  TOPCIT – 수준 4<br />점수 - 730점<br />주관 – 정보통신기획평가원<br />2024.10.12. 응시<br />2026.10.12.까지 유효
                 </p>
               </div>
               <div class="entry">
@@ -690,7 +690,7 @@
               >
             </div>
             <p class="project-subtitle" data-edit>일간 메일 보고서 비서<br />네이버 부스트캠프 Upstage 기업 해커톤</p>
-            <p class="project-date" data-edit>2025.01 ~ 2025.02 (6인)</p>
+            <p class="project-date" data-edit>2025.01 ~ 2025.02 (6인 · 개발 리더)</p>
             <blockquote>
               <p class="" data-edit>
                 매일 쌓이는 메일을 빠르게 파악하고, 중요한 정보를 놓치지 않도록 돕는 LLM Agent 기반 Chrome Extension
@@ -698,10 +698,10 @@
               </p>
             </blockquote>
             <ul class="project-bullets">
-              <li data-edit>Reflexion 적용으로 최종 report G-eval score 0.44점 상승(4.5점 만점)</li>
-              <li data-edit>크롬 익스탠션(react) 및 서버(FastAPI) 개발</li>
-              <li data-edit>토큰 사용량 추적을 통한 비용 효율적인 파이프라인 설계</li>
-              <li data-edit>메일 분류에 대해 요약문을 사용하여 46% 토큰 절약을 확인</li>
+              <li data-edit>Reflexion 적용으로 G-eval 0.44점 상승 (4.5점 만점)</li>
+              <li data-edit>크롬 익스텐션(React) 및 서버(FastAPI) 개발</li>
+              <li data-edit>Solar Pro·Document Parse로 메일 요약·첨부 분석</li>
+              <li data-edit>요약문 분류로 토큰 46% 절감·비용 대비 정확도 77% 향상</li>
             </ul>
           </div>
           <div class="project-visual">
@@ -787,11 +787,12 @@
               </p>
             </blockquote>
             <ul class="project-bullets">
-              <li data-edit>RAG: 하이브리드 검색을 통해 의료 문서를 효율적으로 검색</li>
+              <li data-edit>RAG: Pinecone 하이브리드 검색으로 의료 문서를 효율적으로 검색</li>
               <li data-edit>RAFT: 불완전한 검색에 대한 robustness를 위해 적용</li>
-              <li data-edit>RAFT + RAG 적용으로 답변 유사도 16.04%p 상승</li>
+              <li data-edit>RAFT + RAG 적용으로 RAGAS 의미 유사도 16.04%p 상승</li>
               <li data-edit>Gemma-2-2b-it 모델: 평균 79.98%의 답변 유사도 기록</li>
               <li data-edit>RAFT + RAG 모델: 평균 96.02%의 답변 유사도 기록</li>
+              <li data-edit>LangChain 스트리밍 버그 수정 PR 반영 · 공식 contributor 등재</li>
             </ul>
           </div>
           <div class="project-visual">
@@ -857,7 +858,7 @@
             <p class="project-subtitle" data-edit>
               LLM 음식 추천 챗봇 서비스<br />부산대학교 정보컴퓨터공학부 2023년 전기 졸업과제
             </p>
-            <p class="project-date" data-edit>2023.05 ~ 2023.10 (3인)</p>
+            <p class="project-date" data-edit>2023.05 ~ 2023.10 (3인 · 팀 리더)</p>
             <blockquote>
               <p class="" data-edit>
                 KoAlpaca-polyglot-5.8B의 베이스 모델을 QLoRA 방식으로 파인튜닝하여 만든 Local LLM 기반의 음식 추천
@@ -867,9 +868,9 @@
             <ul class="project-bullets">
               <li data-edit>학습 데이터 수집을 위한 self-instruct 적용</li>
               <li data-edit>KoAlpaca-Polyglot-5.8B 모델 QLoRA 파인튜닝</li>
-              <li data-edit>사용자 계정 정보를 통한 음식 선호도 기억</li>
-              <li data-edit>사용자 대화 history를 바탕으로 응답 생성</li>
+              <li data-edit>사용자 계정과 대화 history를 바탕으로 선호도 반영</li>
               <li data-edit>WebSocket을 통한 token 단위 렌더링</li>
+              <li data-edit>학습 데이터셋 8,000건과 파인튜닝 모델 Hugging Face 공개</li>
             </ul>
           </div>
           <div class="project-visual">
