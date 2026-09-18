@@ -1033,14 +1033,11 @@ dialog button {
   font-size: 30px;
   white-space: nowrap;
 }
-.contact-item.phone {
+.contact-item.email {
   left: 186px;
 }
-.contact-item.email {
-  left: 568px;
-}
 .contact-item.website {
-  left: 1126px;
+  left: 904px;
 }
 .contact-item.github {
   left: 1449px;
