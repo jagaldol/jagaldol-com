@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>안혜준 이력서</title>
+    <meta name="description" content="AI 엔지니어 안혜준의 경력과 프로젝트를 담은 이력서" />
+    <link rel="canonical" href="https://jagaldol.com/resume" />
+    <link rel="icon" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css"
+    />
+    <style>
+      /* ===== A4 세로 이력서 · 브라우저 인쇄(Cmd+P)로 텍스트 PDF 출력 =====
+         인쇄 설정: 용지 A4 / 여백 없음 / 배경 그래픽 켜기 / 머리글·바닥글 끄기 */
+
+      :root {
+        --ink: #233c33;
+        --muted: #6d7a73;
+        --rule: #c8cfca;
+        --accent: #52695b;
+
+        --page-pad-x: 16mm;
+        --page-pad-y: 14mm;
+        --label-w: 27mm;
+        --gap-x: 6mm;
+
+        --fs-base: 9.4pt;
+        --fs-small: 8.5pt;
+        --lh: 1.55;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        background: #e8eae8;
+        color: var(--ink);
+        font-family: Pretendard, "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+        font-size: var(--fs-base);
+        line-height: var(--lh);
+        -webkit-font-smoothing: antialiased;
+        word-break: keep-all;
+      }
+
+      .sheet {
+        width: calc(210mm * var(--scale, 1));
+        height: calc(297mm * var(--scale, 1));
+        margin: 0 auto 8mm;
+      }
+
+      .sheet:first-of-type {
+        margin-top: 8mm;
+      }
+
+      .page {
+        position: relative;
+        width: 210mm;
+        height: 297mm;
+        transform: scale(var(--scale, 1));
+        transform-origin: top left;
+        padding: var(--page-pad-y) var(--page-pad-x);
+        background: #fff;
+        box-shadow: 0 2px 12px rgba(35, 60, 51, 0.16);
+        overflow: hidden;
+      }
+
+      /* ===== 헤더 ===== */
+      .masthead {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8mm;
+        padding-bottom: 2.5mm;
+        border-bottom: 1.2pt solid var(--ink);
+      }
+
+      .masthead h1 {
+        margin: 0;
+        font-size: 21pt;
+        font-weight: 700;
+        letter-spacing: -0.01em;
+        line-height: 1.1;
+      }
+
+      .masthead .role {
+        margin-left: 3mm;
+        font-size: 10pt;
+        font-weight: 500;
+        color: var(--accent);
+        letter-spacing: 0.06em;
+      }
+
+      .contact {
+        text-align: right;
+        font-size: var(--fs-small);
+        line-height: 1.5;
+        color: var(--muted);
+      }
+
+      .contact a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .contact .sep {
+        margin: 0 1.2mm;
+        color: var(--rule);
+      }
+
+      /* ===== 소개 ===== */
+      .summary {
+        margin: 4mm 0 0;
+        font-size: 9.6pt;
+        line-height: 1.6;
+      }
+
+      /* ===== 섹션 ===== */
+      .section {
+        margin-top: 6mm;
+      }
+
+      .section > h2 {
+        margin: 0 0 2.5mm;
+        padding-bottom: 1mm;
+        border-bottom: 0.7pt solid var(--rule);
+        font-size: 9pt;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        color: var(--accent);
+        text-transform: uppercase;
+      }
+
+      /* ===== 항목: 좌측 라벨 + 우측 본문 ===== */
+      .entry {
+        display: grid;
+        grid-template-columns: var(--label-w) 1fr;
+        gap: 0 var(--gap-x);
+        margin-bottom: 3.5mm;
+      }
+
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .entry .label {
+        padding-top: 0.4mm;
+        font-size: var(--fs-small);
+        line-height: 1.45;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .entry .label .org {
+        display: block;
+        margin-top: 0.8mm;
+        color: var(--ink);
+        font-weight: 600;
+      }
+
+      .entry .label .org .sub {
+        color: var(--muted);
+        font-weight: 500;
+      }
+
+      .entry h3 {
+        margin: 0;
+        font-size: 10.4pt;
+        font-weight: 700;
+        line-height: 1.35;
+      }
+
+      .entry h3 .meta {
+        margin-left: 2mm;
+        font-size: 8.8pt;
+        font-weight: 500;
+        color: var(--accent);
+      }
+
+      .entry h3 .meta.role {
+        font-size: 9.6pt;
+        font-weight: 600;
+      }
+
+      .entry .caption {
+        margin: 0.6mm 0 0;
+        font-size: var(--fs-small);
+        color: var(--muted);
+      }
+
+      .entry .links {
+        margin: 0.6mm 0 0;
+        font-size: var(--fs-small);
+      }
+
+      .entry .links a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 0.5pt solid var(--rule);
+      }
+
+      .entry .links .sep {
+        margin: 0 1.5mm;
+        color: var(--rule);
+      }
+
+      /* ===== 하위 과제(경력 내부) ===== */
+      .task {
+        margin-top: 2.8mm;
+      }
+
+      .task > h4 {
+        margin: 0;
+        font-size: 9.6pt;
+        font-weight: 600;
+      }
+
+      .task > h4 .period {
+        margin-left: 1.5mm;
+        font-size: 8.4pt;
+        font-weight: 400;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+      }
+
+      .task > .caption {
+        margin-top: 0.4mm;
+      }
+
+      /* ===== 불릿 ===== */
+      ul {
+        margin: 1.2mm 0 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      li {
+        position: relative;
+        padding-left: 3.2mm;
+        margin-bottom: 0.9mm;
+      }
+
+      li:last-child {
+        margin-bottom: 0;
+      }
+
+      li::before {
+        content: "";
+        position: absolute;
+        left: 0.4mm;
+        top: 1.55mm;
+        width: 1.1mm;
+        height: 1.1mm;
+        border-radius: 50%;
+        background: var(--accent);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      li .metric {
+        display: block;
+      }
+
+      .caption .ln {
+        display: block;
+      }
+
+      li .note {
+        color: var(--muted);
+        font-size: var(--fs-small);
+      }
+
+      strong {
+        font-weight: 600;
+      }
+
+      /* ===== 간략 나열(학력·수상·자격) ===== */
+      .compact .entry {
+        margin-bottom: 2.2mm;
+      }
+
+      .compact .entry .body > p {
+        margin: 0;
+      }
+
+      .compact .entry .body .detail {
+        font-size: var(--fs-small);
+        color: var(--muted);
+      }
+
+      .name {
+        font-weight: 600;
+      }
+
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 8mm;
+        margin-top: 6mm;
+      }
+
+      .two-col .section {
+        margin-top: 0;
+      }
+
+      .two-col .entry {
+        grid-template-columns: 16mm 1fr;
+        gap: 0 4mm;
+      }
+
+      /* 마지막 페이지는 아래가 남으므로 간격을 넓혀 균형을 맞춘다 */
+      .page.loose .section {
+        margin-top: 8mm;
+      }
+
+      .page.loose .two-col {
+        margin-top: 8mm;
+      }
+
+      .page.loose .entry {
+        margin-bottom: 4.4mm;
+      }
+
+      .page.loose .compact .entry {
+        margin-bottom: 2.8mm;
+      }
+
+      .page-footer {
+        position: absolute;
+        left: var(--page-pad-x);
+        right: var(--page-pad-x);
+        bottom: 7mm;
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1.6mm;
+        border-top: 0.5pt solid var(--rule);
+        font-size: 7.6pt;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+      }
+
+      .cont {
+        font-size: 8pt;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+      }
+
+      /* ===== 인쇄 ===== */
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        .sheet,
+        .sheet:first-of-type {
+          width: auto;
+          height: auto;
+          margin: 0;
+        }
+
+        .page {
+          width: auto;
+          height: auto;
+          min-height: 297mm;
+          margin: 0;
+          transform: none;
+          box-shadow: none;
+          overflow: visible;
+          break-after: page;
+          page-break-after: always;
+        }
+
+        .sheet:last-of-type .page {
+          break-after: auto;
+          page-break-after: auto;
+        }
+
+        .entry,
+        .task {
+          break-inside: avoid;
+          page-break-inside: avoid;
+        }
+
+        a {
+          color: inherit;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ================= PAGE 1 ================= -->
+    <div class="sheet">
+    <section class="page">
+      <header class="masthead">
+        <h1>안혜준<span class="role">AI Engineer</span></h1>
+        <div class="contact">
+          <div>
+            010-5439-7218<span class="sep">·</span><a href="mailto:jagaldol.dev@gmail.com">jagaldol.dev@gmail.com</a>
+          </div>
+          <div>
+            <a href="https://jagaldol.com">jagaldol.com</a><span class="sep">·</span
+            ><a href="https://jagaldol.com/portfolio">jagaldol.com/portfolio</a><span class="sep">·</span
+            ><a href="https://github.com/jagaldol">github.com/jagaldol</a><span class="sep">·</span
+            ><a href="https://blog.jagaldol.com">blog.jagaldol.com</a>
+          </div>
+        </div>
+      </header>
+
+      <p class="summary">
+        AI Agent 시스템과 RAG를 실제 서비스로 구현하는 AI 엔지니어입니다. Upstage에서 금융 AI와 기업용 Agent·문서
+        파이프라인을 개발했습니다. 개인화된 AI와 업무 자동화로 일하는 방식을 바꾸는 AX에 관심이 있습니다.
+      </p>
+
+      <section class="section">
+        <h2>Experience</h2>
+
+        <div class="entry">
+          <div class="label">2025.05 – 2025.11</div>
+          <div class="body">
+            <h3>Upstage<span class="meta role">AI Research Engineer Intern</span></h3>
+
+            <div class="task">
+              <h4>IBK 생성형 AI 시스템 구축<span class="period">2025.05 – 2025.09</span></h4>
+              <p class="caption">은행 내부 문서 검색·업무 도구를 연결하는 생성형 AI 서비스</p>
+              <ul>
+                <li>
+                  멀티턴 Function Call의 지연 원인을 분석해 의도분류 기반으로 구조 개선
+                  <span class="metric"
+                    >응답 시간 <strong>2.03초</strong> → <strong>0.40초</strong>, 정확도 <strong>90.35%</strong> →
+                    <strong>92.71%</strong> <span class="note">(Solar Pro 2 · 동일 850문항)</span></span
+                  >
+                </li>
+                <li>RAG 검색 결과에서 유효 근거만 선별하는 Chunk Validator 개선에 참여해 오답·오인용 감소</li>
+              </ul>
+            </div>
+
+            <div class="task">
+              <h4>EWS · Enterprise AI Workspace<span class="period">2025.09 – 2025.11</span></h4>
+              <p class="caption">IBK 유즈케이스를 사내 제품으로 옮긴 기업용 AI 워크스페이스</p>
+              <ul>
+                <li>Agent Layer와 문서 처리 파이프라인을 맡아 구현하고 연동 인터페이스 설계</li>
+                <li>LangGraph 기반 멀티턴 대화·메모리·도구 호출 Agent와 RAG 라우팅·SSE 스트리밍 구현</li>
+                <li>문서 파싱·청킹·임베딩 RAG 파이프라인 구현</li>
+                <li>대용량 처리를 비동기 구조로 전환해 접수와 상태 조회를 분리</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Projects</h2>
+
+        <div class="entry">
+          <div class="label">
+            2026.03 – 현재
+            <span class="org">1인 개발·운영</span>
+          </div>
+          <div class="body">
+            <h3>Lifebase<span class="meta">AI 개인비서 워크스페이스</span></h3>
+            <p class="caption">Obsidian vault에 기록과 작업을 모아 AI 에이전트와 계획·실행·정리하는 제품</p>
+            <ul>
+              <li>AGENTS.md 공통 규칙과 16개 작업별 스킬을 연결한 AI 개인비서 하네스 설계</li>
+              <li>Base·Local·Target 3자 비교로 사용자 노트와 설정 변경을 보존하는 업데이트 엔진(CLI) 구현</li>
+              <li>TypeScript 설치 CLI·라이선스 서버(Cloudflare Worker)·제품 웹사이트 개발</li>
+              <li>한국어·영어 배포 및 2026.09 첫 유료 판매</li>
+            </ul>
+            <p class="links"><a href="https://lifebaseai.com/">lifebaseai.com</a></p>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="label">
+            2025.01 – 2025.02
+            <span class="org">네이버 부스트캠프<br /><span class="sub">Upstage 해커톤</span></span>
+          </div>
+          <div class="body">
+            <h3>매일메일<span class="meta">일간 메일 보고서 비서</span></h3>
+            <p class="caption">하루치 메일을 수집해 요약·분류하는 Chrome Extension 서비스</p>
+            <ul>
+              <li>6인 팀 개발 리더로 AI 파이프라인 설계와 Chrome Extension·FastAPI 서버 구현 담당</li>
+              <li>Upstage Solar Pro·Document Parse·Embedding으로 요약·첨부 분석·유사 메일 클러스터링 구현</li>
+              <li>
+                G-Eval 평가와 self-reflection을 결합한 Reflexion 루프 구현
+                <span class="metric"
+                  >보고서 품질 <strong>3.75</strong> → <strong>4.19</strong>
+                  <span class="note">(4.5점 만점 · Self-Refine baseline 대비)</span></span
+                >
+              </li>
+              <li>분류 입력을 원문에서 요약문으로 바꿔 토큰 비용 <strong>46% 절감</strong>, 비용 대비 정확도 <strong>77% 향상</strong></li>
+            </ul>
+            <p class="links"><a href="https://github.com/jagaldol/maeilmail">github.com/jagaldol/maeilmail</a></p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="label">
+            2024.09 – 2024.10
+            <span class="org">구글 ML 부트캠프</span>
+          </div>
+          <div class="body">
+            <h3>UnDoc<span class="meta">의료상담 챗봇 모델 연구</span></h3>
+            <p class="caption">RAG와 RAFT 적용 · 5기 우수 프로젝트 선정</p>
+            <ul>
+              <li>2인 팀에서 LangChain 기반 RAG·RAFT 시스템과 FastAPI·Next.js 서비스 개발</li>
+              <li>Pinecone 하이브리드 검색으로 의료 문서를 찾고, 검색 결과가 불완전해도 답하도록 RAFT 파인튜닝</li>
+              <li>
+                RAGAS 의미 유사도 평가에서 평균 답변 유사도 <strong>79.98%</strong> → <strong>96.02%</strong>
+                <span class="note">(Gemma-2-2b-it 기준)</span>
+              </li>
+              <li>LangChain 스트리밍 버그 수정 PR이 반영되어 공식 contributor 등재</li>
+            </ul>
+            <p class="links">
+              <a href="https://undoc.vercel.app">undoc.vercel.app</a><span class="sep">·</span
+              ><a href="https://github.com/jagaldol/health-care-advisor">github.com/jagaldol/health-care-advisor</a>
+            </p>
+          </div>
+        </div>
+
+      </section>
+
+      <footer class="page-footer"><span>안혜준 · AI Engineer</span><span>1 / 2</span></footer>
+    </section>
+    </div>
+
+    <!-- ================= PAGE 2 ================= -->
+    <div class="sheet">
+    <section class="page loose">
+      <section class="section" style="margin-top: 0">
+        <h2>Projects <span class="cont">(계속)</span></h2>
+
+        <div class="entry">
+          <div class="label">
+            2023.05 – 2023.10
+            <span class="org">부산대 졸업과제</span>
+          </div>
+          <div class="body">
+            <h3>ChatFoodie<span class="meta">LLM 음식 추천 챗봇 서비스</span></h3>
+            <p class="caption">대화와 사용자 선호도를 반영한 개인 맞춤 추천 서비스</p>
+            <ul>
+              <li>3인 팀 리더로 AI 모델과 Spring Boot·Next.js 기반 서비스 개발</li>
+              <li>GPT Self-Instruct로 학습 데이터 8,000건을 만들어 KoAlpaca-Polyglot-5.8B QLoRA 파인튜닝</li>
+              <li>대화 이력 기반 개인화와 WebSocket 토큰 스트리밍 구현</li>
+              <li>학습 데이터셋과 파인튜닝 모델을 Hugging Face에 공개</li>
+            </ul>
+            <p class="links">
+              <a href="https://foodie.jagaldol.com">foodie.jagaldol.com</a><span class="sep">·</span
+              ><a href="https://github.com/jagaldol/chat-foodie">github.com/jagaldol/chat-foodie</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="label">
+            2022.12 – 2023.03
+            <span class="org">외주 개발</span>
+          </div>
+          <div class="body">
+            <h3>레슨 매니저<span class="meta">학원 레슨 관리 시스템</span></h3>
+            <p class="caption">Piano Together 학원의 수강생·레슨·결제 관리 웹 애플리케이션</p>
+            <ul>
+              <li>2인 팀에서 React·Express·MySQL 기반 풀스택 개발, DB 설계와 관리자 API·문자 전송 담당</li>
+              <li>울산 음악학원에 추가 판매되어 2개 학원 5개 지점에서 3년 넘게 운영·유지보수 지속</li>
+            </ul>
+            <p class="links">
+              <a href="https://pianotogether.co.kr/admin">pianotogether.co.kr/admin</a><span class="sep">·</span
+              ><a href="https://github.com/orangement/lessonmanager-desc">github.com/orangement/lessonmanager-desc</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section compact">
+        <h2>Education</h2>
+
+        <div class="entry">
+          <div class="label">2018.03 – 2025.02</div>
+          <div class="body">
+            <p><span class="name">부산대학교</span> 전기컴퓨터공학부 정보컴퓨터공학전공 학사 <span class="detail">· 학점 4.0 / 4.5</span></p>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="label">2015.03 – 2018.02</div>
+          <div class="body">
+            <p><span class="name">해운대고등학교</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>Training</h2>
+
+        <div class="entry">
+          <div class="label">2024.08 – 2025.02</div>
+          <div class="body">
+            <h3>네이버 부스트캠프 AI Tech 7기 · NLP 트랙</h3>
+            <p class="caption">
+              <span class="ln">PyTorch·Transformer 기반 NLP·LLM 이론 학습</span>
+              <span class="ln">문장 유사도·오픈 도메인 질의응답·수능형 문제풀이 모델 프로젝트와 Upstage 기업 해커톤 ‘매일메일’ 수행</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="label">2024.07 – 2024.10</div>
+          <div class="body">
+            <h3>구글 Machine Learning 부트캠프 5기<span class="meta">Google Developers Group</span></h3>
+            <p class="caption">
+              <span class="ln">Andrew Ng Deep Learning Specialization 이수, Kaggle Playground Competition 상위 5%</span>
+              <span class="ln">Gemma Sprint ‘UnDoc’ 개발</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="label">2023.04 – 2023.11</div>
+          <div class="body">
+            <h3>카카오 테크 캠퍼스 1기 Backend</h3>
+            <p class="caption">
+              <span class="ln">Java·Spring 백엔드 교육과 Spring Security·JPA 기반 ‘카카오 쇼핑하기’ 클론 개발</span>
+              <span class="ln">최종 프로젝트 ‘번개볼링’ 개발 리더로 통합 테스트·Swagger 문서화 담당</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="two-col">
+        <section class="section compact">
+          <h2>Awards</h2>
+
+          <div class="entry">
+            <div class="label">2024.12</div>
+            <div class="body">
+              <p><span class="name">2024년 TOPCIT 성적우수자</span></p>
+              <p class="detail">부산대학교총장상 · 정보통신기획평가원</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="label">2023.12</div>
+            <div class="body">
+              <p><span class="name">2023년 TOPCIT 성적우수자</span></p>
+              <p class="detail">한국정보산업연합회장상 · 정보통신기획평가원</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="label">2023.12</div>
+            <div class="body">
+              <p><span class="name">제1회 PNU Coding Challenge</span></p>
+              <p class="detail">우수상 · 부산대학교</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="label">2023.11</div>
+            <div class="body">
+              <p><span class="name">카카오 테크 캠퍼스 신규 서비스 개발 프로젝트</span></p>
+              <p class="detail">대상 · 카카오</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section compact">
+          <h2>Certifications</h2>
+
+          <div class="entry">
+            <div class="label">2025.03</div>
+            <div class="body">
+              <p><span class="name">TOEIC Speaking IM2</span> <span class="detail">120점</span></p>
+              <p class="detail">한국TOEIC위원회 · 2027.03.15까지 유효</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="label">2024.12</div>
+            <div class="body">
+              <p><span class="name">SQL 개발자(SQLD)</span></p>
+              <p class="detail">한국데이터산업진흥원</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="label">2024.10</div>
+            <div class="body">
+              <p><span class="name">TOPCIT 수준 4</span> <span class="detail">730점</span></p>
+              <p class="detail">정보통신기획평가원 · 2026.10.12까지 유효</p>
+            </div>
+          </div>
+
+          <div class="entry">
+            <div class="label">2024.06</div>
+            <div class="body">
+              <p><span class="name">정보처리기사</span></p>
+              <p class="detail">한국산업인력공단</p>
+            </div>
+          </div>
+
+        </section>
+      </div>
+
+      <footer class="page-footer"><span>안혜준 · AI Engineer</span><span>2 / 2</span></footer>
+    </section>
+    </div>
+
+    <script>
+      /* 화면에서는 A4 비율을 유지한 채 창 폭에 맞춰 축소한다. 인쇄에는 관여하지 않는다. */
+      (function () {
+        var PAGE_W = (210 * 96) / 25.4;
+        function fit() {
+          var avail = document.documentElement.clientWidth - 24;
+          var scale = Math.min(1, avail / PAGE_W);
+          document.documentElement.style.setProperty("--scale", scale);
+        }
+        fit();
+        window.addEventListener("resize", fit);
+        window.addEventListener("orientationchange", fit);
+      })();
+    </script>
+  </body>
+</html>

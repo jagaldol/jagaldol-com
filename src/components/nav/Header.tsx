@@ -62,7 +62,7 @@ export default function Header() {
       >
         프로젝트
       </Link>
-      <a href="/files/resume.pdf" onClick={() => setOpen(false)}>
+      <a href="/resume" onClick={() => setOpen(false)}>
         이력서 <FiArrowUpRight aria-hidden="true" />
       </a>
       <a href="https://github.com/jagaldol" onClick={() => setOpen(false)}>

@@ -3,7 +3,13 @@ import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
   async rewrites() {
-    return [{ source: "/portfolio", destination: "/portfolio/index.html" }]
+    return [
+      { source: "/portfolio", destination: "/portfolio/index.html" },
+      { source: "/resume", destination: "/resume/index.html" },
+    ]
+  },
+  async redirects() {
+    return [{ source: "/files/resume.pdf", destination: "/resume", permanent: true }]
   },
   async headers() {
     return [
