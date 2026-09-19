@@ -2,10 +2,8 @@ import { exportStyles, inlineMedia } from "./assets.js"
 
 /* 문서가 마지막으로 수정된 날짜를 파일명에 쓴다. 내려받은 날짜가 아니라 버전을 가리켜야 한다. */
 export function deckVersionDate() {
-  const d = new Date(document.lastModified)
-  if (Number.isNaN(d.getTime())) return "portfolio"
-  const pad = (n) => String(n).padStart(2, "0")
-  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+  const date = document.querySelector('meta[name="portfolio-modified"]')?.content
+  return /^\d{4}-\d{2}-\d{2}$/.test(date || "") ? date : "undated"
 }
 
 /* Standalone browser export: render each slide, then package JPEG pages as PDF. */

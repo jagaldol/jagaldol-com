@@ -42,3 +42,7 @@ Lifebase 소개 페이지의 제목·부제·본문은 프로젝트 공통 글�
 2026-09-17 화면 캡처 갱신: 소개 페이지의 홈페이지 상단(`ce80d872bb0776ff.webp`), 블로그(`7a7cfb81dfa638b0.webp`), GitHub 기여 그래프(`af7f006a0f50137d.webp`)와 More의 홈페이지 전체(`7a9d9f713a88b11d.webp`)·프로젝트 목록(`30610c385afdf4ba.webp`)을 당시 운영 중인 `jagaldol.com`, `blog.jagaldol.com`, `github.com/jagaldol`에서 다시 캡처했다. 원본 비율을 유지하고 WebP로 저장하며, 기존 캡처는 이전 저장본의 참조를 위해 남겨둔다.
 
 문구 편집과 HTML 저장은 `localhost`, `127.0.0.1`, `[::1]` 및 내려받은 `file:` 문서에서만 활성화한다. 배포 주소에서는 편집 버튼·E 단축키·저장 문구 복원을 사용하지 않으며, 페이지 탐색과 PDF 저장은 그대로 제공한다.
+
+PDF와 HTML 다운로드 파일명의 날짜는 `index.html`의 `portfolio-modified` 메타데이터를 사용한다. `document.lastModified`나 배포 시각은 사용하지 않는다. 포트폴리오 HTML·CSS와 참조 이미지·폰트의 내용 해시가 같으면 날짜도 유지되며, 저장한 독립 HTML에도 메타데이터가 포함된다.
+
+`npm run dev`와 `npm run build` 전에 버전 스크립트를 실행한다. 로컬에서는 관련 파일의 마지막 Git 커밋 시각과 미커밋 파일의 수정 시각을 기준으로 한국 시간 날짜를 기록한다. 실행 중인 개발 서버에서 수정했다면 커밋 전에 `npm run portfolio:version`을 실행하고 변경된 `index.html`도 함께 커밋한다. Vercel/CI에서는 저장된 해시만 검증하며 날짜를 생성하지 않는다. 내용과 메타데이터가 다르면 로컬 갱신을 요청하고 빌드를 중단한다. 검증: `node scripts/check-portfolio-version.mjs`.

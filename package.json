@@ -7,7 +7,10 @@
     "build": "next build",
     "postbuild": "next-sitemap",
     "start": "next start",
-    "lint": "eslint . --max-warnings=0"
+    "lint": "eslint . --max-warnings=0",
+    "portfolio:version": "node scripts/update-portfolio-version.mjs",
+    "predev": "npm run portfolio:version",
+    "prebuild": "npm run portfolio:version"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",
