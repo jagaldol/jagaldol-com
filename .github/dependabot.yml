@@ -3,4 +3,11 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "weekly"
+      interval: "monthly"
+    groups:
+      non-major:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
