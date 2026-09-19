@@ -750,6 +750,110 @@ button:focus-visible {
   width: 800px;
   height: 360px;
 }
+/* 직접 만들어 쓰는 도구: 원본 비율에 맞춰 비교 화면과 모바일 화면을 배치한다. */
+.tool-project .project-copy {
+  width: 780px;
+}
+
+
+.tool-project .project-bullets {
+  font-size: 25px;
+}
+
+.tool-project blockquote {
+  margin: 48px 0 34px;
+}
+
+.tool-project .project-visual {
+  left: 900px;
+  top: 210px;
+  width: 970px;
+  height: 730px;
+}
+
+/* 이미지 파일은 보존하고, 중복 제목과 바깥 여백만 프레임 밖으로 뺀다. */
+.tool-planner .project-visual > a,
+.tool-zotero .project-visual > a {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.tool-planner .project-visual img,
+.tool-zotero .project-visual img {
+  position: absolute;
+  max-width: none;
+  max-height: none;
+  height: auto;
+}
+
+.tool-planner h2 {
+  width: 1450px;
+  white-space: nowrap;
+}
+
+.tool-planner .project-visual {
+  top: 280px;
+  height: 647px;
+}
+
+.tool-planner .project-visual img {
+  width: 104%;
+  left: -2%;
+  top: -71px;
+}
+
+.tool-zotero h2 {
+  width: 1720px;
+  font-size: 104px;
+  white-space: nowrap;
+}
+
+.tool-zotero .project-visual {
+  top: 320px;
+  height: 545px;
+}
+
+.tool-zotero .project-visual img {
+  width: 107.5%;
+  left: -3.7%;
+  top: -82px;
+}
+
+.tool-fitness .project-visual {
+  left: 900px;
+  top: 80px;
+  width: 970px;
+  height: 875px;
+}
+
+.tool-phones {
+  display: flex;
+  gap: 72px;
+  align-items: stretch;
+  justify-content: center;
+  height: 100%;
+}
+
+.tool-phones a {
+  display: block;
+  height: 100%;
+}
+
+.tool-phones img {
+  display: block;
+  width: auto;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.tool-planner .award {
+  top: -280px;
+  right: 50px;
+}
+
 .undoc-ui {
   position: absolute;
   left: -120px;
