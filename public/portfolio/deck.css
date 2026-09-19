@@ -868,12 +868,16 @@ button:focus-visible {
   top: -80px;
   background: var(--gold);
   color: white;
-  padding: 48px 28px 32px;
-  font-size: 28px;
+  padding: 26px 18px 24px;
+  font-size: 24px;
   text-align: center;
-  line-height: 1.5;
+  line-height: 1.4;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 91%, 0 100%);
 }
+.award small {
+  font-size: 20px;
+}
+
 .project-7 blockquote {
   margin-top: 55px;
   margin-bottom: 45px;
