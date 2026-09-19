@@ -1,4 +1,13 @@
 import { exportStyles, inlineMedia } from "./assets.js"
+
+/* 문서가 마지막으로 수정된 날짜를 파일명에 쓴다. 내려받은 날짜가 아니라 버전을 가리켜야 한다. */
+export function deckVersionDate() {
+  const d = new Date(document.lastModified)
+  if (Number.isNaN(d.getTime())) return "portfolio"
+  const pad = (n) => String(n).padStart(2, "0")
+  return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+}
+
 /* Standalone browser export: render each slide, then package JPEG pages as PDF. */
 export async function downloadDeckPDF(slides, progress) {
   const encoder = new TextEncoder(),
@@ -107,7 +116,7 @@ export async function downloadDeckPDF(slides, progress) {
   const url = URL.createObjectURL(new Blob(parts, { type: "application/pdf" }))
   const a = document.createElement("a")
   a.href = url
-  a.download = "2026-09-17-portfolio.pdf"
+  a.download = `${deckVersionDate()}-portfolio.pdf`
   a.click()
   setTimeout(() => URL.revokeObjectURL(url), 60000)
 }

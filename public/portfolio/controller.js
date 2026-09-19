@@ -1,5 +1,5 @@
 import { activateMedia, standaloneHTML } from "./assets.js"
-import { downloadDeckPDF } from "./pdf.js"
+import { downloadDeckPDF, deckVersionDate } from "./pdf.js"
 
 class SlidePresentation {
   constructor() {
@@ -104,7 +104,7 @@ class SlidePresentation {
       let url = URL.createObjectURL(new Blob([await standaloneHTML(root)], { type: "text/html;charset=utf-8" }))
       let a = document.createElement("a")
       a.href = url
-      a.download = "2026-09-17-portfolio-edited.html"
+      a.download = `${deckVersionDate()}-portfolio-edited.html`
       a.click()
       setTimeout(() => URL.revokeObjectURL(url), 10000)
       this.message("수정한 HTML 파일을 다운로드했습니다.")
