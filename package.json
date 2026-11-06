@@ -48,6 +48,8 @@
   },
   "overrides": {
     "postcss": "8.5.23",
-    "sharp": "^0.35.4"
+    "sharp": "^0.35.5",
+    "minimatch@>=7.0.0 <11.0.1": "^11.0.1",
+    "katex": "$katex"
   }
 }
